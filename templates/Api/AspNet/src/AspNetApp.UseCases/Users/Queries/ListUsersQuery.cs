@@ -1,5 +1,9 @@
-﻿namespace AspNetApp.UseCases.Users.Queries;
+﻿using AspNetApp.UseCases.Abstractions;
 
-internal class ListUsersQuery
+using RichillCapital.SharedKernel.Monads;
+
+namespace AspNetApp.UseCases.Users.Queries;
+
+public sealed record ListUsersQuery : IQuery<ErrorOr<IEnumerable<UserDto>>>
 {
 }

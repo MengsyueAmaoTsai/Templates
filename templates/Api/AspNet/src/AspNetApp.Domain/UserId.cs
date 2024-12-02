@@ -18,4 +18,7 @@ public sealed class UserId : SingleValueObject<string>
             .Ensure(id => !string.IsNullOrEmpty(id), Error.Invalid($"'{nameof(value)}' cannot be null or empty."))
             .Ensure(id => id.Length <= MaxLength, Error.Invalid($"'{nameof(value)}' cannot be longer than {MaxLength} characters."))
             .Then(id => new UserId(id));
+
+    public static UserId NewUserId() => 
+        From(Guid.NewGuid().ToString()).ThrowIfFailure().Value;
 }
