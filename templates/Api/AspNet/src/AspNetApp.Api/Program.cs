@@ -34,11 +34,9 @@ if (app.Environment.IsDevelopment())
     app.UseDeveloperExceptionPage();
 }
 
-
 app.UseExceptionHandler(options =>
 {
 });
-
 
 app.UseHttpsRedirection();
 

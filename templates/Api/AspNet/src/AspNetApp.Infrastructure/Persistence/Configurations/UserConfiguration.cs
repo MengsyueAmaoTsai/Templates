@@ -40,5 +40,27 @@ internal sealed class UserConfiguration : IEntityTypeConfiguration<User>
                 name => name.Value,
                 value => UserName.From(value).ThrowIfFailure().Value)
             .IsRequired();
+
+        builder.HasData([
+            CreateUser(
+                id: "1",
+                email: "someone@example.com",
+                name: "AspNetApp User",
+                passwordHash: "PA55W0RD"),
+        ]);
     }
+
+    private static User CreateUser(
+        string id,
+        string email,
+        string name,
+        string passwordHash) => User
+        .Create(
+            UserId.From(id).ThrowIfFailure().Value,
+            Email.From(email).ThrowIfFailure().Value,
+            UserName.From(name).ThrowIfFailure().Value,
+            passwordHash,
+            DateTimeOffset.UtcNow)
+        .ThrowIfError()
+        .Value;
 }
