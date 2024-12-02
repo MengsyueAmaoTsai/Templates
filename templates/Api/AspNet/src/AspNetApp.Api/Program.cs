@@ -6,7 +6,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.WebHost.UseCustomLogger();
 
-builder.Services.AddApplicationServices()
+builder.Services.AddApplicationServices();
 
 builder.Services.AddDateTimeProvider();
 
