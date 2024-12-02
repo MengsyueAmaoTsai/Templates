@@ -31,5 +31,5 @@ public sealed class DeleteUserEndpoint(
             .With(userId)
             .Then(id => new DeleteUserCommand { UserId = id })
             .Then(command => _mediator.Send(command, cancellationToken))
-            .Match(_ => NotFound(), HandleFailure);
+            .Match(_ => NoContent(), HandleFailure);
 }

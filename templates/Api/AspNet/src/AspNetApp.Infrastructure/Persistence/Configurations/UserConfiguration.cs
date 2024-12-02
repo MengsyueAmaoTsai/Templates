@@ -47,6 +47,11 @@ internal sealed class UserConfiguration : IEntityTypeConfiguration<User>
                 email: "someone@example.com",
                 name: "AspNetApp User",
                 passwordHash: "PA55W0RD"),
+            CreateUser(
+                id: "2",
+                email: "anotherone@example.com",
+                name: "AspNetApp User 2",
+                passwordHash: "PA55W0RD"),
         ]);
     }
 

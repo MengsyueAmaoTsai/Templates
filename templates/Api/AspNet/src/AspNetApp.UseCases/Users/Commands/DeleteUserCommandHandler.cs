@@ -3,7 +3,6 @@ using AspNetApp.Domain.Abstractions.Repositories;
 using AspNetApp.UseCases.Abstractions;
 
 using RichillCapital.SharedKernel.Monads;
-
 namespace AspNetApp.UseCases.Users.Commands;
 
 internal sealed class DeleteUserCommandHandler(
