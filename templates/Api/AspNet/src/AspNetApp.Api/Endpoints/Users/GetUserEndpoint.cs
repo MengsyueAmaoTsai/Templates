@@ -23,11 +23,11 @@ public sealed class GetUserEndpoint(
     .WithActionResult<UserDetailsResponse>
 {
     [HttpGet(ApiRoutes.Users.Get)]
-    [SwaggerOperation(Tags = ["Users"])]
+    [SwaggerOperation(Tags = [ApiTags.Users])]
     [AllowAnonymous]
     public override async Task<ActionResult<UserDetailsResponse>> HandleAsync(
         [FromRoute(Name = nameof(userId))] string userId,
-        CancellationToken cancellationToken = default) => 
+        CancellationToken cancellationToken = default) =>
         await ErrorOr<string>
             .With(userId)
             .Then(id => new GetUserQuery { UserId = id })

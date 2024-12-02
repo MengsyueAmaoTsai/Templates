@@ -23,7 +23,7 @@ public class CreateUserEndpoint(
     .WithActionResult<UserCreatedResponse>
 {
     [HttpPost(ApiRoutes.Users.Create)]
-    [SwaggerOperation(Tags = ["Users"])]
+    [SwaggerOperation(Tags = [ApiTags.Users])]
     [AllowAnonymous]
     public override async Task<ActionResult<UserCreatedResponse>> HandleAsync(
         [FromBody] CreateUserRequest request,
@@ -39,5 +39,5 @@ public class CreateUserEndpoint(
             .Then(command => _mediator.Send(command, cancellationToken))
             .Then(id => new UserCreatedResponse { Id = id.Value })
             .Match(HandleFailure, Ok);
-            
+
 }

@@ -23,7 +23,7 @@ public sealed class ListUsersEndpoint(
     .WithActionResult<IEnumerable<UserResponse>>
 {
     [HttpGet(ApiRoutes.Users.List)]
-    [SwaggerOperation(Tags = ["Users"])]
+    [SwaggerOperation(Tags = [ApiTags.Users])]
     [AllowAnonymous]
     public override async Task<ActionResult<IEnumerable<UserResponse>>> HandleAsync(
         CancellationToken cancellationToken = default) =>

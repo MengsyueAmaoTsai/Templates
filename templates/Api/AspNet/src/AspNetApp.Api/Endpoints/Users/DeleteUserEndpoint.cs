@@ -22,7 +22,7 @@ public sealed class DeleteUserEndpoint(
     .WithActionResult
 {
     [HttpDelete(ApiRoutes.Users.Delete)]
-    [SwaggerOperation(Tags = ["Users"])]
+    [SwaggerOperation(Tags = [ApiTags.Users])]
     [AllowAnonymous]
     public override async Task<ActionResult> HandleAsync(
         [FromRoute(Name = nameof(userId))] string userId,

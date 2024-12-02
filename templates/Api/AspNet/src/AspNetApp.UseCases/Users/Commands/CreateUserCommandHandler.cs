@@ -10,7 +10,7 @@ namespace AspNetApp.UseCases.Users.Commands;
 internal sealed class CreateUserCommandHandler(
     IDateTimeProvider _dateTimeProvider,
     IRepository<User> _userRepository,
-    IUnitOfWork _unitOfWork) : 
+    IUnitOfWork _unitOfWork) :
     ICommandHandler<CreateUserCommand, ErrorOr<UserId>>
 {
     public async Task<ErrorOr<UserId>> Handle(CreateUserCommand command, CancellationToken cancellationToken)
@@ -26,11 +26,11 @@ internal sealed class CreateUserCommandHandler(
 
         var (email, name) = validationResult.Value;
 
-        var dupliacteEmail = await _userRepository.AnyAsync(
-            u => u.Email == email, 
+        var duplicateEmail = await _userRepository.AnyAsync(
+            u => u.Email == email,
             cancellationToken);
 
-        if (dupliacteEmail)
+        if (duplicateEmail)
         {
             return ErrorOr<UserId>.WithError(UserErrors.EmailTaken(email));
         }
@@ -52,7 +52,7 @@ internal sealed class CreateUserCommandHandler(
         _userRepository.Add(user);
 
         await _unitOfWork.SaveChangesAsync(cancellationToken);
-        
+
         return ErrorOr<UserId>.With(user.Id);
     }
 }

@@ -7,11 +7,11 @@ using RichillCapital.SharedKernel.Monads;
 namespace AspNetApp.UseCases.Users.Queries;
 
 internal sealed class ListUsersQueryHandler(
-    IReadOnlyRepository<User> _userRepository) : 
+    IReadOnlyRepository<User> _userRepository) :
     IQueryHandler<ListUsersQuery, ErrorOr<IEnumerable<UserDto>>>
 {
     public async Task<ErrorOr<IEnumerable<UserDto>>> Handle(
-        ListUsersQuery query, 
+        ListUsersQuery query,
         CancellationToken cancellationToken)
     {
         var users = await _userRepository.ListAsync(cancellationToken);
