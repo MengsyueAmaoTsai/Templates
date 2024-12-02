@@ -10,7 +10,7 @@ jobs:
 - job: BuildAndTest
   displayName: 'Build and Test'
   steps:
-  - task: Checkout@2
+  - task: Checkout@1
     displayName: 'Checkout repository'
   
   - task: UseDotNet@2
