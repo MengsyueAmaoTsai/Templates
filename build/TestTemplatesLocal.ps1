@@ -17,6 +17,8 @@ docker compose down
 
 dotnet publish ./TestAspNetApp.Api.sln -c Release -o ./artifacts
 
+docker build -t .
+
 Pop-Location
 
 Remove-Item -Recurse -Force TestAspNetApp
