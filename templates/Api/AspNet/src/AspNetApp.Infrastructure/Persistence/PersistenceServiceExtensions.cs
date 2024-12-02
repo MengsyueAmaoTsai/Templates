@@ -39,12 +39,12 @@ public static class PersistenceServiceExtensions
         //    .GetRequiredService<IOptions<DatabaseOptions>>()
         //    .Value;
 
-        //services
-        //    .AddDbContext<EFCoreDbContext>(options =>
-        //        options.UseSqlServer(databaseOptions.ConnectionString))
-        //    .AddDbContextFactory<EFCoreDbContext>(
-        //        (Action<DbContextOptionsBuilder>)null!,
-        //        ServiceLifetime.Scoped);
+        services
+           .AddDbContext<EFCoreDbContext>(options =>
+               options.UseSqlServer("Server=127.0.0.1,1433;Database=richillcapital;User Id=SA;Password=Pa55w0rd!;TrustServerCertificate=true;MultipleActiveResultSets=true;Encrypt=False"))
+           .AddDbContextFactory<EFCoreDbContext>(
+               (Action<DbContextOptionsBuilder>)null!,
+               ServiceLifetime.Scoped);
 
         services.AddScoped(typeof(IRepository<>), typeof(EFCoreRepository<>));
         services.AddScoped(typeof(IReadOnlyRepository<>), typeof(EFCoreRepository<>));

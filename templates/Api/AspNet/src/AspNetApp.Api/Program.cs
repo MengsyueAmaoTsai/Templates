@@ -1,3 +1,6 @@
+using AspNetApp.Api.Endpoints;
+using AspNetApp.Api.Middlewares;
+using AspNetApp.Api.OpenApi;
 using AspNetApp.Infrastructure.Clock;
 using AspNetApp.Infrastructure.Events;
 using AspNetApp.Infrastructure.Logging;
@@ -14,23 +17,37 @@ builder.Services.AddDateTimeProvider();
 builder.Services.AddDomainEventServices();
 builder.Services.AddPersistence();
 
-builder.Services.AddControllers();
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddMiddlewares();
+builder.Services.AddOpenApi();
+builder.Services.AddEndpoints();
 
 var app = builder.Build();
 
+app.ResetDatabase();
+
+app.UseForwardedHeaders();
+
+app.UseRequestDebuggingMiddleware();
+
 if (app.Environment.IsDevelopment())
 {
-    app.UseSwagger();
-    app.UseSwaggerUI();
+    app.UseDeveloperExceptionPage();
 }
+
+
+app.UseExceptionHandler(options =>
+{
+});
+
 
 app.UseHttpsRedirection();
 
-app.UseAuthorization();
+app.UseRouting();
 
-app.MapControllers();
+app.UseSwaggerDoc();
+
+app.MapEndpoints();
+
 
 await app.RunAsync();
 
