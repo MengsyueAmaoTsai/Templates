@@ -7,9 +7,15 @@ Push-Location TestAspNetApp
 
 dotnet new api-aspnet -n TestAspNetApp -o ./
 
-dotnet build ./TestAspNetApp.Api.sln -c Release --no-logo
-dotnet test ./TestAspNetApp.Api.sln -c Release --no-logo
-dotnet publish ./TestAspNetApp.Api.sln -c Release --no-logo -o ./artifacts
+dotnet build ./TestAspNetApp.Api.sln -c Release
+
+docker compose up -d 
+
+dotnet test ./TestAspNetApp.Api.sln -c Release 
+
+docker compose down
+
+dotnet publish ./TestAspNetApp.Api.sln -c Release -o ./artifacts
 
 Pop-Location
 
