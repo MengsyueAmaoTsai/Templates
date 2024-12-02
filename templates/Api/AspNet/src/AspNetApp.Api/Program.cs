@@ -1,4 +1,5 @@
 using AspNetApp.Infrastructure.Clock;
+using AspNetApp.Infrastructure.Events;
 using AspNetApp.Infrastructure.Logging;
 using AspNetApp.UseCases;
 
@@ -9,6 +10,7 @@ builder.WebHost.UseCustomLogger();
 builder.Services.AddApplicationServices();
 
 builder.Services.AddDateTimeProvider();
+builder.Services.AddDomainEventServices();
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
