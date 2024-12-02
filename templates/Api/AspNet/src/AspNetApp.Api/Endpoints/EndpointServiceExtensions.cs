@@ -1,4 +1,6 @@
 ﻿using Asp.Versioning;
+
+using AspNetApp.Api.Endpoints.General;
 using AspNetApp.Api.OpenApi;
 
 namespace AspNetApp.Api.Endpoints;
@@ -28,7 +30,7 @@ internal static class EndpointServiceExtensions
     internal static IEndpointRouteBuilder MapEndpoints(this IEndpointRouteBuilder builder)
     {
         builder.MapControllers();
-        //builder.MapGeneralEndpoints();
+        builder.MapGeneralEndpoints();
 
         return builder;
     }
@@ -54,12 +56,12 @@ internal static class EndpointServiceExtensions
         return services;
     }
 
-    //private static IEndpointRouteBuilder MapGeneralEndpoints(this IEndpointRouteBuilder builder)
-    //{
-    //    builder.MapGCInfoEndpoint();
-    //    builder.MapThreadPoolInfoEndpoint();
-    //    builder.MapProcessInfoEndpoint();
-    //    builder.MapAppSettingsEndpoint();
-    //    return builder;
-    //}
+    private static IEndpointRouteBuilder MapGeneralEndpoints(this IEndpointRouteBuilder builder)
+    {
+        builder.MapGCInfoEndpoint();
+        builder.MapThreadPoolInfoEndpoint();
+        builder.MapProcessInfoEndpoint();
+
+        return builder;
+    }
 }
