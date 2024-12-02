@@ -5,21 +5,24 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{D14D0741-E1F6-482A-8CF0-7B8054096826}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetApp.Api", "src\AspNetApp.Api\AspNetApp.Api.csproj", "{24542F90-1E6D-4402-AC70-66253C5E9C37}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspNetApp.Api", "src\AspNetApp.Api\AspNetApp.Api.csproj", "{24542F90-1E6D-4402-AC70-66253C5E9C37}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetApp.Domain", "src\AspNetApp.Domain\AspNetApp.Domain.csproj", "{8ED3629D-807A-4836-9A1B-3AC9EDB10FC2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspNetApp.Domain", "src\AspNetApp.Domain\AspNetApp.Domain.csproj", "{8ED3629D-807A-4836-9A1B-3AC9EDB10FC2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetApp.Infrastructure", "src\AspNetApp.Infrastructure\AspNetApp.Infrastructure.csproj", "{53A1C8AA-5682-4DCF-A1D9-30811D84B7A3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspNetApp.Infrastructure", "src\AspNetApp.Infrastructure\AspNetApp.Infrastructure.csproj", "{53A1C8AA-5682-4DCF-A1D9-30811D84B7A3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetApp.UseCases", "src\AspNetApp.UseCases\AspNetApp.UseCases.csproj", "{7FB76331-DDC9-40B9-8B9E-11AAC3B036A0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspNetApp.UseCases", "src\AspNetApp.UseCases\AspNetApp.UseCases.csproj", "{7FB76331-DDC9-40B9-8B9E-11AAC3B036A0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{834ADB0E-1079-49A9-9982-A859B02AA843}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetApp.Api.ArchitectureTests", "tests\AspNetApp.Api.ArchitectureTests\AspNetApp.Api.ArchitectureTests.csproj", "{B433ED26-9F34-45C3-A704-16B939CC041A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetApp.Api.AcceptanceTests", "tests\AspNetApp.Api.AcceptanceTests\AspNetApp.Api.AcceptanceTests.csproj", "{27DC59F1-B450-408D-8F98-37028F7E850C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{24542F90-1E6D-4402-AC70-66253C5E9C37}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -38,11 +41,27 @@ Global
 		{7FB76331-DDC9-40B9-8B9E-11AAC3B036A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7FB76331-DDC9-40B9-8B9E-11AAC3B036A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7FB76331-DDC9-40B9-8B9E-11AAC3B036A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B433ED26-9F34-45C3-A704-16B939CC041A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B433ED26-9F34-45C3-A704-16B939CC041A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B433ED26-9F34-45C3-A704-16B939CC041A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B433ED26-9F34-45C3-A704-16B939CC041A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{27DC59F1-B450-408D-8F98-37028F7E850C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27DC59F1-B450-408D-8F98-37028F7E850C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27DC59F1-B450-408D-8F98-37028F7E850C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27DC59F1-B450-408D-8F98-37028F7E850C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{24542F90-1E6D-4402-AC70-66253C5E9C37} = {D14D0741-E1F6-482A-8CF0-7B8054096826}
 		{8ED3629D-807A-4836-9A1B-3AC9EDB10FC2} = {D14D0741-E1F6-482A-8CF0-7B8054096826}
 		{53A1C8AA-5682-4DCF-A1D9-30811D84B7A3} = {D14D0741-E1F6-482A-8CF0-7B8054096826}
 		{7FB76331-DDC9-40B9-8B9E-11AAC3B036A0} = {D14D0741-E1F6-482A-8CF0-7B8054096826}
+		{B433ED26-9F34-45C3-A704-16B939CC041A} = {834ADB0E-1079-49A9-9982-A859B02AA843}
+		{27DC59F1-B450-408D-8F98-37028F7E850C} = {834ADB0E-1079-49A9-9982-A859B02AA843}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BEC97281-BC7D-42AE-BC04-A1C4FCF4787C}
 	EndGlobalSection
 EndGlobal
