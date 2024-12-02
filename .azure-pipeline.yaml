@@ -1,0 +1,20 @@
+trigger:
+  branches:
+    include:
+      - develop   
+
+pool:
+  vmImage: 'windows-latest'
+
+jobs:
+- job: BuildAndTest
+  displayName: 'Build and Test'
+  steps:
+  - task: Checkout@2
+    displayName: 'Checkout repository'
+  
+  - task: UseDotNet@2
+    displayName: 'Install .NET SDK'
+    inputs:
+      packageType: 'sdk'
+      version: '8.x'   
