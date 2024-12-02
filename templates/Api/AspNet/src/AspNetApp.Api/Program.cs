@@ -1,3 +1,4 @@
+using AspNetApp.Infrastructure.Clock;
 using AspNetApp.Infrastructure.Logging;
 using AspNetApp.UseCases;
 
@@ -5,7 +6,9 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.WebHost.UseCustomLogger();
 
-builder.Services.AddApplicationServices();
+builder.Services.AddApplicationServices()
+
+builder.Services.AddDateTimeProvider();
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
