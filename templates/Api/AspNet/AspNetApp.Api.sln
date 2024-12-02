@@ -7,6 +7,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{9A2BC5DF-F4F
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetApp.Api", "src\AspNetApp.Api\AspNetApp.Api.csproj", "{1E7AF71D-3AE9-4E79-A2A7-AB0F0F40313D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetApp.Domain", "src\AspNetApp.Domain\AspNetApp.Domain.csproj", "{395B5A27-3C3E-4BFB-A3B2-C52EC1042D1F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,11 +19,19 @@ Global
 		{1E7AF71D-3AE9-4E79-A2A7-AB0F0F40313D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1E7AF71D-3AE9-4E79-A2A7-AB0F0F40313D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1E7AF71D-3AE9-4E79-A2A7-AB0F0F40313D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{395B5A27-3C3E-4BFB-A3B2-C52EC1042D1F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{395B5A27-3C3E-4BFB-A3B2-C52EC1042D1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{395B5A27-3C3E-4BFB-A3B2-C52EC1042D1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{395B5A27-3C3E-4BFB-A3B2-C52EC1042D1F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{1E7AF71D-3AE9-4E79-A2A7-AB0F0F40313D} = {9A2BC5DF-F4F6-4B3E-B6CC-3F7B50243B29}
+		{395B5A27-3C3E-4BFB-A3B2-C52EC1042D1F} = {9A2BC5DF-F4F6-4B3E-B6CC-3F7B50243B29}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {14BD1165-A396-455E-A0EB-38D45FC66014}
 	EndGlobalSection
 EndGlobal
