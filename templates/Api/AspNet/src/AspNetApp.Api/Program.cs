@@ -1,6 +1,7 @@
 using AspNetApp.Infrastructure.Clock;
 using AspNetApp.Infrastructure.Events;
 using AspNetApp.Infrastructure.Logging;
+using AspNetApp.Infrastructure.Persistence;
 using AspNetApp.UseCases;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -11,6 +12,7 @@ builder.Services.AddApplicationServices();
 
 builder.Services.AddDateTimeProvider();
 builder.Services.AddDomainEventServices();
+builder.Services.AddPersistence();
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
