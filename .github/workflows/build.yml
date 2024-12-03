@@ -1,0 +1,62 @@
+on:
+  push:
+    branches:
+      - develop 
+      - master
+      - feature/**/*
+      - release/**/*
+      - hotfix/**/*
+
+defaults:
+  run:
+    shell: pwsh
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8.0.x
+
+      - name: Setup NuGet
+        uses: NuGet/setup-nuget@v1
+        with:
+          nuget-version: 5.x
+
+  test:
+    runs-on: windows-latest
+    needs: build
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8.0.x
+
+      - name: Setup NuGet
+        uses: NuGet/setup-nuget@v1
+        with:
+          nuget-version: 5.x
+
+  deploy:
+    runs-on: windows-latest
+    needs: test
+
+    steps:
+        - uses: actions/checkout@v4
+        - name: Setup .NET
+          uses: actions/setup-dotnet@v4
+          with:
+            dotnet-version: 8.0.x
+  
+        - name: Setup NuGet
+          uses: NuGet/setup-nuget@v1
+          with:
+            nuget-version: 5.x
+      
+    
