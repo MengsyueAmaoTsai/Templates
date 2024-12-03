@@ -10,5 +10,10 @@
     "type": "project"
   },
   "sourceName": "nuxt-app",
-  "preferNameDirectory": true
+  "preferNameDirectory": true,
+  "sources": [
+    {
+      "exclude": ["**/.nuxt/**", "**/.output/**", "**/node_modules/**"]
+    }
+  ]
 }
