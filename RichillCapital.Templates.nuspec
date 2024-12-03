@@ -3,25 +3,31 @@
   <metadata>
     <id>RichillCapital.Templates</id>
     <title>RichillCapital.Templates</title>
-    <version>0.0.0</version>
-    <authors>Mengsyue Amao Tsai</authors>
+    <version>$version$</version>
     <description>
-        Custom templates for internal uses.
+        Provides custom templates for personal uses. 
+        These templates help standardize project initialization and accelerate development workflows.
     </description>
-    <language>en-US</language>
-    <license type="expression">MIT</license>
+    <packageTypes>
+      <packageType name="Template" />
+    </packageTypes>    
+    
+    <readme>README.md</readme>
+    <tags>templates;solution</tags>
+
     <projectUrl>https://github.com/MengsyueAmaoTsai/Templates</projectUrl>
+    <repository type="git" url="https://github.com/MengsyueAmaoTsai/Templates.git" />   
+    <license type="expression">MIT</license>
+    <authors>Mengsyue Amao Tsai</authors>
+
     <releaseNotes>
         Initial release.
     </releaseNotes>
-    <packageTypes>
-      <packageType name="Template" />
-    </packageTypes>
-    <readme>README.md</readme>
+    <language>en-US</language>
   </metadata>
 
   <files>
-    <file src=".\**" target="content" exclude="**\bin\**;**\obj\**;**\.git\**;**\.github\**;**\*.user;**\.vs\**;**\.vscode\**;**\.gitignore;**\sample\**;**\node_modules\**;**\.nuxt\**;**\.output\**" />
-    <file src="README.md" />
+    <file src="docs\README.md" target="content" />
+    <file src=".\**" target="content" exclude="**\{bin,obj,.git,.github,.vs,.vscode,node_modules,sample}**;**\*.user;**\.gitignore;**\.nuxt\**;**\.output\**" />
   </files>
 </package>

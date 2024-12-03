@@ -58,5 +58,15 @@ jobs:
           uses: NuGet/setup-nuget@v1
           with:
             nuget-version: 5.x
+
+        # Code quality checks
+
+        # Build and run tests
+
+        # Publish or package 
+
+        # Deploy to environment
+
+        # Update documentation, release notes, etc.
       
     
