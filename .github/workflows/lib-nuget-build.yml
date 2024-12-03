@@ -1,0 +1,45 @@
+name: NuGet Library Template CI
+
+on:
+  push:
+    branches:
+      - feature/lib/nuget
+
+defualts:
+  run:
+    shell: pwsh
+
+jobs:
+  build-and-test:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup .NET SDK
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8.0.x
+      
+      - name: Setup NuGet CLI
+        uses: NuGet/setup-nuget@v1
+        with:
+          nuget-version: 5.x
+
+      - name: Install template
+        run: dotnet new install ./templates/Lib/NuGet
+
+      - name: Test
+        run: |
+          mkdir TestNuGetLib 
+          Push-Location .\TestNuGetLib
+
+          dotnet new lib-nuget -n TestNuGetLib -o .
+          dotnet build .\TestNuGetLib.sln -c Release
+          dotnet test .\TestNuGetLib.sln -c Release
+          nuget pack .\TestNuGetLib.nuspec -OutputDirectory .\artifacts 
+
+          Pop-Location
+          Remove-Item -Recurse -Force .\TestNuGetLib
+          
