@@ -25,10 +25,14 @@ jobs:
           
       - name: Setup Docker
         uses: docker/setup-buildx-action@v3
+        with:
+          version: latest
+
+      - name: Start Docker service
+        uses: docker/setup-buildx-action@v3
 
       - name: Test ASP.NET Core API Template
-        run: |
-            ./build/ApiAspNet.Template.Tests.ps1
+        run: ./build/ApiAspNet.Template.Tests.ps1
 
   web-nuxt-test:
     runs-on: windows-latest
