@@ -1,0 +1,12 @@
+{
+  "dotnet.defaultSolution": "./AspNetApp.Api.sln",
+  "cSpell.words": [
+    "accessibilities",
+    "dtos",
+    "ipascalcase",
+    "Mediat",
+    "pascalcase",
+    "Swashbuckle",
+    "tpascalcase"
+  ]
+}
