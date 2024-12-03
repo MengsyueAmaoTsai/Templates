@@ -1,7 +1,7 @@
 {
   "$schema": "http://json.schemastore.org/template",
   "author": "Mengsyue Amao Tsai",
-  "classifications": ["Api", "AspNet"],
+  "classifications": ["Web", "RazorPages"],
   "identity": "RichillCapital.Templates.Web.RazorPages",
   "name": "RichillCapital Web Template for Razor Pages",
   "shortName": "web-razor",
