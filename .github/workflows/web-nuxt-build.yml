@@ -1,0 +1,48 @@
+name: Nuxt Web Template CI
+
+on:
+  push:
+    branches:
+      - feature/web/nuxt
+
+defaults:
+  run:
+    shell: pwsh
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup .NET SDK
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8.0.x
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 22.x
+      
+      - name: Setup pnpm
+        run: npm i -g pnpm
+
+      - name: Install dependencies
+        run: pnpm i
+
+      - name: Test
+        run: |
+          mkdir test-nuxt-app 
+          Push-Location .\test-nuxt-app
+
+          dotnet new web-nuxt -n test-nuxt-app -o .
+          pnpm i 
+          pnpm run build
+          pnpm run test
+
+          Pop-Location
+          Remove-Item -Recurse -Force .\test-nuxt-app
+          
