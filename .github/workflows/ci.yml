@@ -22,7 +22,10 @@ jobs:
         uses: actions/setup-dotnet@v4
         with:
           dotnet-version: 8.0.x
-          
+
+      - name: Setup Docker
+        uses: crazy-max/ghaction-setup-docker@v3.5.0
+                
       - name: Test ASP.NET Core API Template
         run: ./build/ApiAspNet.Template.Tests.ps1
 
