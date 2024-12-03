@@ -25,9 +25,10 @@ jobs:
         uses: NuGet/setup-nuget@v1
         with:
           nuget-version: 'latest'
+          nuget-api-key: ${{ secrets.NUGET_API_KEY }}
 
       - name: Pack templates
         run: nuget pack ./RichillCapital.Templates.nuspec -Version 0.0.2 -Prop Configuration=Release -OutputDirectory ./artifacts -NoDefaultExcludes
 
       - name: Push to NuGet Gallery
-        run: nuget push ./artifacts/RichillCapital.Templates.*.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json --skip-duplicate
+        run: nuget push ./artifacts/RichillCapital.Templates.*.nupkg --source https://api.nuget.org/v3/index.json --skip-duplicate
