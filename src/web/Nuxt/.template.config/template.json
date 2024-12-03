@@ -1,3 +1,10 @@
 {
-  "$schema": "http://json.schemastore.org/template"
+  "$schema": "http://json.schemastore.org/template",
+  "author": "Mengsyue Amao Tsai",
+  "classifications": ["Web", "Nuxt"],
+  "identity": "RichillCapital.Templates.Web.Nuxt",
+  "name": "RichillCapital Nuxt Web Template",
+  "shortName": "web-nuxt",
+  "sourceName": "nuxt-app",
+  "preferNameDirectory": true
 }
