@@ -5,7 +5,7 @@ on:
     branches:
       - feature/lib/nuget
 
-defualts:
+defaults:
   run:
     shell: pwsh
 
