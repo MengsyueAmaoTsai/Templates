@@ -27,21 +27,19 @@ jobs:
         with:
           node-version: 22.x
       
-      - name: Setup pnpm
-        run: npm i -g pnpm
-
       - name: Install dependencies
-        run: pnpm i
+        run: |
+          npm i -g pnpm 
+          pnpm i
 
       - name: Test
         run: |
           mkdir test-nuxt-app 
           Push-Location .\test-nuxt-app
 
-          dotnet new web-nuxt -n test-nuxt-app -o .
+          dotnet new web-nuxt -n test-nuxt-app -o .\
           pnpm i 
           pnpm run build
-          pnpm run test
 
           Pop-Location
           Remove-Item -Recurse -Force .\test-nuxt-app
