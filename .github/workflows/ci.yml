@@ -23,15 +23,6 @@ jobs:
         with:
           dotnet-version: 8.0.x
           
-      - name: Setup Docker
-        uses: docker/setup-buildx-action@v3
-        with:
-          version: latest
-          platform: windows/amd64
-
-      - name: Start Docker service
-        uses: docker/setup-buildx-action@v3
-
       - name: Test ASP.NET Core API Template
         run: ./build/ApiAspNet.Template.Tests.ps1
 
