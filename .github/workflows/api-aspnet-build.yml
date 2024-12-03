@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - feature/api/aspnet
+      - develop
 
 env:
   DOTNET_VERSION: 8.0.x
