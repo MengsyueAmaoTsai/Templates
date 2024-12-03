@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>RichillCapital.Template</id>
+    <title>Richill Capital Templates</title>
+    <version>0.0.1</version>
+    <authors>Mengsyue Amao Tsai</authors>
+    <description>
+      Richill Capital Templates
+    </description>
+    <language>en-US</language>
+    <license type="expression">MIT</license>
+    <projectUrl>https://github.com/MengsyueAmaoTsai/Templates</projectUrl>
+    <releaseNotes>
+      Initial release
+    </releaseNotes>
+    <packageTypes>
+      <packageType name="Template" />
+    </packageTypes>
+    <tags>templates;</tags>
+    <readme>README.md</readme>
+  </metadata>
+  <files>
+    <file src=".\**" target="content" exclude="**\bin\**;**\obj\**;**\.git\**;**\.github\**;**\*.user;**\.vs\**;**\.vscode\**;**\.gitignore;**\sample\**;**\node_modules\**" />
+    <file src="README.md" />
+  </files>
+</package>

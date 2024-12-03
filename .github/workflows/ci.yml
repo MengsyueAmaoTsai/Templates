@@ -4,7 +4,8 @@ on:
   push:
     branches:
       - develop
-      - feature/**/*
+      - feature/**
+      - release/**
 
 defaults:
   run:
@@ -50,3 +51,24 @@ jobs:
         run: |
             npm install -g pnpm
             ./build/NuxtWeb.Template.Tests.ps1
+
+  release:
+    runs-on: windows-latest
+
+    needs: [api-aspnet-test, web-nuxt-test]
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup NuGet
+        uses: actions/setup-nuget@v1
+
+      - name: Pack NuGet packages
+        run: nuget pack .\RichillCapital.Templates.nuspec -NoDefaultExclude -OutputDirectory ./artifacts -Properties Configuration=Release
+      
+      - name: Upload release artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: RichillCapital.Templates-0.0.0
+          path: ./artifacts
