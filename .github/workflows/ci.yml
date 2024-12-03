@@ -3,7 +3,7 @@ name: Continue Integration
 on:
   push:
     branches:
-      - feature/*
+      - feature/**/*
 
 defaults:
   run:
