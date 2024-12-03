@@ -20,5 +20,6 @@ steps:
 # 執行測試腳本 TestNuxtWeb.ps1
 - script: |
     echo "Running Nuxt.js Web Template Tests"
-    pwsh ./build/TestNuxtWeb.ps1
+    Import-Module Microsoft.PowerShell.Security
+    ./build/TestNuxtWeb.ps1
   displayName: 'Run Nuxt Web Tests'
