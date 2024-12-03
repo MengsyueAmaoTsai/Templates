@@ -12,7 +12,7 @@ on:
 defaults:
   run:
     shell: pwsh
-    
+
 jobs:
   push-to-nuget:
     runs-on: windows-latest
@@ -31,4 +31,4 @@ jobs:
         run: nuget pack ./RichillCapital.Templates.nuspec -Version 0.0.2 -Prop Configuration=Release -OutputDirectory ./artifacts -NoDefaultExcludes
 
       - name: Push to NuGet Gallery
-        run: nuget push ./artifacts/RichillCapital.Templates.0.0.2.nupkg -s https://api.nuget.org/v3/index.json --skip-duplicate
+        run: nuget push ./artifacts/RichillCapital.Templates.0.0.2.nupkg -src https://api.nuget.org/v3/index.json --skip-duplicate
