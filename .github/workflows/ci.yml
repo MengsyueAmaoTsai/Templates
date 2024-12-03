@@ -29,4 +29,6 @@ jobs:
           node-version: 22.x
 
       - name: Test Nuxt.js Web Template
-        run: ./build/NuxtWeb.Template.Tests.ps1
+        run: |
+            npm install -g pnpm
+            ./build/NuxtWeb.Template.Tests.ps1
