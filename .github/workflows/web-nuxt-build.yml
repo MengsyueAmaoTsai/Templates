@@ -39,6 +39,7 @@ jobs:
           Push-Location .\test-nuxt-app
 
           dotnet new web-nuxt -n test-nuxt-app -o .\
+          ls
           pnpm i 
           pnpm run build
 
