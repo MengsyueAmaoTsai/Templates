@@ -26,3 +26,9 @@ jobs:
         uses: actions/setup-dotnet@v4
         with:
           dotnet-version: 8.0.x
+
+      - name: Install templates
+        run: ./build/InstallTemplatesLocal.ps1
+
+      - name: Test templates
+        run: ./build/TestTemplatesLocal.ps1
