@@ -34,7 +34,7 @@ jobs:
           Push-Location ./TestAspNetApp
           
           Write-Host "Creating new project"
-          dotnet new api-aspnet -n TestAspNetApp .
+          dotnet new api-aspnet -n TestAspNetApp -o ./
 
           dotnet build ./TestAspNetApp.Api.sln -c Release
           dotnet test ./TestAspNetApp.Api.sln -c Release
