@@ -31,7 +31,7 @@ jobs:
         run: npm i -g pnpm 
       
       - name: Install template
-        run: dotnet new install .\templates\Web\Nuxt
+        run: dotnet new install ./templates/Web/Nuxt
 
       - name: Test
         run: |

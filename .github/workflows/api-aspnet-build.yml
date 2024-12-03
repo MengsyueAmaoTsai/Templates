@@ -28,7 +28,7 @@ jobs:
           nuget-version: 5.x
 
       - name: Install template
-        run: dotnet new install .\templates\Api\AspNet
+        run: dotnet new install ./templates/Api/AspNet
 
       - name: Test
         run: |
