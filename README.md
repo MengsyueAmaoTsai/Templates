@@ -11,3 +11,9 @@ RichillCapital.Templates is a collection of project templates designed for perso
 ```powershell
 dotnet new install RichillCapital.Templates
 ```
+
+## Available Templates
+
+| Name       | Description          | Status                                                                                                                                                                                                       |
+| ---------- | -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| api-aspnet | ASP.NET API template | [![ASP.NET API Template Workflow](https://github.com/MengsyueAmaoTsai/Templates/actions/workflows/api-aspnet.yml/badge.svg)](https://github.com/MengsyueAmaoTsai/Templates/actions/workflows/api-aspnet.yml) |
