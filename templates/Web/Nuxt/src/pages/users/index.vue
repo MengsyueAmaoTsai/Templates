@@ -56,12 +56,6 @@
 </template>
 
 <script lang="ts" setup>
-const selectedUserIds = ref<string[]>([]);
-
-const allSelected = computed(() => {
-  return selectedUserIds.value.length === users.value.length;
-});
-
 const users = ref([
   {
     id: "1",
@@ -76,6 +70,12 @@ const users = ref([
     createdTime: new Date(),
   },
 ]);
+
+const selectedUserIds = ref<string[]>([]);
+
+const allSelected = computed(() => {
+  return selectedUserIds.value.length === users.value.length;
+});
 
 const toggleAllUsers = (event: Event) => {
   if (!event.target) {
