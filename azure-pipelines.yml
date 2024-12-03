@@ -1,0 +1,24 @@
+trigger:
+  branches:
+    include:
+      - feature/web-nuxt     
+
+pool:
+  name: Default
+
+steps:
+- task: UseDotNet@2
+  inputs:
+    packageType: 'sdk'
+    version: '8.0.x'
+    installationPath: $(Agent.ToolsDirectory)/dotnet
+    
+- task: UseNode@1
+  inputs:
+    version: '22.x'
+
+# 執行測試腳本 TestNuxtWeb.ps1
+- script: |
+    echo "Running Nuxt.js Web Template Tests"
+    pwsh ./build/TestNuxtWeb.ps1
+  displayName: 'Run Nuxt Web Tests'
