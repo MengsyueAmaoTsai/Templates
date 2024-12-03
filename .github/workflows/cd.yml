@@ -10,9 +10,9 @@ on:
 defaults:
   run:
     shell: pwsh
-    
+
 jobs:
-  deploy:
+  develop-artifacts:
     runs-on: ubuntu-latest
 
     if: github.event.workflow_run.conclusion == 'success' && github.ref_name == 'develop' 
@@ -23,4 +23,30 @@ jobs:
     
       - name: Setup
         run: |
-          Write-Host "Depoyed!"
+          Write-Host "Released debug!"
+
+  release-artifacts:
+    runs-on: ubuntu-latest
+
+    if: github.event.workflow_run.conclusion == 'success' && startsWith(github.ref_name, 'release/') 
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+    
+      - name: Setup
+        run: |
+          Write-Host "Released!"
+
+  production:
+    runs-on: ubuntu-latest
+
+    if: github.event.workflow_run.conclusion == 'success' && github.ref_name == 'master' 
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+    
+      - name: Setup
+        run: |
+          Write-Host "Produciotn ready!"
