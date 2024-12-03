@@ -1,0 +1,22 @@
+name: Continue Deployment
+
+on:
+  workflow_run:
+    workflows:
+      - Continue Integration
+    types:
+      - completed
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    if: github.event.workflow_run.conclusion == 'success' && github.ref_name == 'develop' 
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+    
+      - name: Setup
+        run: |
+          Write-Host "Depoyed!"

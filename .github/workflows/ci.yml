@@ -1,0 +1,22 @@
+name: Continue Integration
+
+on:
+  push:
+    branches:
+      - feature/**/*
+      - develop
+      - release/*.*.*
+      - hotfix/**/*
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+    
+      - name: Setup
+        run: |
+          Write-Host "Build!"
