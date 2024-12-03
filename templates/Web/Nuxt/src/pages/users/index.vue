@@ -1,12 +1,12 @@
 <template>
   <div>
     <div>
-      <button>New signal source</button>
-      <button>Refresh</button>
-      <button>Delete</button>
+      <button @click="newUser">New user</button>
+      <button @click="refreshPage">Refresh</button>
+      <button @click="deleteSelectedUsers">Delete</button>
     </div>
 
-    <div></div>
+    <div>{{ users.length }} result{{ users.length > 1 ? "s" : "" }} found.</div>
 
     <div>
       <table>
@@ -20,7 +20,11 @@
         </thead>
 
         <tbody>
-          <tr v-for="user of users" x:key="user.id">
+          <tr v-if="users.length === 0">
+            <td colspan="4" style="text-align: center">No data available.</td>
+          </tr>
+
+          <tr v-else v-for="user in users" :key="user.id">
             <td>{{ user.id }}</td>
             <td>{{ user.email }}</td>
             <td>{{ user.name }}</td>
@@ -47,6 +51,18 @@ const users = ref([
     createdTime: new Date(),
   },
 ]);
+
+const refreshPage = () => {
+  console.log("Refresh page");
+};
+
+const deleteSelectedUsers = () => {
+  console.log("Delete user");
+};
+
+const newUser = () => {
+  console.log("New user");
+};
 </script>
 
 <style></style>
