@@ -51,10 +51,29 @@ jobs:
         run: |
             npm install -g pnpm
             ./build/NuxtWeb.Template.Tests.ps1
+  
+  develop-build:
+    runs-on: windows-latest
 
+    if: github.ref == 'refs/heads/develop'
+    needs: [api-aspnet-test, web-nuxt-test]
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup NuGet
+        uses: nuget/setup-nuget@v2
+        with:
+          nuget-version: 5.x
+
+      - name: Pack NuGet packages
+        run: nuget pack .\RichillCapital.Templates.nuspec -NoDefaultExclude -OutputDirectory ./artifacts -Properties Configuration=Release
+                  
   release:
     runs-on: windows-latest
 
+    if: startsWith(github.ref, 'refs/heads/release/')
     needs: [api-aspnet-test, web-nuxt-test]
 
     steps:
