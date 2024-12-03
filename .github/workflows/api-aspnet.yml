@@ -10,6 +10,10 @@ defaults:
   run:
     shell: pwsh
 
+env:
+  TEMPLATE_NAME: api-aspnet
+  TEMPLATE_PATH: ./templates/Api/AspNet
+
 jobs:
   build-and-test:
     runs-on: windows-latest
@@ -21,3 +25,14 @@ jobs:
         uses: actions/setup-dotnet@v4
         with:
           dotnet-version: 8.0.x
+
+      - name: Install template
+        run: dotnet new install ${{ env.TEMPLATE_PATH }}
+
+      - name: Create template
+        run: dotnet new ${{ env.TEMPLATE_NAME }} 
+
+      # - name: Build and test template
+
+      - name: Uninstall template
+        run: dotnet new uninstall ${{ env.TEMPLATE_PATH }}

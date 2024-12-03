@@ -14,6 +14,8 @@ dotnet new install RichillCapital.Templates
 
 ## Available Templates
 
-| Name       | Description          | Status                                                                                                                                                                                                       |
-| ---------- | -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| api-aspnet | ASP.NET API template | [![ASP.NET API Template Workflow](https://github.com/MengsyueAmaoTsai/Templates/actions/workflows/api-aspnet.yml/badge.svg)](https://github.com/MengsyueAmaoTsai/Templates/actions/workflows/api-aspnet.yml) |
+| Name       | Description            | Status                                                                                                                                                                                                       |
+| ---------- | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| api-aspnet | ASP.NET api template   | [![ASP.NET API Template Workflow](https://github.com/MengsyueAmaoTsai/Templates/actions/workflows/api-aspnet.yml/badge.svg)](https://github.com/MengsyueAmaoTsai/Templates/actions/workflows/api-aspnet.yml) |
+| web-nuxt   | Nuxt.js web template   |                                                                                                                                                                                                              |
+| lib-nuget  | NuGet package template |                                                                                                                                                                                                              |
