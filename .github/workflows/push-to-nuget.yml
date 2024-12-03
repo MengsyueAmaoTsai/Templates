@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - master
+      
   pull_request:
     branches:
       - master
@@ -22,4 +23,7 @@ jobs:
           nuget-version: 'latest'
 
       - name: Pack templates
-        run: nuget pack ./RichillCapital.Templates.nuspec -Version 0.0.2 -Prop Configuration=Release -OutputDirectory ./artifacts
+        run: nuget pack ./RichillCapital.Templates.nuspec -Version 0.0.2 -Prop Configuration=Release -OutputDirectory ./artifacts -NoDefaultExcludes
+
+      - name: Push to NuGet Gallery
+        run: nuget push ./artifacts/RichillCapital.Templates.0.0.2.nupkg -s https://api.nuget.org/v3/index.json -k ${{ secrets.NUGET_API_KEY }} --skip-duplicate
