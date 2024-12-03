@@ -13,7 +13,12 @@
   "preferNameDirectory": true,
   "sources": [
     {
-      "exclude": ["**/.nuxt/**", "**/.output/**", "**/node_modules/**"]
+      "exclude": [
+        "**/.nuxt/**",
+        "**/.output/**",
+        ".template.config/**/*",
+        "**/node_modules/**"
+      ]
     }
   ]
 }
