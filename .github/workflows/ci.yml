@@ -27,14 +27,6 @@ jobs:
         with:
           dotnet-version: 8.0.x
 
-      - name: Setup Docker
-        uses: docker/setup-buildx-action@v3
-
-      - name: Install Docker Compose
-        run: |
-          Invoke-WebRequest -Uri "https://github.com/docker/compose/releases/latest/download/docker-compose-windows-x86_64.exe" -OutFile "$Env:ProgramFiles\Docker\docker-compose.exe"
-          Write-Host "Docker Compose installed at $Env:ProgramFiles\Docker\docker-compose.exe"
-          
       - name: Install templates
         run: ./build/InstallTemplatesLocal.ps1
 

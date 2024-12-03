@@ -23,4 +23,4 @@ Pop-Location
 
 Remove-Item -Recurse -Force TestAspNetApp
 
-Write-Host "RichillCapital.Templates.Api.AspNet template test passed"
+Write-Host "RichillCapital.Templates.Api.AspNet template test completed"
