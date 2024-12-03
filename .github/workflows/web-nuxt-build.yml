@@ -42,6 +42,8 @@ jobs:
           pnpm i 
           pnpm run build
 
+          docker build -t .
+
           Pop-Location
           Remove-Item -Recurse -Force .\TestNuxtApp
           

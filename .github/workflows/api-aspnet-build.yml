@@ -39,7 +39,9 @@ jobs:
           dotnet build .\TestAspNetApp.Api.sln -c Release
           dotnet test .\TestAspNetApp.Api.sln -c Release
           dotnet publish .\src\TestAspNetApp.Api\TestAspNetApp.Api.csproj -c Release -o .\artifacts
-
+          
+          docker build -t .
+          
           Pop-Location
           Remove-Item -Recurse -Force .\TestAspNetApp
           
