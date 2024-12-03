@@ -19,5 +19,6 @@ steps:
 
 # 執行測試腳本 TestNuxtWeb.ps1
 - script: |
+    Import-Module Microsoft.PowerShell.Security
     ./build/TestNuxtWeb.ps1
   displayName: 'Run Nuxt Web Tests'
