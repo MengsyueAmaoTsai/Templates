@@ -9,6 +9,10 @@ on:
       - hotfix/**/*
       - master
 
+defaults:
+  run:
+    shell: pwsh
+    
 jobs:
   build:
     runs-on: ubuntu-latest
