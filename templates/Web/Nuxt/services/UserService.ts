@@ -46,4 +46,3 @@ class UserService implements IUserService {
     }
 }
 
-const userService = new UserService("https://localhost:10000");
