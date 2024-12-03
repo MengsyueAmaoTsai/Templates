@@ -35,14 +35,13 @@ jobs:
 
       - name: Test
         run: |
-          mkdir test-nuxt-app 
-          Push-Location .\test-nuxt-app
+          mkdir TestNuxtApp 
+          Push-Location .\TestNuxtApp
 
           dotnet new web-nuxt -n test-nuxt-app -o .\
-          ls
           pnpm i 
           pnpm run build
 
           Pop-Location
-          Remove-Item -Recurse -Force .\test-nuxt-app
+          Remove-Item -Recurse -Force .\TestNuxtApp
           
