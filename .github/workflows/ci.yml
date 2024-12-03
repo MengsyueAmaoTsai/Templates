@@ -85,6 +85,18 @@ jobs:
         with:
           nuget-version: 5.x
 
+      - name: Generate version from branch name. e.g. refs/heads/release/0.0.0 -> 0.0.0 
+        id: version
+        run: |
+          $branchName = '${{ github.ref }}' # refs/heads/release/0.0.0
+
+          if ($branchName -match 'refs/heads/release/(.+)') {
+            $version = $Matches[1]
+            Write-Host "VERSION=$version" >> $GITHUB_ENV
+          } else {
+            throw "Branch name is not in the expected format: refs/heads/release/*.*.*"
+          }
+
       - name: Pack NuGet packages
         run: nuget pack .\RichillCapital.Templates.nuspec -NoDefaultExclude -OutputDirectory ./artifacts -Properties Configuration=Release
       
