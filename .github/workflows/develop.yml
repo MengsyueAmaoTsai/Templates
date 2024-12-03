@@ -11,9 +11,14 @@ on:
 defaults:
   run:
     shell: pwsh
-    
+
+env:
+  PROJECT_ID: RichillCapital.Templates
+  BUILD_CONFIGURATION: Debug
+  ARTIFACTS_DIRECTORY: ./artifacts
+
 jobs:
-  build:
+  pack-debug-artifacts:
     runs-on: windows-latest
     
     if: github.ref_name == 'develop'
@@ -32,12 +37,13 @@ jobs:
         run: echo "::set-output name=version::$(date +'%Y.%m.%d').$(git rev-list --count HEAD)"
 
       - name: Pack templates
-        run: nuget pack ./RichillCapital.Templates.nuspec -OutputDirectory ./artifacts -NoDefaultExcludes -Prop Configuration=Debug -Version ${{ steps.version.outputs.version }}
+        run: | 
+          nuget pack ./${{ env.PROJECT_ID }}.nuspec -OutputDirectory ${{ env.ARTIFACTS_DIRECTORY }} -NoDefaultExcludes -Prop Configuration=${{ env.BUILD_CONFIGURATION }} -Version ${{ steps.version.outputs.version }}
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: RichillCapital.Templates-${{ steps.version.outputs.version }}
-          path: ./artifacts
+          name: ${{ env.PROJECT_ID }}-${{ steps.version.outputs.version }}-${{ env.BUILD_CONFIGURATION }}
+          path: ${{ env.ARTIFACTS_DIRECTORY }}
 
     
