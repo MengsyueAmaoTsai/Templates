@@ -28,7 +28,7 @@ jobs:
           nuget-version: 5.x
 
       - name: Install template
-        run: dotnet new install ./templates/Lib/NuGet
+        run: dotnet new install .\templates\Lib\NuGet
 
       - name: Test
         run: |
