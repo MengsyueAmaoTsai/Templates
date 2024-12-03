@@ -3,11 +3,11 @@ name: Push to NuGet
 on:
   push:
     branches:
-      - master
+      - develop
 
   pull_request:
     branches:
-      - master
+      - develop
 
 defaults:
   run:
