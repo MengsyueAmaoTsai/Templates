@@ -1,0 +1,40 @@
+name: Continue Integration
+
+on:
+  workflow_run:
+    workflows:
+      - Continue Integration
+    types:
+      - completed
+
+defaults:
+  run:
+    shell: pwsh
+      
+jobs:
+  develop-artifacts:
+    runs-on: windows-latest
+    
+    if: github.ref_name == 'develop'
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+  release-artifacts:
+    runs-on: windows-latest
+
+    if: startsWith(github.ref_name, 'release/')
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+  push-to-nuget:
+     runs-on: windows-latest
+
+     if: github.ref_name == 'master'
+
+     steps:
+       - name: Checkout repository
+         uses: actions/checkout@v4
