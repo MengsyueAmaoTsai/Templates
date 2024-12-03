@@ -1,0 +1,31 @@
+name: ASP.NET API Template CI
+
+on:
+  push:
+    branches:
+      - feature/api/aspnet
+
+jobs:
+  build:
+    runs-on: windows-latest
+  
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      - name: Install template
+        run: dotnet new install ./templates/Api/AspNet
+
+      - name: Build and test solution template
+        run: |
+          mkdir TestAspNetApp
+          Push-Location TestAspNetApp
+          
+          dotnet build ./TestAspNetApp.Api.sln -c Release 
+          dotnet test ./TestAspNetApp.Api.sln -c Release 
+          dotnet publish ./src/TestAspNetApp.Api/TestAspNetApp.Api.csproj -c Release -o ./artifacts
+
+          Pop-Location
+          Remove-Item -Recurse -Force TestAspNetApp
+        
+    
