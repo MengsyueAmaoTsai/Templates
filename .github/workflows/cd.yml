@@ -15,7 +15,7 @@ jobs:
   develop-artifacts:
     runs-on: windows-latest
     
-    if: github.ref_name == 'develop'
+    if: github.ref_name == 'develop' && github.event.workflow_run.conclusion == 'success'
 
     steps:
       - name: Checkout repository
@@ -24,7 +24,7 @@ jobs:
   release-artifacts:
     runs-on: windows-latest
 
-    if: startsWith(github.ref_name, 'release/')
+    if: startsWith(github.ref_name, 'release/') && github.event.workflow_run.conclusion == 'success'
 
     steps:
       - name: Checkout repository
@@ -33,7 +33,7 @@ jobs:
   push-to-nuget:
      runs-on: windows-latest
 
-     if: github.ref_name == 'master'
+     if: github.ref_name == 'master' && github.event.workflow_run.conclusion == 'success'
 
      steps:
        - name: Checkout repository
