@@ -7,7 +7,7 @@ public sealed class UserId : SingleValueObject<string>
 {
     internal const int MaxLength = 36;
 
-    private UserId(string value) 
+    private UserId(string value)
         : base(value)
     {
     }
@@ -19,6 +19,6 @@ public sealed class UserId : SingleValueObject<string>
             .Ensure(id => id.Length <= MaxLength, Error.Invalid($"'{nameof(value)}' cannot be longer than {MaxLength} characters."))
             .Then(id => new UserId(id));
 
-    public static UserId NewUserId() => 
+    public static UserId NewUserId() =>
         From(Guid.NewGuid().ToString()).ThrowIfFailure().Value;
 }

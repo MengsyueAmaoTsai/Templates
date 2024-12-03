@@ -35,7 +35,7 @@ internal sealed class UserConfiguration : IEntityTypeConfiguration<User>
 
         builder
             .Property(user => user.Name)
-            .HasMaxLength(UserName.MaxLenth)
+            .HasMaxLength(UserName.MaxLength)
             .HasConversion(
                 name => name.Value,
                 value => UserName.From(value).ThrowIfFailure().Value)
