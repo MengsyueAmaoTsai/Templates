@@ -4,7 +4,7 @@
   "classifications": ["Api", "AspNet"],
   "identity": "RichillCapital.Templates.Web.RazorPages",
   "name": "RichillCapital Web Template for Razor Pages",
-  "shortName": "web-razorpages",
+  "shortName": "web-razor",
   "tags": {
     "language": "C#",
     "type": "solution"
