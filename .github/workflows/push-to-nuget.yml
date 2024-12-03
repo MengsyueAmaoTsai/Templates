@@ -30,4 +30,4 @@ jobs:
         run: nuget pack ./RichillCapital.Templates.nuspec -Version 0.0.2 -Prop Configuration=Release -OutputDirectory ./artifacts -NoDefaultExcludes
 
       - name: Push to NuGet Gallery
-        run: nuget push ./artifacts/RichillCapital.Templates.*.nupkg -src https://api.nuget.org/v3/index.json -k ${{ secrets.NUGET_API_KEY }} --skip-duplicate
+        run: nuget push ./artifacts/RichillCapital.Templates.*.nupkg -ApiKey ${{ secrets.NUGET_API_KEY }} -src https://api.nuget.org/v3/index.json -SkipDuplicate -Timeout 360
