@@ -10,5 +10,15 @@
     "language": "TypeScript,Vue",
     "type": "project"
   },
-  "preferNameDirectory": true
+  "preferNameDirectory": true,
+  "sources": [
+    {
+      "exclude": [
+        "node_modules/**/*",
+        ".template.config/**/*",
+        ".output/**/*",
+        ".nuxt/**/*"
+      ]
+    }
+  ]
 }
