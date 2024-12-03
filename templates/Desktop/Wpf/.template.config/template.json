@@ -1,0 +1,26 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "Mengsyue Amao Tsai",
+  "classifications": ["Desktop", "WPF"],
+  "identity": "RichillCapital.Templates.Desktop.Wpf",
+  "name": "RichillCapital Desktop Template for WPF",
+  "shortName": "desktop-wpf",
+  "tags": {
+    "language": "C#",
+    "type": "solution"
+  },
+  "sourceName": "WpfApp",
+  "preferNameDirectory": true,
+  "sources": [
+    {
+      "exclude": [
+        "**/[Bb]in/**",
+        "**/[Oo]bj/**",
+        ".template.config/**/*",
+        "**/*.filelist",
+        "**/*.user",
+        "**/*.lock.json"
+      ]
+    }
+  ]
+}
