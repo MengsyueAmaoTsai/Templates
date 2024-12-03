@@ -1,13 +1,15 @@
 {
-  "name": "nuxt-app",
+  "name": "nuxt-app-web",
   "private": true,
   "type": "module",
   "scripts": {
     "build": "nuxt build",
-    "dev": "nuxt dev",
+    "dev": "nuxt dev -p 9995",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "lint": "echo 'No linting configured'",
+    "test": "echo 'No test configured'"
   },
   "dependencies": {
     "nuxt": "^3.14.1592",

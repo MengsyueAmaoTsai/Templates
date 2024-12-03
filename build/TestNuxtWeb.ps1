@@ -33,6 +33,8 @@ if (-not $testFailed) {
 }
 
 pnpm i 
+pnpm run lint 
+pnpm run test
 pnpm run build
 
 # Clean up
