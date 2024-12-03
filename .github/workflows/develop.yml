@@ -8,9 +8,15 @@ on:
     types:
       - completed
 
+defaults:
+  run:
+    shell: pwsh
+    
 jobs:
   build:
     runs-on: windows-latest
+    
+    if: github.ref_name == 'develop'
 
     steps:
       - name: Checkout repository
@@ -20,5 +26,18 @@ jobs:
         uses: NuGet/setup-nuget@v1
         with:
           nuget-version: latest
+      
+      - name: Generate version
+        id: version
+        run: echo "::set-output name=version::$(date +'%Y.%m.%d').$(git rev-list --count HEAD)"
+
+      - name: Pack templates
+        run: nuget pack ./RichillCapital.Templates.nuspec -OutputDirectory ./artifacts -NoDefaultExcludes -Prop Configuration=Debug -Version ${{ steps.version.outputs.version }}
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: RichillCapital.Templates-${{ steps.version.outputs.version }}
+          path: ./artifacts
 
     
