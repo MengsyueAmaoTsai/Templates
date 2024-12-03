@@ -1,0 +1,25 @@
+name: Push to NuGet
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  push-to-nuget:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup NuGet CLI
+        uses: NuGet/setup-nuget@v1
+        with:
+          nuget-version: 'latest'
+
+      - name: Pack templates
+        run: nuget pack ./RichillCapital.Templates.nuspec -Version 0.0.2 -Prop Configuration=Release -OutputDirectory ./artifacts
