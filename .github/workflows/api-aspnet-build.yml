@@ -35,7 +35,7 @@ jobs:
           mkdir TestAspNetApp 
           Push-Location .\TestAspNetApp
 
-          dotnet new lib-nuget -n TestAspNetApp -o .
+          dotnet new api-aspnet -n TestAspNetApp -o .
           dotnet build .\TestAspNetApp.Api.sln -c Release
           dotnet test .\TestAspNetApp.Api.sln -c Release
           dotnet publish .\src\TestAspNetApp.Api\TestAspNetApp.Api.csproj -c Release -o .\artifacts
