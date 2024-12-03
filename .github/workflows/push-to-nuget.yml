@@ -4,11 +4,15 @@ on:
   push:
     branches:
       - master
-      
+
   pull_request:
     branches:
       - master
 
+defaults:
+  run:
+    shell: pwsh
+    
 jobs:
   push-to-nuget:
     runs-on: windows-latest
@@ -21,9 +25,10 @@ jobs:
         uses: NuGet/setup-nuget@v1
         with:
           nuget-version: 'latest'
+          nuget-api-key: ${{ secrets.NUGET_API_KEY }}
 
       - name: Pack templates
         run: nuget pack ./RichillCapital.Templates.nuspec -Version 0.0.2 -Prop Configuration=Release -OutputDirectory ./artifacts -NoDefaultExcludes
 
       - name: Push to NuGet Gallery
-        run: nuget push ./artifacts/RichillCapital.Templates.0.0.2.nupkg -s https://api.nuget.org/v3/index.json -k ${{ secrets.NUGET_API_KEY }} --skip-duplicate
+        run: nuget push ./artifacts/RichillCapital.Templates.0.0.2.nupkg -s https://api.nuget.org/v3/index.json --skip-duplicate
