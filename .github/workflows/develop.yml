@@ -1,0 +1,24 @@
+name: Develop Pipeline
+
+on:
+  workflow_run:
+    workflows:
+      - Asp.Net Api Template CI
+
+    types:
+      - completed
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup NuGet.exe
+        uses: NuGet/setup-nuget@v1
+        with:
+          nuget-version: latest
+
+    

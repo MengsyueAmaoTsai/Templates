@@ -1,4 +1,4 @@
-name: ASP.NET API Template CI
+name: Asp.Net Api Template CI
 
 on:
   push:
