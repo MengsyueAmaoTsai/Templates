@@ -22,6 +22,13 @@ builder.Services.AddPersistence();
 builder.Services.AddMiddlewares();
 builder.Services.AddOpenApi();
 builder.Services.AddEndpoints();
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAnyOrigin", builder => builder
+        .AllowAnyOrigin()
+        .AllowAnyMethod()
+        .AllowAnyHeader());
+});
 
 var app = builder.Build();
 
@@ -43,6 +50,8 @@ app.UseExceptionHandler(options =>
 app.UseHttpsRedirection();
 
 app.UseRouting();
+
+app.UseCors("AllowAnyOrigin");
 
 app.UseSwaggerDoc();
 
