@@ -17,7 +17,11 @@
     <thead>
       <tr>
         <th>
-          <input type="checkbox" />
+          <input
+            type="checkbox"
+            :checked="allSelected"
+            @change="toggleSelectAll"
+          />
         </th>
         <th @click="sortByField('id')">Id</th>
         <th @click="sortByField('email')">Email</th>
@@ -65,6 +69,8 @@ const users = ref([
     createdTime: new Date(),
   },
 ]);
+
+// Checkbox
 
 // Sorting
 const sortBy = ref("id");
