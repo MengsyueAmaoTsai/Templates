@@ -22,25 +22,27 @@
             <td>Created time</td>
           </tr>
         </thead>
+
+        <tbody>
+          <tr v-if="users.length === 0">
+            <td colspan="4">No results.</td>
+          </tr>
+
+          <tr v-for="user in users" :key="user.id">
+            <td>{{ user.id }}</td>
+            <td>{{ user.email }}</td>
+            <td>{{ user.name }}</td>
+            <td>{{ user.createdTime.toLocaleString() }}</td>
+          </tr>
+        </tbody>
       </table>
-
-      <tbody>
-        <tr v-if="users.length === 0">
-          <td colspan="4">No results.</td>
-        </tr>
-
-        <tr v-for="user in users" :key="user.id">
-          <td>{{ user.id }}</td>
-          <td>{{ user.email }}</td>
-          <td>{{ user.name }}</td>
-          <td>{{ user.createdTime.toLocaleString() }}</td>
-        </tr>
-      </tbody>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
+const { $resources } = useNuxtApp();
+
 const users = ref<
   {
     id: string;
@@ -48,14 +50,18 @@ const users = ref<
     name: string;
     createdTime: Date;
   }[]
->([
-  {
-    id: "1",
-    email: "mengsyue.tsai@outlook.com",
-    name: "Mengsyue Amao Tsai",
-    createdTime: new Date(),
-  },
-]);
+>([]);
+
+onMounted(async () => {
+  const result = await $resources.listUsers();
+
+  users.value = result.map((u) => ({
+    id: u.id,
+    email: u.email,
+    name: u.name,
+    createdTime: new Date(u.createdTime),
+  }));
+});
 </script>
 
 <style>

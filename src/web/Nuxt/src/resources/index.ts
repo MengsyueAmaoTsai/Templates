@@ -34,8 +34,23 @@ export interface IResourceService {
 }
 
 class ResourceService implements IResourceService {
+	private static readonly baseAddress = "https://localhost:10000";
+
 	public async listUsers(): Promise<UserResponse[]> {
-		throw new Error("Method not implemented.");
+		const fullUrl = `${ResourceService.baseAddress}/api/v1/users`;
+
+		const response = await fetch(fullUrl, {
+			method: "GET",
+		});
+
+		if (!response.ok) {
+			const errorResponse = (await response.json()) as ErrorResponse;
+			throw new Error(
+				`Error ${errorResponse.status}: ${errorResponse.title} - ${errorResponse.detail}`,
+			);
+		}
+
+		return (await response.json()) as UserResponse[];
 	}
 
 	public async createUser(
@@ -57,7 +72,7 @@ class ResourceService implements IResourceService {
 		path: string,
 		body?: object,
 	): Promise<TResponse> {
-		const fullUrl = `https://localhost:10000${path}`;
+		const fullUrl = `${ResourceService.baseAddress}${path}`;
 
 		const response = await fetch(fullUrl, {
 			method: method,

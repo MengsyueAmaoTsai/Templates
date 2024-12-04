@@ -35,7 +35,7 @@
 </template>
 
 <script setup lang="ts">
-const { $resources } = useNuxtApp() as IResourceService;
+const { $resources } = useNuxtApp();
 
 const newUser = ref({
   email: "",
