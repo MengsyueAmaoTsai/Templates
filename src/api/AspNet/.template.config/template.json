@@ -3,7 +3,7 @@
   "author": "Mengsyue Amao Tsai",
   "classifications": ["Api", "AspNet"],
   "identity": "RichillCapital.Templates.Api.AspNet",
-  "name": "RichillCapital Api Template for ASP.NET",
+  "name": "RichillCapital Api - ASP.NET API Project",
   "shortName": "api-aspnet",
   "tags": {
     "language": "C#",
