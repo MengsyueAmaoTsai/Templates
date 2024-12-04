@@ -58,6 +58,18 @@ jobs:
             npm install -g pnpm
             ./tests/web/NuxtTests.ps1
   
+  signal-tv-test:
+    runs-on: windows-latest
+    if: github.ref != 'refs/heads/master'
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Test TradingView Signal Source Template
+        run: |
+            ./tests/signal/TradingViewTests.ps1
+  
   develop-build:
     runs-on: windows-latest
 
