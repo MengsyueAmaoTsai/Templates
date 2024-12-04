@@ -64,7 +64,12 @@ jobs:
           } else {
             throw "Branch name is not in the expected format: refs/heads/release/*.*.*"
           }
-
+          
+      - name: Install dependencies
+        run: |
+          npm i -g pnpm 
+          pnpm i
+  
       - name: Build release
         run: pnpm run build
 
