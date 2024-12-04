@@ -98,10 +98,15 @@ jobs:
           }
 
       - name: Pack NuGet packages
-        run: nuget pack .\RichillCapital.Templates.nuspec -NoDefaultExclude -OutputDirectory ./artifacts -Properties Configuration=Release
+        run: |
+          nuget pack .\RichillCapital.Templates.nuspec `
+            -NoDefaultExclude `
+            -OutputDirectory ./artifacts `
+            -Properties Configuration=Release`
+            -Version $env:VERSION
       
       - name: Upload release artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: RichillCapital.Templates-0.0.0
+          name: RichillCapital.Templates-${{ env.VERSION }}
           path: ./artifacts
