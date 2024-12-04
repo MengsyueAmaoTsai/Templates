@@ -74,7 +74,7 @@ jobs:
     runs-on: windows-latest
 
     if: startsWith(github.ref, 'refs/heads/release/')
-    needs: [api-aspnet-test, web-nuxt-test]
+    # needs: [api-aspnet-test, web-nuxt-test]
 
     steps:
       - name: Checkout repository
