@@ -133,7 +133,7 @@ jobs:
         run: |
           git fetch --all
           
-          ss$releaseBranch = git branch -r --sort=-committerdate | Select-String 'origin/release/' | Select-Object -First 1
+          $releaseBranch = git branch -r --sort=-committerdate | Select-String 'origin/release/' | Select-Object -First 1
 
           if ($releaseBranch -match 'origin/release/(.+)') {
             $version = $Matches[1]
