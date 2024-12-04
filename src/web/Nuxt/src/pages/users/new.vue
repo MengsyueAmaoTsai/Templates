@@ -31,16 +31,22 @@
 </template>
 
 <script setup lang="ts">
+const { $resources } = useNuxtApp() as IResourceService;
+
 const newUser = ref({
   email: "",
   name: "",
   password: "",
 });
 
-const submit = () => {
-  // Show new user data
-  alert(JSON.stringify(newUser.value));
-  navigateTo("/users");
+const submit = async () => {
+  try {
+    const createdResponse = await $resources.createUser(newUser.value);
+    alert(`Response: ${createdResponse} id: ${createdResponse.id}`);
+  } catch (error) {
+    console.error(error);
+  }
+  // navigateTo("/users");
 };
 
 const back = () => {
