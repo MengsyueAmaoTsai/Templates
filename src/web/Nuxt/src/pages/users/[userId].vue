@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="user-details">
+    <div v-if="user" class="user-details">
       <p>Id: {{ user.id }}</p>
       <p>Email: {{ user.email }}</p>
       <p>Name: {{ user.name }}</p>
@@ -12,14 +12,21 @@
 </template>
 
 <script setup lang="ts">
+const { $resources } = useNuxtApp();
 const route = useRoute();
 const userId = route.params.userId as string;
 
-const user = ref({
-  id: userId,
-  email: "mengsyue.tsai@outlook.com",
-  name: "Mengsyue Amao Tsai",
-  createdTime: new Date(),
+const user = ref(null);
+
+onMounted(async () => {
+  const result = await $resources.getUser(userId);
+
+  user.value = {
+    id: result.id,
+    email: result.email,
+    name: result.name,
+    createdTime: new Date(result.createdTime),
+  };
 });
 </script>
 

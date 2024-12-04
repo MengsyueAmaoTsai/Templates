@@ -60,7 +60,20 @@ class ResourceService implements IResourceService {
 	}
 
 	public async getUser(id: string): Promise<UserDetailsResponse> {
-		throw new Error("Method not implemented.");
+		const fullUrl = `${ResourceService.baseAddress}/api/v1/users/${id}`;
+
+		const response = await fetch(fullUrl, {
+			method: "GET",
+		});
+
+		if (!response.ok) {
+			const errorResponse = (await response.json()) as ErrorResponse;
+			throw new Error(
+				`Error ${errorResponse.status}: ${errorResponse.title} - ${errorResponse.detail}`,
+			);
+		}
+
+		return (await response.json()) as UserDetailsResponse;
 	}
 
 	public async deleteUser(id: string): Promise<void> {
