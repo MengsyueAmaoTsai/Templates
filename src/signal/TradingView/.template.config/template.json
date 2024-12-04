@@ -4,7 +4,7 @@
   "classifications": ["SignalSource", "TradingView"],
   "identity": "RichillCapital.Templates.Signal.TradingView",
   "name": "RichillCapital - TradingView Signal Source",
-  "shortName": "source-tv",
+  "shortName": "signal-tv",
   "tags": {
     "language": "PineScript",
     "type": "item"

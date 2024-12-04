@@ -4,7 +4,7 @@
   "classifications": ["SignalSource", "CTrader"],
   "identity": "RichillCapital.Templates.Signal.CTrader",
   "name": "RichillCapital - CTrader Signal Source",
-  "shortName": "source-ct",
+  "shortName": "signal-ct",
   "tags": {
     "language": "C#",
     "type": "solution"
