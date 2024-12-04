@@ -33,24 +33,15 @@ export interface IResourceService {
 	deleteUser(id: string): Promise<void>;
 }
 
+type ResourceOptions = {
+	baseAddress: string;
+};
+
 class ResourceService implements IResourceService {
-	private static readonly baseAddress = "https://localhost:10000";
+	public constructor(private readonly options: ResourceOptions) {}
 
 	public async listUsers(): Promise<UserResponse[]> {
-		const fullUrl = `${ResourceService.baseAddress}/api/v1/users`;
-
-		const response = await fetch(fullUrl, {
-			method: "GET",
-		});
-
-		if (!response.ok) {
-			const errorResponse = (await response.json()) as ErrorResponse;
-			throw new Error(
-				`Error ${errorResponse.status}: ${errorResponse.title} - ${errorResponse.detail}`,
-			);
-		}
-
-		return (await response.json()) as UserResponse[];
+		return await this.invoke<UserResponse[]>("GET", "/api/v1/users");
 	}
 
 	public async createUser(
@@ -60,20 +51,7 @@ class ResourceService implements IResourceService {
 	}
 
 	public async getUser(id: string): Promise<UserDetailsResponse> {
-		const fullUrl = `${ResourceService.baseAddress}/api/v1/users/${id}`;
-
-		const response = await fetch(fullUrl, {
-			method: "GET",
-		});
-
-		if (!response.ok) {
-			const errorResponse = (await response.json()) as ErrorResponse;
-			throw new Error(
-				`Error ${errorResponse.status}: ${errorResponse.title} - ${errorResponse.detail}`,
-			);
-		}
-
-		return (await response.json()) as UserDetailsResponse;
+		return await this.invoke<UserDetailsResponse>("GET", `/api/v1/users/${id}`);
 	}
 
 	public async deleteUser(id: string): Promise<void> {
@@ -85,7 +63,7 @@ class ResourceService implements IResourceService {
 		path: string,
 		body?: object,
 	): Promise<TResponse> {
-		const fullUrl = `${ResourceService.baseAddress}${path}`;
+		const fullUrl = `${this.options.baseAddress}${path}`;
 
 		const response = await fetch(fullUrl, {
 			method: method,
@@ -106,5 +84,6 @@ class ResourceService implements IResourceService {
 	}
 }
 
-export const resourceServiceSingleton =
-	new ResourceService() as IResourceService;
+export const resourceServiceSingleton = new ResourceService({
+	baseAddress: "https://localhost:10000",
+}) as IResourceService;
