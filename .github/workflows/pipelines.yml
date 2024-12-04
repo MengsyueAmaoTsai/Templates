@@ -110,7 +110,7 @@ jobs:
       - name: Upload release artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: RichillCapital.Templates-${{ env.VERSION }}
+          name: RichillCapital.Templates-${{ steps.versioning.outputs.version }}
           path: ./artifacts
   
   publish:
