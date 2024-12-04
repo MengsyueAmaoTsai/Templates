@@ -99,11 +99,8 @@ jobs:
 
       - name: Pack NuGet packages
         run: |
-          nuget pack .\RichillCapital.Templates.nuspec `
-            -NoDefaultExclude `
-            -OutputDirectory ./artifacts `
-            -Properties Configuration=Release `
-            -Version $VERSION
+          Write-Host "VERSION=$env:VERSION"
+          nuget pack .\RichillCapital.Templates.nuspec -NoDefaultExclude -OutputDirectory ./artifacts -Properties Configuration=Release -Version $VERSION
       
       - name: Upload release artifacts
         uses: actions/upload-artifact@v4
