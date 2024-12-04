@@ -28,8 +28,6 @@ dotnet build ./MyAspNetApp.Api.sln -c Release --nologo
 dotnet test ./MyAspNetApp.Api.sln -c Release --no-restore --no-build --nologo
 dotnet publish ./src/MyAspNetApp.Api/MyAspNetApp.Api.csproj -c Release --no-restore --no-build --nologo
 
-docker build -t aspnet-api .
-
 # Clean up
 Pop-Location
 if (Test-Path $projectDirectory) {

@@ -37,8 +37,6 @@ pnpm run lint
 pnpm run test
 pnpm run build
 
-docker build -t nuxt-web .
-
 # Clean up
 Pop-Location
 if (Test-Path $projectDirectory) {
