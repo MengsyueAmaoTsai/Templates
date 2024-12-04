@@ -152,7 +152,8 @@ jobs:
             -Version ${{ steps.versioning.outputs.version }}         
 
       - name: Push to NuGet Gallery
-        run: nuget push ./artifacts/RichillCapital.Templates.*.nupkg `
+        run: |
+          nuget push ./artifacts/RichillCapital.Templates.*.nupkg `
           -src https://api.nuget.org/v3/index.json `
           -ApiKey ${{ secrets.NUGET_API_KEY }} `
           -SkipDuplicate
