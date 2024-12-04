@@ -69,7 +69,24 @@ jobs:
       - name: Test TradingView Signal Source Template
         run: |
             ./tests/signal/TradingViewTests.ps1
-  
+
+  signal-ct-test:
+    runs-on: windows-latest
+    if: github.ref != 'refs/heads/master'
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup .NET SDK
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8.0.x
+                
+      - name: Test CTrader Signal Source Template
+        run: |
+            ./tests/signal/CTraderTests.ps1
+
   develop-build:
     runs-on: windows-latest
 
