@@ -19,10 +19,10 @@
         <th>
           <input type="checkbox" />
         </th>
-        <th>Id</th>
-        <th>Email</th>
-        <th>Name</th>
-        <th>Created time</th>
+        <th @click="sortByField('id')">Id</th>
+        <th @click="sortByField('email')">Email</th>
+        <th @click="sortByField('name')">Name</th>
+        <th @click="sortByField('createdTime')">Created time</th>
       </tr>
     </thead>
 
@@ -65,4 +65,35 @@ const users = ref([
     createdTime: new Date(),
   },
 ]);
+
+// Sorting
+const sortBy = ref("id");
+const orderBy = ref("asc");
+
+const sortByField = (fieldName: string) => {
+  if (sortBy.value === fieldName) {
+    orderBy.value = orderBy.value === "asc" ? "desc" : "asc";
+  } else {
+    sortBy.value = fieldName;
+    orderBy.value = "asc";
+  }
+
+  users.value.sort((a, b) => {
+    let aValue = a[fieldName];
+    let bValue = b[fieldName];
+
+    if (fieldName === "createdTime") {
+      aValue = new Date(a[fieldName]);
+      bValue = new Date(b[fieldName]);
+    }
+
+    if (aValue < bValue) {
+      return orderBy.value === "asc" ? -1 : 1;
+    } else if (aValue > bValue) {
+      return orderBy.value === "asc" ? 1 : -1;
+    } else {
+      return 0;
+    }
+  });
+};
 </script>
