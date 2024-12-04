@@ -133,7 +133,7 @@ jobs:
         run: |
           $releaseBranch = git branch -r --sort=-committerdate | Select-String 'origin/release/' | Select-Object -First 1
 
-          if ($releaseBranch -match 'release/(.+)') {
+          if ($releaseBranch -match 'origin/release/(.+)') {
             $version = $Matches[1]
             Write-Host "VERSION=$version" >> $GITHUB_ENV
             echo "::set-output name=version::$version"
