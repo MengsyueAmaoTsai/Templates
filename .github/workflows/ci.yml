@@ -86,21 +86,25 @@ jobs:
           nuget-version: 5.x
 
       - name: Fetch release version
-        id: version
+        id: versioning
         run: |
           $branchName = '${{ github.ref }}' # refs/heads/release/0.0.0
 
           if ($branchName -match 'refs/heads/release/(.+)') {
             $version = $Matches[1]
             Write-Host "VERSION=$version" >> $GITHUB_ENV
+            echo "::set-output name=version::$version"
           } else {
             throw "Branch name is not in the expected format: refs/heads/release/*.*.*"
           }
 
       - name: Pack NuGet packages
         run: |
-          Write-Host "VERSION=$env:VERSION"
-          nuget pack .\RichillCapital.Templates.nuspec -NoDefaultExclude -OutputDirectory ./artifacts -Properties Configuration=Release -Version $VERSION
+          nuget pack .\RichillCapital.Templates.nuspec `
+            -NoDefaultExclude `
+            -OutputDirectory ./artifacts `
+            -Properties Configuration=Release `
+            -Version ${{ steps.versioning.outputs.version }}
       
       - name: Upload release artifacts
         uses: actions/upload-artifact@v4
