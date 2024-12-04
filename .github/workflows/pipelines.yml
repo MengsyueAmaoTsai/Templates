@@ -50,6 +50,9 @@ jobs:
         with:
           node-version: 22.x
 
+      - name: Setup Docker
+        uses: crazy-max/ghaction-setup-docker@v3.5.0
+        
       - name: Test Nuxt.js Web Template
         run: |
             npm install -g pnpm
