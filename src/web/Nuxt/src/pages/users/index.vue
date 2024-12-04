@@ -1,6 +1,6 @@
 <template>
   <div style="display: flex">
-    <button>New user</button>
+    <button @click="newUser">New user</button>
     <button>Delete</button>
     <button>Refresh</button>
   </div>
@@ -69,6 +69,10 @@ const users = ref([
     createdTime: new Date(),
   },
 ]);
+
+const newUser = () => {
+  navigateTo("/users/new");
+};
 
 // Checkbox
 
