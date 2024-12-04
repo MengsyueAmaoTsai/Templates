@@ -9,22 +9,22 @@ type CreatedResponse = {
 	id: string;
 };
 
-type UserCreatedResponse = CreatedResponse;
+export type UserCreatedResponse = CreatedResponse;
 
-type CreateUserRequest = {
+export type CreateUserRequest = {
 	email: string;
 	name: string;
 	password: string;
 };
 
-type UserResponse = {
+export type UserResponse = {
 	id: string;
 	email: string;
 	name: string;
 	createdTime: Date;
 };
 
-type UserDetailsResponse = UserResponse;
+export type UserDetailsResponse = UserResponse;
 
 export interface IResourceService {
 	listUsers(): Promise<UserResponse[]>;
