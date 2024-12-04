@@ -117,7 +117,7 @@ jobs:
     runs-on: windows-latest
 
     if: github.ref == 'refs/heads/master'
-    # needs: [api-aspnet-test, web-nuxt-test]
+    needs: [api-aspnet-test, web-nuxt-test]
 
     steps:
       - name: Checkout repository
