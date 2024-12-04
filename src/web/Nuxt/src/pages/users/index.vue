@@ -38,12 +38,31 @@
         <td>{{ user.id }}</td>
         <td>{{ user.email }}</td>
         <td>{{ user.name }}</td>
-        <td>{{ user.created_at }}</td>
+        <td>{{ user.createdTime.toLocaleString() }}</td>
       </tr>
     </tbody>
   </table>
 </template>
 
 <script lang="ts" setup>
-const users = ref([]);
+const users = ref([
+  {
+    id: "UID0000001",
+    email: "mengsyue.tsai@outlook.com",
+    name: "Meng Syue Tsai",
+    createdTime: new Date(),
+  },
+  {
+    id: "UID0000002",
+    email: "mengsyue.tsai@gmail.com",
+    name: "Meng Syue Tsai",
+    createdTime: new Date(),
+  },
+  {
+    id: "UID0000003",
+    email: "someone@example.com",
+    name: "Some one",
+    createdTime: new Date(),
+  },
+]);
 </script>
