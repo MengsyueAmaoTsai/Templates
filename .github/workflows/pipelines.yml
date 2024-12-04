@@ -91,7 +91,7 @@ jobs:
     runs-on: windows-latest
 
     if: github.ref == 'refs/heads/develop'
-    needs: [api-aspnet-test, web-nuxt-test]
+    needs: [api-aspnet-test, web-nuxt-test, signal-tv-test, signal-ct-test]
 
     steps:
       - name: Checkout repository
