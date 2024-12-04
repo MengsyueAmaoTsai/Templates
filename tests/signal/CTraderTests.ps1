@@ -5,7 +5,7 @@ $projectDirectory = "./MyCTraderSignalSource"
 
 dotnet new install $template --force
 
-dotnet new web-nuxt -n MyCTraderSignalSource -o $projectDirectory
+dotnet new signal-ct -n MyCTraderSignalSource -o $projectDirectory
 Push-Location $projectDirectory
 
 if (Test-Path "./.template.config") {

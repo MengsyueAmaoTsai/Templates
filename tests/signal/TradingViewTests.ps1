@@ -5,7 +5,7 @@ $projectDirectory = "./MyTradingViewSignalSource"
 
 dotnet new install $template --force
 
-dotnet new web-nuxt -n MyTradingViewSignalSource -o $projectDirectory
+dotnet new signal-tv -n MyTradingViewSignalSource -o $projectDirectory
 Push-Location $projectDirectory
 
 if (Test-Path "./.template.config") {
