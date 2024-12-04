@@ -143,3 +143,10 @@ jobs:
             throw "No valid release branch found" 
           }
       
+      - name: Download release artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: RichillCapital.Templates-${{ steps.versioning.outputs.version }}
+          
+      - name: Push to NuGet Gallery
+        run: nuget push .\RichillCapital.Templates.${{ steps.versioning.outputs.version }}.nupkg -src https://api.nuget.org/v3/index.json -ApiKey ${{ secrets.NUGET_API_KEY }}
