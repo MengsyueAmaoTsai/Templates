@@ -102,7 +102,7 @@ jobs:
           nuget pack .\RichillCapital.Templates.nuspec `
             -NoDefaultExclude `
             -OutputDirectory ./artifacts `
-            -Properties Configuration=Release`
+            -Properties Configuration=Release `
             -Version $env:VERSION
       
       - name: Upload release artifacts
