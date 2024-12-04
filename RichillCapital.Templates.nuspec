@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
-    <id>RichillCapital.Template</id>
+    <id>RichillCapital.Templates</id>
     <title>Richill Capital Templates</title>
     <version>0.0.1</version>
     <authors>Mengsyue Amao Tsai</authors>
