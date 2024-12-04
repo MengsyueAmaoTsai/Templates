@@ -64,6 +64,7 @@ class ResourceService implements IResourceService {
 			headers: {
 				"Content-Type": "application/json",
 			},
+			body: JSON.stringify(body),
 		});
 
 		if (!response.ok) {

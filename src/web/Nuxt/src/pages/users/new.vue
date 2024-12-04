@@ -22,7 +22,11 @@
 
       <div class="form-group">
         <button type="submit" class="primary-button">Submit</button>
-        <button type="button" class="secondary-button" @click="back">
+        <button
+          type="button"
+          class="secondary-button"
+          @click="navigateTo('/users')"
+        >
           Back
         </button>
       </div>
@@ -41,16 +45,17 @@ const newUser = ref({
 
 const submit = async () => {
   try {
-    const createdResponse = await $resources.createUser(newUser.value);
-    alert(`Response: ${createdResponse} id: ${createdResponse.id}`);
-  } catch (error) {
-    console.error(error);
-  }
-  // navigateTo("/users");
-};
+    const createdResponse = await $resources.createUser({
+      email: newUser.value.email,
+      name: newUser.value.name,
+      password: newUser.value.password,
+    });
 
-const back = () => {
-  navigateTo("/users");
+    alert(`User created: ${createdResponse.id}`);
+    navigateTo("/users");
+  } catch (error) {
+    alert(`Failed to create user: ${error}`);
+  }
 };
 </script>
 <style scoped lang="scss">
