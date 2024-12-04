@@ -9,6 +9,8 @@ using AspNetApp.UseCases;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.AddDatabaseOptions();
+
 builder.WebHost.UseCustomLogger();
 
 builder.Services.AddApplicationServices();
