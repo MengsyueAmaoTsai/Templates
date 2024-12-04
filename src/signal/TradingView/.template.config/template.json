@@ -3,7 +3,7 @@
   "author": "Mengsyue Amao Tsai",
   "classifications": ["SignalSource", "TradingView"],
   "identity": "RichillCapital.Templates.Signal.TradingView",
-  "name": "RichillCapital Api - TradingView Signal Source",
+  "name": "RichillCapital - TradingView Signal Source",
   "shortName": "source-tv",
   "tags": {
     "language": "PineScript",
