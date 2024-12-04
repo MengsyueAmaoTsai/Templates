@@ -43,4 +43,3 @@ if (Test-Path $projectDirectory) {
     Remove-Item -Recurse -Force $projectDirectory
 }
 
-dotnet new uninstall $template
