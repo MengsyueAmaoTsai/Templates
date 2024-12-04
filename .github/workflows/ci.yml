@@ -85,7 +85,7 @@ jobs:
         with:
           nuget-version: 5.x
 
-      - name: Generate version from branch name. e.g. refs/heads/release/0.0.0 -> 0.0.0 
+      - name: Fetch release version
         id: version
         run: |
           $branchName = '${{ github.ref }}' # refs/heads/release/0.0.0
@@ -103,7 +103,7 @@ jobs:
             -NoDefaultExclude `
             -OutputDirectory ./artifacts `
             -Properties Configuration=Release `
-            -Version $env:VERSION
+            -Version $VERSION
       
       - name: Upload release artifacts
         uses: actions/upload-artifact@v4
