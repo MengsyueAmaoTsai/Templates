@@ -1,4 +1,4 @@
-name: Continue Integration
+name: Pipelines
 
 on:
   push:
