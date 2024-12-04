@@ -1,11 +1,11 @@
 $testFailed = $false
 
-$template = "./src/signal/TradingView"
-$projectDirectory = "./MyTradingViewSignalSource"
+$template = "./src/signal/CTrader"
+$projectDirectory = "./MyCTraderSignalSource"
 
 dotnet new install $template --force
 
-dotnet new web-nuxt -n MyTradingViewSignalSource -o $projectDirectory
+dotnet new web-nuxt -n MyCTraderSignalSource -o $projectDirectory
 Push-Location $projectDirectory
 
 if (Test-Path "./.template.config") {
@@ -16,6 +16,8 @@ if (Test-Path "./.template.config") {
 if (-not $testFailed) {
     Write-Host "All tests passed."
 }
+
+dotnet build ./MyCTraderSignalSource.sln -c Release /p:AlgoPublish=true /p:IncludeSource=false
 
 # Clean up
 Pop-Location
