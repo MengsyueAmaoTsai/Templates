@@ -131,7 +131,7 @@ jobs:
       - name: Fetch latest release version
         id: versioning
         run: |
-          $releaseBranch = git branch -r --sort=-committerdate | Select-String 'release/' | Select-Object -First 1
+          $releaseBranch = git branch -r --sort=-committerdate | Select-String 'origin/release/' | Select-Object -First 1
 
           if ($releaseBranch -match 'release/(.+)') {
             $version = $Matches[1]
