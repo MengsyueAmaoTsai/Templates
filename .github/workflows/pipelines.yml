@@ -6,6 +6,7 @@ on:
       - develop
       - feature/**
       - release/**
+      - master
 
 defaults:
   run:
@@ -111,3 +112,32 @@ jobs:
         with:
           name: RichillCapital.Templates-${{ env.VERSION }}
           path: ./artifacts
+  
+  publish:
+    runs-on: windows-latest
+
+    if: github.ref == 'refs/heads/master'
+    # needs: [api-aspnet-test, web-nuxt-test]
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup NuGet
+        uses: nuget/setup-nuget@v2
+        with:
+          nuget-version: 5.x
+
+      - name: Fetch latest release version
+        id: versioning
+        run: |
+          $releaseBranch = git branch -r --sort=-committerdate | Select-String 'release/' | Select-Object -First 1
+
+          if ($releaseBranch -match 'release/(.+)') {
+            $version = $Matches[1]
+            Write-Host "VERSION=$version" >> $GITHUB_ENV
+            echo "::set-output name=version::$version"
+          } else {
+            throw "No valid release branch found" 
+          }
+      
