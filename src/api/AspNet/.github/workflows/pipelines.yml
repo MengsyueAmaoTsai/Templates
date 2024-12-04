@@ -65,16 +65,16 @@ jobs:
     
       - name: Update assembly version
         run: |
-            $projectFile = './src/RichillCapital.Api/RichillCapital.Api.csproj'
+            $projectFile = './src/AspNetApp.Api/AspNetApp.Api.csproj'
             $fileContent = Get-Content $projectFile
             $fileContent -replace '<Version>.*</Version>', "<Version>${{ steps.versioning.outputs.version }}</Version>" | Set-Content $projectFile
 
       - name: Publish application
         run: |
-          dotnet publish ./src/RichillCapital.Api/RichillCapital.Api.csproj -c Release -o ./artifacts --nologo
+          dotnet publish ./src/AspNetApp.Api/AspNetApp.Api.csproj -c Release -o ./artifacts --nologo
     
       - name: Upload release artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: RichillCapital.Api-${{ steps.versioning.outputs.version }}
+          name: AspNetApp.Api-${{ steps.versioning.outputs.version }}
           path: ./artifacts
