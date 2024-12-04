@@ -30,7 +30,7 @@ jobs:
         uses: crazy-max/ghaction-setup-docker@v3.5.0
                 
       - name: Test ASP.NET Core API Template
-        run: ./build/ApiAspNet.Template.Tests.ps1
+        run: ./tests/api/AspNetTests.ps1
 
   web-nuxt-test:
     runs-on: windows-latest
@@ -53,7 +53,7 @@ jobs:
       - name: Test Nuxt.js Web Template
         run: |
             npm install -g pnpm
-            ./build/NuxtWeb.Template.Tests.ps1
+            ./tests/web/NuxtTests.ps1
   
   develop-build:
     runs-on: windows-latest
