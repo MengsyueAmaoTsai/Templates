@@ -1,18 +1,21 @@
-﻿using cAlgo.API;
+﻿using System.Text;
+using System.Text.Json;
+using cAlgo.API;
 using cAlgo.API.Indicators;
+using HttpMethod = cAlgo.API.HttpMethod;
 
 namespace CTraderRobot;
 
 [Robot(
     DefaultSymbolName = "NAS100",
-    DefaultTimeFrame = "M15",
+    DefaultTimeFrame = "M1",
     TimeZone = TimeZones.UTC,
     AccessRights = AccessRights.FullAccess)]
 public sealed partial class CTraderRobot : Robot
 {
     private readonly TradingContext _context = new();
-    private DonchianChannel _donchianChannel;
-    private AverageTrueRange _atr;
+    private DonchianChannel? _donchianChannel;
+    private AverageTrueRange? _atr;
 
     protected override void OnStart()
     {
@@ -20,7 +23,9 @@ public sealed partial class CTraderRobot : Robot
         _atr = Indicators.AverageTrueRange(Bars, AtrLength, MovingAverageType.Simple);
     }
 
-    protected override void OnBar() { }
+    protected override void OnBar()
+    {
+    }
 
     protected override void OnBarClosed()
     {
@@ -31,9 +36,9 @@ public sealed partial class CTraderRobot : Robot
 
         var close = Bars.ClosePrices;
         var high = Bars.HighPrices;
-        var upperBand = _donchianChannel.Top;
+        var upperBand = _donchianChannel!.Top;
         var lowerBand = _donchianChannel.Bottom;
-        var atr = _atr.Result;
+        var atr = _atr!.Result;
 
         if (position is null)
         {
@@ -57,8 +62,6 @@ public sealed partial class CTraderRobot : Robot
                 {
                     _context.StopLossPrice = close.LastValue - atr.LastValue * StopLossAtrMultiplier;
                     _context.ProfitTargetPrice = close.LastValue + atr.LastValue * ProfitTargetAtrMultiplier;
-                    Print("Set stop loss price: {0}", _context.StopLossPrice);
-                    Print("Set profit target price: {0}", _context.ProfitTargetPrice);
                 }
             }
         }
@@ -78,26 +81,85 @@ public sealed partial class CTraderRobot : Robot
 
             if (crossUnder)
             {
-                Print("Cross under. Close position.");
                 ClosePosition(position);
             }
             else if (crossStopLoss)
             {
-                Print("Stop loss activated. Stop loss price: {0}", _context.StopLossPrice);
                 ClosePosition(position);
             }
             else if (position.EntryPrice + _context.MaxProfitPoints >= _context.ProfitTargetPrice &&
                 crossTrailingStop)
             {
-                Print("Trailing stop activated. Trailing stop price: {0}", trailingPrice);
                 ClosePosition(position);
             }
         }
     }
 
-    protected override void OnTick() { }
+    protected override void OnTick()
+    {
+        var uri = new Uri("https://localhost:10000/api/v1/signal-source-snapshots");
 
-    protected override void OnStop() { }
+        var position = Positions.Find(
+            label: Label,
+            symbolName: Symbol.Name,
+            tradeType: TradeType.Buy);
+
+        var httpRequest = new HttpRequest(uri)
+        {
+            Method = HttpMethod.Post,
+            Body = JsonSerializer.Serialize(new
+            {
+                // Heartbeat 
+                Server.Time,
+                SignalSourceId = "CTraderRobot",
+                Instrument = new
+                {
+                    Symbol = Symbol.Name,
+                    Symbol.Description,
+                    TimeFrame = TimeFrame.ShortName,
+                },
+                Account = new
+                {
+                    Account.AccountType,
+
+                    // Balance
+                    Account.UserId,
+                    Account.UserNickName,
+                    Account.Asset,
+                    Account.IsLive,
+                    Account.Number,
+                    Account.BrokerName,
+                    Account.PreciseLeverage,
+                    Account.Credit,
+                    Account.TotalMarginCalculationType,
+
+                    Account.Balance,
+                    Account.Equity,
+                    Account.Margin,
+                    Account.FreeMargin,
+                    Account.MarginLevel,
+                    Account.StopOutLevel,
+                    Account.UnrealizedGrossProfit,
+                    Account.UnrealizedNetProfit,
+                },
+                Position = position is null ?
+                    null :
+                    new
+                    {
+                        Id = position.Id,
+                        Side = position.TradeType == TradeType.Buy ? "Long" : "Short",
+                        Quantity = position.Quantity,
+                        AveragePrice = position.EntryPrice,
+                        EntryTime = position.EntryTime,
+                        Commission = position.Commissions,
+                        Swap = position.Swap,
+                    },
+            }),
+        };
+
+        var httpResponse = Http.Send(httpRequest);
+        Print("Response status code: {0}", httpResponse.StatusCode);
+    }
 }
 
 internal sealed class TradingContext
