@@ -15,7 +15,7 @@ public sealed class UserName : SingleValueObject<string>
     public static Result<UserName> From(string value) =>
         Result<string>
             .With(value)
-            .Ensure(name => !string.IsNullOrEmpty(name), Error.Invalid($"'{nameof(value)}' cannot be null or empty."))
-            .Ensure(name => name.Length <= MaxLength, Error.Invalid($"'{nameof(value)}' cannot be longer than {MaxLength} characters."))
+            .Ensure(name => !string.IsNullOrEmpty(name), Error.Invalid($"'{nameof(UserName)}' cannot be null or empty."))
+            .Ensure(name => name.Length <= MaxLength, Error.Invalid($"'{nameof(UserName)}' cannot be longer than {MaxLength} characters."))
             .Then(name => new UserName(name));
 }
