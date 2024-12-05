@@ -1,0 +1,87 @@
+// This Pine Script™ code is subject to the terms of the Mozilla Public License 2.0 at https://mozilla.org/MPL/2.0/
+// © RichillCapital
+
+//@version=6
+strategy(
+  title = 'TradingViewStrategy', 
+  shorttitle = 'TradingViewStrategy', 
+  overlay = true, 
+  initial_capital = 3000000, 
+  // Order size - 30,000 USDT / 30,000 USDT / 1,000,000 TWD 
+  default_qty_value = 30000, 
+  default_qty_type = strategy.cash, 
+  // Commission 
+  commission_value = 0.04, 
+  commission_type = strategy.commission.percent, 
+  dynamic_requests = false)
+
+//#region Imports
+//#endregion
+
+//#region Constants
+//#endregion
+
+//#region Inputs
+//#endregion
+
+//#region Functions
+//#endregion
+
+//#region Indicator calculations
+//#endregion 
+
+//#region Log before signal 
+var label priceLabel = na 
+label.delete(priceLabel) 
+priceLabel := label.new(
+  x=bar_index, 
+  y=close, 
+  text="Close: " + str.tostring(close), 
+  color=color.black, 
+  style=label.style_label_down)
+
+//#endregion
+
+//#region Strategy calls
+longCondition = ta.crossover(ta.sma(close, 14), ta.sma(close, 28))
+if (longCondition)
+    strategy.entry('My Long Entry Id', strategy.long)
+    label.new(bar_index, high, "Buy Signal\nPrice: " + str.tostring(close), color=color.green, textcolor=color.white)
+    // Log at signal 
+
+shortCondition = ta.crossunder(ta.sma(close, 14), ta.sma(close, 28))
+if (shortCondition)
+    strategy.entry('My Short Entry Id', strategy.short)
+    label.new(bar_index, low, "Sell Signal\nPrice: " + str.tostring(close), color=color.red, textcolor=color.white)
+    // Log at signal
+//#endregion
+
+//#region Log after signal 
+if (strategy.opentrades > 0) 
+    var float entryPrice = strategy.position_avg_price
+    var float profit = strategy.netprofit
+    var label profitLabel = na 
+    label.delete(profitLabel)
+
+    if (strategy.position_size > 0) 
+        profitLabel := label.new(
+          x=bar_index, 
+          y=high, 
+          text="Long Trade\nEntry: " + str.tostring(entryPrice) + "\nProfit: " + str.tostring(profit), 
+          color=color.green, 
+          textcolor=color.white) 
+          
+    if (strategy.position_size < 0) 
+        profitLabel := label.new(
+          x=bar_index, 
+          y=low, 
+          text="Short Trade\nEntry: " + str.tostring(entryPrice) + "\nProfit: " + str.tostring(profit), 
+          color=color.red, 
+          textcolor=color.white)
+//#endregion 
+
+//#region Visuals
+//#endregion 
+
+//#region Alerts
+//#endregion
