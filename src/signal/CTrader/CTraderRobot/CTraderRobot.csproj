@@ -4,10 +4,11 @@
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <AssemblyName>CTraderRobot</AssemblyName>
+    <RootNamespace>RichillCapital.SignalSources.CTrader</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="cTrader.Automate" Version="1.0.9" />
   </ItemGroup>
-
 </Project>
