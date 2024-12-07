@@ -1,6 +1,6 @@
 $testFailed = $false
 
-$template = "./src/signal/TradingView"
+$template = "./src/strategy/TradingView"
 $projectDirectory = "./MyTradingViewSignalSource"
 
 dotnet new install $template --force

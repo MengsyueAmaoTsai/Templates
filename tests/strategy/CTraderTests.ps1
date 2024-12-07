@@ -1,6 +1,6 @@
 $testFailed = $false
 
-$template = "./src/signal/CTrader"
+$template = "./src/strategy/CTrader"
 $projectDirectory = "./MyCTraderSignalSource"
 
 dotnet new install $template --force
