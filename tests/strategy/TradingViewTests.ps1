@@ -4,8 +4,7 @@ $template = "./src/strategy/TradingView"
 $projectDirectory = "./MyTradingViewSignalSource"
 
 dotnet new install $template --force
-
-dotnet new signal-tv -n MyTradingViewSignalSource -o $projectDirectory
+dotnet new strategy-tv -n MyTradingViewSignalSource -o $projectDirectory
 Push-Location $projectDirectory
 
 if (Test-Path "./.template.config") {

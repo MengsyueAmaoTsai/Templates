@@ -4,8 +4,7 @@ $template = "./src/strategy/CTrader"
 $projectDirectory = "./MyCTraderSignalSource"
 
 dotnet new install $template --force
-
-dotnet new signal-ct -n MyCTraderSignalSource -o $projectDirectory
+dotnet new strategy-ct -n MyCTraderSignalSource -o $projectDirectory
 Push-Location $projectDirectory
 
 if (Test-Path "./.template.config") {
