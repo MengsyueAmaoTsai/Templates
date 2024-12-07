@@ -1,10 +1,10 @@
 {
   "$schema": "http://json.schemastore.org/template",
   "author": "Mengsyue Amao Tsai",
-  "classifications": ["SignalSource", "TradingView"],
-  "identity": "RichillCapital.Templates.Signal.TradingView",
-  "name": "RichillCapital - TradingView Signal Source",
-  "shortName": "signal-tv",
+  "classifications": ["Strategy", "TradingView"],
+  "identity": "RichillCapital.Templates.Strategy.TradingView",
+  "name": "RichillCapital - TradingView Strategy",
+  "shortName": "strategy-tv",
   "tags": {
     "language": "PineScript",
     "type": "item"

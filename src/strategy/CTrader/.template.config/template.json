@@ -1,10 +1,10 @@
 {
   "$schema": "http://json.schemastore.org/template",
   "author": "Mengsyue Amao Tsai",
-  "classifications": ["SignalSource", "CTrader"],
-  "identity": "RichillCapital.Templates.Signal.CTrader",
-  "name": "RichillCapital - CTrader Signal Source",
-  "shortName": "signal-ct",
+  "classifications": ["Strategy", "CTrader"],
+  "identity": "RichillCapital.Templates.Strategy.CTrader",
+  "name": "RichillCapital - CTrader Strategy",
+  "shortName": "strategy-ct",
   "tags": {
     "language": "C#",
     "type": "solution"

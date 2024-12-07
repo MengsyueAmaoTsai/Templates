@@ -58,7 +58,7 @@ jobs:
             npm install -g pnpm
             ./tests/web/NuxtTests.ps1
   
-  signal-tv-test:
+  strategy-tv-test:
     runs-on: windows-latest
     if: github.ref != 'refs/heads/master'
 
@@ -66,11 +66,11 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Test TradingView Signal Source Template
+      - name: Test TradingView Strategy Template
         run: |
-            ./tests/signal/TradingViewTests.ps1
+            ./tests/strategy/TradingViewTests.ps1
 
-  signal-ct-test:
+  strategy-ct-test:
     runs-on: windows-latest
     if: github.ref != 'refs/heads/master'
 
@@ -83,15 +83,15 @@ jobs:
         with:
           dotnet-version: 8.0.x
                 
-      - name: Test CTrader Signal Source Template
+      - name: Test CTrader Strategy Template
         run: |
-            ./tests/signal/CTraderTests.ps1
+            ./tests/strategy/CTraderTests.ps1
 
   develop-build:
     runs-on: windows-latest
 
     if: github.ref == 'refs/heads/develop'
-    needs: [api-aspnet-test, web-nuxt-test, signal-tv-test, signal-ct-test]
+    needs: [api-aspnet-test, web-nuxt-test, strategy-tv-test, strategy-ct-test]
 
     steps:
       - name: Checkout repository
@@ -109,7 +109,7 @@ jobs:
     runs-on: windows-latest
 
     if: startsWith(github.ref, 'refs/heads/release/')
-    needs: [api-aspnet-test, web-nuxt-test, signal-tv-test, signal-ct-test]
+    needs: [api-aspnet-test, web-nuxt-test, strategy-tv-test, strategy-ct-test]
 
     steps:
       - name: Checkout repository
