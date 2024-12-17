@@ -98,7 +98,7 @@ public sealed partial class CTraderRobot : Robot
 
     protected override void OnTick()
     {
-        var uri = new Uri("https://localhost:10000/api/v1/signal-source-snapshots");
+        var uri = new Uri("https://localhost:10000/api/v1/snapshots");
 
         var position = Positions.Find(
             label: Label,
@@ -110,51 +110,12 @@ public sealed partial class CTraderRobot : Robot
             Method = HttpMethod.Post,
             Body = JsonSerializer.Serialize(new
             {
-                // Heartbeat 
-                Server.Time,
                 SignalSourceId = "CTraderRobot",
-                Instrument = new
-                {
-                    Symbol = Symbol.Name,
-                    Symbol.Description,
-                    TimeFrame = TimeFrame.ShortName,
-                },
-                Account = new
-                {
-                    Account.AccountType,
+                Server.Time,
 
-                    // Balance
-                    Account.UserId,
-                    Account.UserNickName,
-                    Account.Asset,
-                    Account.IsLive,
-                    Account.Number,
-                    Account.BrokerName,
-                    Account.PreciseLeverage,
-                    Account.Credit,
-                    Account.TotalMarginCalculationType,
-
-                    Account.Balance,
-                    Account.Equity,
-                    Account.Margin,
-                    Account.FreeMargin,
-                    Account.MarginLevel,
-                    Account.StopOutLevel,
-                    Account.UnrealizedGrossProfit,
-                    Account.UnrealizedNetProfit,
-                },
-                Position = position is null ?
-                    null :
-                    new
-                    {
-                        Id = position.Id,
-                        Side = position.TradeType == TradeType.Buy ? "Long" : "Short",
-                        Quantity = position.Quantity,
-                        AveragePrice = position.EntryPrice,
-                        EntryTime = position.EntryTime,
-                        Commission = position.Commissions,
-                        Swap = position.Swap,
-                    },
+                Symbol = Symbol.Name,
+                BarTime = Bars.LastBar.OpenTime,
+                LastPrice = Bars.ClosePrices.LastValue,
             }),
         };
 
