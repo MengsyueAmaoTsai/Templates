@@ -20,9 +20,9 @@ dotnet new update
 
 ### Available Templates
 
-| Name       | Description               | Status |
-| ---------- | ------------------------- | ------ |
-| api-aspnet | Asp.Net api project       |        |
-| web-nuxt   | Nuxt.js web project       |        |
-| signal-tv  | TradingView signal source |        |
-| signal-ct  | CTrader signal source     |        |
+| Name        | Description          | Status |
+| ----------- | -------------------- | ------ |
+| api-aspnet  | Asp.Net api project  |        |
+| web-nuxt    | Nuxt.js web project  |        |
+| strategy-tv | TradingView strategy |        |
+| strategy-ct | CTrader strategy     |        |
