@@ -4,7 +4,7 @@ using cAlgo.API;
 using cAlgo.API.Indicators;
 using HttpMethod = cAlgo.API.HttpMethod;
 
-namespace CTraderRobot;
+namespace RichillCapital.Strategies.CTrader;
 
 [Robot(
     DefaultSymbolName = "NAS100",

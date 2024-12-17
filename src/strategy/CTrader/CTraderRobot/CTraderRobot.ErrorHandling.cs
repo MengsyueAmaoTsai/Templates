@@ -1,6 +1,6 @@
 using cAlgo.API;
 
-namespace CTraderRobot;
+namespace RichillCapital.Strategies.CTrader;
 
 public sealed partial class CTraderRobot
 {
