@@ -1,1 +1,1 @@
-dotnet build ./CTraderRobot.sln -c Release /p:AlgoPublish=true /p:IncludeSource=false --nologo
+dotnet build ./CTraderRobot/CTraderRobot.csproj -c Release /p:AlgoPublish=true /p:IncludeSource=false --nologo
