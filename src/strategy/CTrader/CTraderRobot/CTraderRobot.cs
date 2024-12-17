@@ -8,9 +8,10 @@ namespace RichillCapital.Strategies.CTrader;
 
 [Robot(
     DefaultSymbolName = "NAS100",
-    DefaultTimeFrame = "M1",
+    DefaultTimeFrame = "M3",
     TimeZone = TimeZones.UTC,
-    AccessRights = AccessRights.FullAccess)]
+    AccessRights = AccessRights.FullAccess,
+    AddIndicators = true)]
 public sealed partial class CTraderRobot : Robot
 {
     private readonly TradingContext _context = new();
