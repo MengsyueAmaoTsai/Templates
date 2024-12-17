@@ -1,10 +1,10 @@
 $testFailed = $false
 
 $template = "./src/strategy/CTrader"
-$projectDirectory = "./MyCTraderSignalSource"
+$projectDirectory = "./MyCTraderStrategy"
 
 dotnet new install $template --force
-dotnet new strategy-ct -n MyCTraderSignalSource -o $projectDirectory
+dotnet new strategy-ct -n MyCTraderStrategy -o $projectDirectory
 Push-Location $projectDirectory
 
 if (Test-Path "./.template.config") {
@@ -16,7 +16,7 @@ if (-not $testFailed) {
     Write-Host "All tests passed."
 }
 
-dotnet build ./MyCTraderSignalSource.sln -c Release /p:AlgoPublish=true /p:IncludeSource=false
+dotnet build ./MyCTraderStrategy/MyCTraderStrategy.csproj -c Release /p:AlgoPublish=true /p:IncludeSource=false
 
 # Clean up
 Pop-Location

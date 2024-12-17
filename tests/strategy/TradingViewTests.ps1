@@ -1,10 +1,10 @@
 $testFailed = $false
 
 $template = "./src/strategy/TradingView"
-$projectDirectory = "./MyTradingViewSignalSource"
+$projectDirectory = "./MyTradingViewStrategy"
 
 dotnet new install $template --force
-dotnet new strategy-tv -n MyTradingViewSignalSource -o $projectDirectory
+dotnet new strategy-tv -n MyTradingViewStrategy -o $projectDirectory
 Push-Location $projectDirectory
 
 if (Test-Path "./.template.config") {
