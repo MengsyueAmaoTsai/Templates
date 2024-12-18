@@ -7,7 +7,7 @@ public sealed partial class CTraderRobot
     [Parameter("Label", DefaultValue = "CTraderRobot")]
     public string Label { get; init; } = string.Empty;
 
-    [Parameter("Order size", DefaultValue = 300_000, MinValue = 100)]
+    [Parameter("Order size", DefaultValue = 30_000, MinValue = 100)]
     public int OrderSize { get; init; }
 
     [Parameter("Channel length", DefaultValue = 55, MinValue = 5)]

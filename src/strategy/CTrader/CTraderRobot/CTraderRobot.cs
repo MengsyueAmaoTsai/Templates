@@ -7,8 +7,8 @@ using HttpMethod = cAlgo.API.HttpMethod;
 namespace RichillCapital.Strategies.CTrader;
 
 [Robot(
-    DefaultSymbolName = "NAS100",
-    DefaultTimeFrame = "M3",
+    DefaultSymbolName = "XAUUSD",
+    DefaultTimeFrame = "M15",
     TimeZone = TimeZones.UTC,
     AccessRights = AccessRights.FullAccess,
     AddIndicators = true)]
