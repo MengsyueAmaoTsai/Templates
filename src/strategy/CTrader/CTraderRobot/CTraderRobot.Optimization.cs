@@ -6,7 +6,7 @@ public sealed partial class CTraderRobot
 {
     protected override double GetFitness(GetFitnessArgs args)
     {
-        var netProfitToDrawdownRatio = args.NetProfit / Math.Abs(args.MaxEquityDrawdown);
+        var netProfitToDrawdownRatio = args.NetProfit / Math.Abs(args.MaxBalanceDrawdown);
         return netProfitToDrawdownRatio / 3 * args.ProfitFactor;
     }
 }
