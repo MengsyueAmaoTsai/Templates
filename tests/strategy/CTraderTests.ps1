@@ -16,7 +16,7 @@ if (-not $testFailed) {
     Write-Host "All tests passed."
 }
 
-dotnet build ./MyCTraderStrategy/MyCTraderStrategy.csproj -c Release /p:AlgoPublish=true /p:IncludeSource=false
+dotnet build ./MyCTraderSignalSource/MyCTraderSignalSource.csproj -c Release /p:AlgoPublish=true /p:IncludeSource=false
 
 # Clean up
 Pop-Location
