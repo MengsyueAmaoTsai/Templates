@@ -12,6 +12,9 @@ defaults:
   run:
     shell: pwsh
 
+env:
+  DOTNET_VERSION: 8.0.x
+
 jobs:
   api-aspnet-test:
     runs-on: windows-latest
@@ -24,13 +27,32 @@ jobs:
       - name: Setup .NET SDK
         uses: actions/setup-dotnet@v4
         with:
-          dotnet-version: 8.0.x
+          dotnet-version: ${{ env.DOTNET_VERSION }}
 
       - name: Setup Docker
         uses: crazy-max/ghaction-setup-docker@v3.5.0
                 
       - name: Test ASP.NET Core API Template
         run: ./tests/api/AspNetTests.ps1
+  
+  web-razor-pages-test:
+    runs-on: windows-latest
+    if: github.ref != 'refs/heads/master'
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup .NET SDK
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: ${{ env.DOTNET_VERSION }}
+
+      - name: Setup Docker
+        uses: crazy-max/ghaction-setup-docker@v3.5.0
+
+      - name: Test Razor Pages Web Template
+        run: ./tests/web/RazorPagesTests.ps1
 
   web-nuxt-test:
     runs-on: windows-latest
