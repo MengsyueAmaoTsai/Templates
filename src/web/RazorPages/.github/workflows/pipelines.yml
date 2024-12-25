@@ -1,0 +1,80 @@
+name: Pipelines
+
+on:
+  push:
+    branches:
+      - develop
+      - master
+      - feature/**
+      - release/**
+
+defaults:
+  run:
+    shell: pwsh
+
+jobs:
+  build-and-test:
+    runs-on: windows-latest
+    
+    if: github.ref_name != 'refs/heads/master'
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8.0.x
+
+      - name: Setup Docker
+        uses: crazy-max/ghaction-setup-docker@v3.5.0
+
+      - name: Build
+        run: |
+          dotnet build ./RazorPagesApp.Web.sln -c Release --nologo
+          dotnet test ./RazorPagesApp.Web.sln -c Release --no-restore --no-build --nologo --verbosity normal
+          dotnet publish ./src/RazorPagesApp.Web/RazorPagesApp.Web.csproj -c Release -o ./artifacts --no-restore --no-build --nologo
+  
+  release:
+    runs-on: windows-latest
+    needs: build-and-test
+    if: startsWith(github.ref, 'refs/heads/release/')
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8.0.x
+
+      - name: Fetch release version
+        id: versioning
+        run: |
+          $branchName = '${{ github.ref }}' # refs/heads/release/0.0.0
+
+          if ($branchName -match 'refs/heads/release/(.+)') {
+            $version = $Matches[1]
+            Write-Host "VERSION=$version" >> $GITHUB_ENV
+            echo "::set-output name=version::$version"
+          } else {
+            throw "Branch name is not in the expected format: refs/heads/release/*.*.*"
+          }
+    
+      - name: Update assembly version
+        run: |
+            $projectFile = './src/RazorPagesApp.Web/RazorPagesApp.Web.csproj'
+            $fileContent = Get-Content $projectFile
+            $fileContent -replace '<Version>.*</Version>', "<Version>${{ steps.versioning.outputs.version }}</Version>" | Set-Content $projectFile
+
+      - name: Publish application
+        run: |
+          dotnet publish ./src/RazorPagesApp.Web/RazorPagesApp.Web.csproj -c Release -o ./artifacts --nologo
+    
+      - name: Upload release artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: RazorPagesApp.Web-${{ steps.versioning.outputs.version }}
+          path: ./artifacts
