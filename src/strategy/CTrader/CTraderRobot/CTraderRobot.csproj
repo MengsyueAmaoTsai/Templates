@@ -6,6 +6,8 @@
     <Nullable>enable</Nullable>
     <AssemblyName>CTraderRobot</AssemblyName>
     <RootNamespace>RichillCapital.SignalSources.CTrader</RootNamespace>
+    <IncludeSource>false</IncludeSource>
+    <AlgoBuild>false</AlgoBuild>
   </PropertyGroup>
 
   <ItemGroup>
