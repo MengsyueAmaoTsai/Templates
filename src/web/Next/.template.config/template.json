@@ -1,0 +1,25 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "Mengsyue Amao Tsai",
+  "classifications": ["Web", "Next"],
+  "identity": "RichillCapital.Templates.Web.Next",
+  "name": "RichillCapital - Next.js Web Project",
+  "shortName": "web-next",
+  "sourceName": "nuxt-app",
+  "tags": {
+    "language": "TypeScript",
+    "type": "project"
+  },
+  "preferNameDirectory": true,
+  "sources": [
+    {
+      "exclude": [
+        "node_modules/**/*",
+        ".template.config/**/*",
+        ".next/**/*",
+        "out/**/*",
+        "next-env.d.ts"
+      ]
+    }
+  ]
+}
