@@ -20,9 +20,10 @@ dotnet new update
 
 ### Available Templates
 
-| Name        | Description          | Status |
-| ----------- | -------------------- | ------ |
-| api-aspnet  | Asp.Net api project  |        |
-| web-nuxt    | Nuxt.js web project  |        |
-| strategy-tv | TradingView strategy |        |
-| strategy-ct | CTrader strategy     |        |
+| Name        | Description                     | Status |
+| ----------- | ------------------------------- | ------ |
+| api-aspnet  | Asp.Net api project             |        |
+| web-razor   | Asp.Net Razor Pages web project |        |
+| web-nuxt    | Nuxt.js web project             |        |
+| strategy-tv | TradingView strategy            |        |
+| strategy-ct | CTrader strategy                |        |
