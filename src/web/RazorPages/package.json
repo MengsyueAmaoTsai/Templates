@@ -1,0 +1,6 @@
+{
+	"dependencies": {
+		"@fluentui/web-components": "^2.6.1",
+		"@microsoft/fast-element": "^2.0.1"
+	}
+}

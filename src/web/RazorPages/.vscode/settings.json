@@ -1,0 +1,4 @@
+{
+  "dotnet.defaultSolution": "./RazorPagesApp.Web.sln",
+  "cSpell.words": ["Antiforgery", "ASPNETCORE"]
+}
