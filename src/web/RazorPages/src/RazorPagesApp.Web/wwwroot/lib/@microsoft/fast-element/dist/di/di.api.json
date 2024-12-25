@@ -1,0 +1,4929 @@
+{
+  "metadata": {
+    "toolPackage": "@microsoft/api-extractor",
+    "toolVersion": "7.47.0",
+    "schemaVersion": 1011,
+    "oldestForwardsCompatibleVersion": 1001,
+    "tsdocConfig": {
+      "$schema": "https://developer.microsoft.com/json-schemas/tsdoc/v0/tsdoc.schema.json",
+      "noStandardTags": true,
+      "tagDefinitions": [
+        {
+          "tagName": "@alpha",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@beta",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@defaultValue",
+          "syntaxKind": "block"
+        },
+        {
+          "tagName": "@decorator",
+          "syntaxKind": "block",
+          "allowMultiple": true
+        },
+        {
+          "tagName": "@deprecated",
+          "syntaxKind": "block"
+        },
+        {
+          "tagName": "@eventProperty",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@example",
+          "syntaxKind": "block",
+          "allowMultiple": true
+        },
+        {
+          "tagName": "@experimental",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@inheritDoc",
+          "syntaxKind": "inline"
+        },
+        {
+          "tagName": "@internal",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@label",
+          "syntaxKind": "inline"
+        },
+        {
+          "tagName": "@link",
+          "syntaxKind": "inline",
+          "allowMultiple": true
+        },
+        {
+          "tagName": "@override",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@packageDocumentation",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@param",
+          "syntaxKind": "block",
+          "allowMultiple": true
+        },
+        {
+          "tagName": "@privateRemarks",
+          "syntaxKind": "block"
+        },
+        {
+          "tagName": "@public",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@readonly",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@remarks",
+          "syntaxKind": "block"
+        },
+        {
+          "tagName": "@returns",
+          "syntaxKind": "block"
+        },
+        {
+          "tagName": "@sealed",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@see",
+          "syntaxKind": "block"
+        },
+        {
+          "tagName": "@throws",
+          "syntaxKind": "block",
+          "allowMultiple": true
+        },
+        {
+          "tagName": "@typeParam",
+          "syntaxKind": "block",
+          "allowMultiple": true
+        },
+        {
+          "tagName": "@virtual",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@betaDocumentation",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@internalRemarks",
+          "syntaxKind": "block"
+        },
+        {
+          "tagName": "@preapproved",
+          "syntaxKind": "modifier"
+        }
+      ],
+      "supportForTags": {
+        "@alpha": true,
+        "@beta": true,
+        "@defaultValue": true,
+        "@decorator": true,
+        "@deprecated": true,
+        "@eventProperty": true,
+        "@example": true,
+        "@experimental": true,
+        "@inheritDoc": true,
+        "@internal": true,
+        "@label": true,
+        "@link": true,
+        "@override": true,
+        "@packageDocumentation": true,
+        "@param": true,
+        "@privateRemarks": true,
+        "@public": true,
+        "@readonly": true,
+        "@remarks": true,
+        "@returns": true,
+        "@sealed": true,
+        "@see": true,
+        "@throws": true,
+        "@typeParam": true,
+        "@virtual": true,
+        "@betaDocumentation": true,
+        "@internalRemarks": true,
+        "@preapproved": true
+      },
+      "reportUnsupportedHtmlElements": false
+    }
+  },
+  "kind": "Package",
+  "canonicalReference": "@microsoft/fast-element!",
+  "docComment": "",
+  "name": "@microsoft/fast-element",
+  "preserveMemberOrder": false,
+  "members": [
+    {
+      "kind": "EntryPoint",
+      "canonicalReference": "@microsoft/fast-element!",
+      "name": "",
+      "preserveMemberOrder": false,
+      "members": [
+        {
+          "kind": "Function",
+          "canonicalReference": "@microsoft/fast-element!all:function(1)",
+          "docComment": "/**\n * A decorator and DI resolver that will resolve an array of all dependencies registered with the specified key.\n *\n * @param key - The key to resolve all dependencies for.\n *\n * @param searchAncestors - [optional] Indicates whether to search ancestor containers.\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "all: (key: "
+            },
+            {
+              "kind": "Content",
+              "text": "any"
+            },
+            {
+              "kind": "Content",
+              "text": ", searchAncestors?: "
+            },
+            {
+              "kind": "Content",
+              "text": "boolean"
+            },
+            {
+              "kind": "Content",
+              "text": ") => "
+            },
+            {
+              "kind": "Reference",
+              "text": "ReturnType",
+              "canonicalReference": "!ReturnType:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<typeof "
+            },
+            {
+              "kind": "Reference",
+              "text": "DI.inject",
+              "canonicalReference": "@microsoft/fast-element!~inject:member"
+            },
+            {
+              "kind": "Content",
+              "text": ">"
+            }
+          ],
+          "fileUrlPath": "dist/dts/di/di.d.ts",
+          "returnTypeTokenRange": {
+            "startIndex": 5,
+            "endIndex": 9
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "key",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isOptional": false
+            },
+            {
+              "parameterName": "searchAncestors",
+              "parameterTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "isOptional": true
+            }
+          ],
+          "name": "all"
+        },
+        {
+          "kind": "TypeAlias",
+          "canonicalReference": "@microsoft/fast-element!AsyncRegistrationLocator:type",
+          "docComment": "/**\n * A function capable of asynchronously locating a resolver for a key.\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare type AsyncRegistrationLocator = "
+            },
+            {
+              "kind": "Content",
+              "text": "(key: "
+            },
+            {
+              "kind": "Reference",
+              "text": "Key",
+              "canonicalReference": "@microsoft/fast-element!Key:type"
+            },
+            {
+              "kind": "Content",
+              "text": ") => "
+            },
+            {
+              "kind": "Reference",
+              "text": "Promise",
+              "canonicalReference": "!Promise:interface"
+            },
+            {
+              "kind": "Content",
+              "text": "<"
+            },
+            {
+              "kind": "Reference",
+              "text": "Registration",
+              "canonicalReference": "@microsoft/fast-element!Registration:interface"
+            },
+            {
+              "kind": "Content",
+              "text": " | null>"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "dist/dts/di/di.d.ts",
+          "releaseTag": "Public",
+          "name": "AsyncRegistrationLocator",
+          "typeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 8
+          }
+        },
+        {
+          "kind": "Interface",
+          "canonicalReference": "@microsoft/fast-element!Container:interface",
+          "docComment": "/**\n * Implemented by dependency injection containers.\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface Container extends "
+            },
+            {
+              "kind": "Reference",
+              "text": "ServiceLocator",
+              "canonicalReference": "@microsoft/fast-element!ServiceLocator:interface"
+            },
+            {
+              "kind": "Content",
+              "text": " "
+            }
+          ],
+          "fileUrlPath": "dist/dts/di/di.d.ts",
+          "releaseTag": "Public",
+          "name": "Container",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "MethodSignature",
+              "canonicalReference": "@microsoft/fast-element!Container#createChild:member(1)",
+              "docComment": "/**\n * Creates a child dependency injection container parented to this container.\n *\n * @param config - The configuration for the new container.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "createChild(config?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Partial",
+                  "canonicalReference": "!Partial:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Omit",
+                  "canonicalReference": "!Omit:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "ContainerConfiguration",
+                  "canonicalReference": "@microsoft/fast-element!ContainerConfiguration:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", \"parentLocator\">>"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Container",
+                  "canonicalReference": "@microsoft/fast-element!Container:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isOptional": false,
+              "returnTypeTokenRange": {
+                "startIndex": 8,
+                "endIndex": 9
+              },
+              "releaseTag": "Public",
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "config",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 7
+                  },
+                  "isOptional": true
+                }
+              ],
+              "name": "createChild"
+            },
+            {
+              "kind": "MethodSignature",
+              "canonicalReference": "@microsoft/fast-element!Container#getFactory:member(1)",
+              "docComment": "/**\n * Gets the factory for the specified key.\n *\n * @param key - The key to get the factory for.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "getFactory<T extends "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Constructable",
+                  "canonicalReference": "@microsoft/fast-element!~Constructable:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">(key: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "T"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Factory",
+                  "canonicalReference": "@microsoft/fast-element!Factory:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<T>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isOptional": false,
+              "returnTypeTokenRange": {
+                "startIndex": 5,
+                "endIndex": 7
+              },
+              "releaseTag": "Public",
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "key",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 3,
+                    "endIndex": 4
+                  },
+                  "isOptional": false
+                }
+              ],
+              "typeParameters": [
+                {
+                  "typeParameterName": "T",
+                  "constraintTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "defaultTypeTokenRange": {
+                    "startIndex": 0,
+                    "endIndex": 0
+                  }
+                }
+              ],
+              "name": "getFactory"
+            },
+            {
+              "kind": "MethodSignature",
+              "canonicalReference": "@microsoft/fast-element!Container#getResolver:member(1)",
+              "docComment": "/**\n * Gets a resolver for the specified key.\n *\n * @param key - The key to get the resolver for.\n *\n * @param autoRegister - Indicates whether or not to try to auto-register a dependency for the key if one is not explicitly registered.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "getResolver<K extends "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Key",
+                  "canonicalReference": "@microsoft/fast-element!Key:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", T = "
+                },
+                {
+                  "kind": "Content",
+                  "text": "K"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">(key: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "K | "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Key",
+                  "canonicalReference": "@microsoft/fast-element!Key:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", autoRegister?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "boolean"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Resolver",
+                  "canonicalReference": "@microsoft/fast-element!Resolver:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<T> | null"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isOptional": false,
+              "returnTypeTokenRange": {
+                "startIndex": 10,
+                "endIndex": 12
+              },
+              "releaseTag": "Public",
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "key",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 5,
+                    "endIndex": 7
+                  },
+                  "isOptional": false
+                },
+                {
+                  "parameterName": "autoRegister",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 8,
+                    "endIndex": 9
+                  },
+                  "isOptional": true
+                }
+              ],
+              "typeParameters": [
+                {
+                  "typeParameterName": "K",
+                  "constraintTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "defaultTypeTokenRange": {
+                    "startIndex": 0,
+                    "endIndex": 0
+                  }
+                },
+                {
+                  "typeParameterName": "T",
+                  "constraintTokenRange": {
+                    "startIndex": 0,
+                    "endIndex": 0
+                  },
+                  "defaultTypeTokenRange": {
+                    "startIndex": 3,
+                    "endIndex": 4
+                  }
+                }
+              ],
+              "name": "getResolver"
+            },
+            {
+              "kind": "MethodSignature",
+              "canonicalReference": "@microsoft/fast-element!Container#register:member(1)",
+              "docComment": "/**\n * Registers dependencies with the container via registration objects.\n *\n * @param params - The registration objects.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "register(...params: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "any[]"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Container",
+                  "canonicalReference": "@microsoft/fast-element!Container:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isOptional": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "releaseTag": "Public",
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "params",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "name": "register"
+            },
+            {
+              "kind": "MethodSignature",
+              "canonicalReference": "@microsoft/fast-element!Container#registerFactory:member(1)",
+              "docComment": "/**\n * Registers a factory with the container for the specified key.\n *\n * @param key - The key to register the factory under.\n *\n * @param factory - The factory to register.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "registerFactory<T extends "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Constructable",
+                  "canonicalReference": "@microsoft/fast-element!~Constructable:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">(key: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "T"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", factory: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Factory",
+                  "canonicalReference": "@microsoft/fast-element!Factory:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<T>"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "void"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isOptional": false,
+              "returnTypeTokenRange": {
+                "startIndex": 8,
+                "endIndex": 9
+              },
+              "releaseTag": "Public",
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "key",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 3,
+                    "endIndex": 4
+                  },
+                  "isOptional": false
+                },
+                {
+                  "parameterName": "factory",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 5,
+                    "endIndex": 7
+                  },
+                  "isOptional": false
+                }
+              ],
+              "typeParameters": [
+                {
+                  "typeParameterName": "T",
+                  "constraintTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "defaultTypeTokenRange": {
+                    "startIndex": 0,
+                    "endIndex": 0
+                  }
+                }
+              ],
+              "name": "registerFactory"
+            },
+            {
+              "kind": "MethodSignature",
+              "canonicalReference": "@microsoft/fast-element!Container#registerResolver:member(1)",
+              "docComment": "/**\n * Registers a resolver with the container for the specified key.\n *\n * @param key - The key to register the resolver under.\n *\n * @param resolver - The resolver to register.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "registerResolver<K extends "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Key",
+                  "canonicalReference": "@microsoft/fast-element!Key:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", T = "
+                },
+                {
+                  "kind": "Content",
+                  "text": "K"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">(key: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "K"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", resolver: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Resolver",
+                  "canonicalReference": "@microsoft/fast-element!Resolver:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<T>"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Resolver",
+                  "canonicalReference": "@microsoft/fast-element!Resolver:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<T>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isOptional": false,
+              "returnTypeTokenRange": {
+                "startIndex": 10,
+                "endIndex": 12
+              },
+              "releaseTag": "Public",
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "key",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 5,
+                    "endIndex": 6
+                  },
+                  "isOptional": false
+                },
+                {
+                  "parameterName": "resolver",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 7,
+                    "endIndex": 9
+                  },
+                  "isOptional": false
+                }
+              ],
+              "typeParameters": [
+                {
+                  "typeParameterName": "K",
+                  "constraintTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "defaultTypeTokenRange": {
+                    "startIndex": 0,
+                    "endIndex": 0
+                  }
+                },
+                {
+                  "typeParameterName": "T",
+                  "constraintTokenRange": {
+                    "startIndex": 0,
+                    "endIndex": 0
+                  },
+                  "defaultTypeTokenRange": {
+                    "startIndex": 3,
+                    "endIndex": 4
+                  }
+                }
+              ],
+              "name": "registerResolver"
+            },
+            {
+              "kind": "MethodSignature",
+              "canonicalReference": "@microsoft/fast-element!Container#registerTransformer:member(1)",
+              "docComment": "/**\n * Registers a transformer with the container for the specified key.\n *\n * @param key - The key to resolved to register the transformer with.\n *\n * @param transformer - The transformer to register.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "registerTransformer<K extends "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Key",
+                  "canonicalReference": "@microsoft/fast-element!Key:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", T = "
+                },
+                {
+                  "kind": "Content",
+                  "text": "K"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">(key: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "K"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", transformer: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Transformer",
+                  "canonicalReference": "@microsoft/fast-element!Transformer_2:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<T>"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "boolean"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isOptional": false,
+              "returnTypeTokenRange": {
+                "startIndex": 10,
+                "endIndex": 11
+              },
+              "releaseTag": "Public",
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "key",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 5,
+                    "endIndex": 6
+                  },
+                  "isOptional": false
+                },
+                {
+                  "parameterName": "transformer",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 7,
+                    "endIndex": 9
+                  },
+                  "isOptional": false
+                }
+              ],
+              "typeParameters": [
+                {
+                  "typeParameterName": "K",
+                  "constraintTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "defaultTypeTokenRange": {
+                    "startIndex": 0,
+                    "endIndex": 0
+                  }
+                },
+                {
+                  "typeParameterName": "T",
+                  "constraintTokenRange": {
+                    "startIndex": 0,
+                    "endIndex": 0
+                  },
+                  "defaultTypeTokenRange": {
+                    "startIndex": 3,
+                    "endIndex": 4
+                  }
+                }
+              ],
+              "name": "registerTransformer"
+            }
+          ],
+          "extendsTokenRanges": [
+            {
+              "startIndex": 1,
+              "endIndex": 2
+            }
+          ]
+        },
+        {
+          "kind": "Variable",
+          "canonicalReference": "@microsoft/fast-element!Container:var",
+          "docComment": "/**\n * The key that resolves the dependency injection Container itself.\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "Container: "
+            },
+            {
+              "kind": "Reference",
+              "text": "ContextDecorator",
+              "canonicalReference": "@microsoft/fast-element!~ContextDecorator:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<"
+            },
+            {
+              "kind": "Reference",
+              "text": "Container",
+              "canonicalReference": "@microsoft/fast-element!Container:interface"
+            },
+            {
+              "kind": "Content",
+              "text": ">"
+            }
+          ],
+          "fileUrlPath": "dist/dts/di/di.d.ts",
+          "isReadonly": true,
+          "releaseTag": "Public",
+          "name": "Container",
+          "variableTypeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 5
+          }
+        },
+        {
+          "kind": "Interface",
+          "canonicalReference": "@microsoft/fast-element!ContainerConfiguration:interface",
+          "docComment": "/**\n * Configuration for a dependency injection container.\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface ContainerConfiguration "
+            }
+          ],
+          "fileUrlPath": "dist/dts/di/di.d.ts",
+          "releaseTag": "Public",
+          "name": "ContainerConfiguration",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@microsoft/fast-element!ContainerConfiguration#asyncRegistrationLocator:member",
+              "docComment": "/**\n * When an asynchronous get request is made to the container, if no resolver is found for the key, this function is called to provide a registration.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "asyncRegistrationLocator: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "AsyncRegistrationLocator",
+                  "canonicalReference": "@microsoft/fast-element!AsyncRegistrationLocator:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "asyncRegistrationLocator",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "MethodSignature",
+              "canonicalReference": "@microsoft/fast-element!ContainerConfiguration#defaultResolver:member(1)",
+              "docComment": "/**\n * Gets the default resolver to use during auto-registration.\n *\n * @param key - The key to register the dependency with.\n *\n * @param handler - The container that is handling the auto-registration request.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "defaultResolver(key: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Key",
+                  "canonicalReference": "@microsoft/fast-element!Key:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", handler: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Container",
+                  "canonicalReference": "@microsoft/fast-element!Container:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Resolver",
+                  "canonicalReference": "@microsoft/fast-element!Resolver:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isOptional": false,
+              "returnTypeTokenRange": {
+                "startIndex": 5,
+                "endIndex": 6
+              },
+              "releaseTag": "Public",
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "key",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                },
+                {
+                  "parameterName": "handler",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 3,
+                    "endIndex": 4
+                  },
+                  "isOptional": false
+                }
+              ],
+              "name": "defaultResolver"
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@microsoft/fast-element!ContainerConfiguration#parentLocator:member",
+              "docComment": "/**\n * The locator function used to find the parent of the container.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "parentLocator: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "ParentLocator",
+                  "canonicalReference": "@microsoft/fast-element!ParentLocator:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "parentLocator",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@microsoft/fast-element!ContainerConfiguration#responsibleForOwnerRequests:member",
+              "docComment": "/**\n * Indicates whether this container should resolve dependencies that are directly made by its owner. The default is \"false\" which results in the parent container being used.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "responsibleForOwnerRequests: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "boolean"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "responsibleForOwnerRequests",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            }
+          ],
+          "extendsTokenRanges": []
+        },
+        {
+          "kind": "Variable",
+          "canonicalReference": "@microsoft/fast-element!ContainerConfiguration:var",
+          "docComment": "/**\n * Configuration for a dependency injection container.\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "ContainerConfiguration: "
+            },
+            {
+              "kind": "Reference",
+              "text": "Readonly",
+              "canonicalReference": "!Readonly:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<{\n    default: "
+            },
+            {
+              "kind": "Reference",
+              "text": "Readonly",
+              "canonicalReference": "!Readonly:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<"
+            },
+            {
+              "kind": "Reference",
+              "text": "ContainerConfiguration",
+              "canonicalReference": "@microsoft/fast-element!ContainerConfiguration:interface"
+            },
+            {
+              "kind": "Content",
+              "text": ">;\n}>"
+            }
+          ],
+          "fileUrlPath": "dist/dts/di/di.d.ts",
+          "isReadonly": true,
+          "releaseTag": "Public",
+          "name": "ContainerConfiguration",
+          "variableTypeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 7
+          }
+        },
+        {
+          "kind": "Variable",
+          "canonicalReference": "@microsoft/fast-element!DefaultResolver:var",
+          "docComment": "/**\n * A set of default resolvers useful in configuring a container.\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "DefaultResolver: "
+            },
+            {
+              "kind": "Reference",
+              "text": "Readonly",
+              "canonicalReference": "!Readonly:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<{\n    none(key: "
+            },
+            {
+              "kind": "Reference",
+              "text": "Key",
+              "canonicalReference": "@microsoft/fast-element!Key:type"
+            },
+            {
+              "kind": "Content",
+              "text": "): "
+            },
+            {
+              "kind": "Reference",
+              "text": "Resolver",
+              "canonicalReference": "@microsoft/fast-element!Resolver:interface"
+            },
+            {
+              "kind": "Content",
+              "text": ";\n    singleton(key: "
+            },
+            {
+              "kind": "Reference",
+              "text": "Key",
+              "canonicalReference": "@microsoft/fast-element!Key:type"
+            },
+            {
+              "kind": "Content",
+              "text": "): "
+            },
+            {
+              "kind": "Reference",
+              "text": "Resolver",
+              "canonicalReference": "@microsoft/fast-element!Resolver:interface"
+            },
+            {
+              "kind": "Content",
+              "text": ";\n    transient(key: "
+            },
+            {
+              "kind": "Reference",
+              "text": "Key",
+              "canonicalReference": "@microsoft/fast-element!Key:type"
+            },
+            {
+              "kind": "Content",
+              "text": "): "
+            },
+            {
+              "kind": "Reference",
+              "text": "Resolver",
+              "canonicalReference": "@microsoft/fast-element!Resolver:interface"
+            },
+            {
+              "kind": "Content",
+              "text": ";\n}>"
+            }
+          ],
+          "fileUrlPath": "dist/dts/di/di.d.ts",
+          "isReadonly": true,
+          "releaseTag": "Public",
+          "name": "DefaultResolver",
+          "variableTypeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 15
+          }
+        },
+        {
+          "kind": "Variable",
+          "canonicalReference": "@microsoft/fast-element!DI:var",
+          "docComment": "/**\n * The gateway to dependency injection APIs.\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "DI: "
+            },
+            {
+              "kind": "Reference",
+              "text": "Readonly",
+              "canonicalReference": "!Readonly:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<{\n    installAsContextRequestStrategy(fallback?: () => "
+            },
+            {
+              "kind": "Reference",
+              "text": "DOMContainer",
+              "canonicalReference": "@microsoft/fast-element!DOMContainer:interface"
+            },
+            {
+              "kind": "Content",
+              "text": "): void;\n    createContainer(config?: "
+            },
+            {
+              "kind": "Reference",
+              "text": "Partial",
+              "canonicalReference": "!Partial:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<"
+            },
+            {
+              "kind": "Reference",
+              "text": "ContainerConfiguration",
+              "canonicalReference": "@microsoft/fast-element!ContainerConfiguration:interface"
+            },
+            {
+              "kind": "Content",
+              "text": ">): "
+            },
+            {
+              "kind": "Reference",
+              "text": "Container",
+              "canonicalReference": "@microsoft/fast-element!Container:interface"
+            },
+            {
+              "kind": "Content",
+              "text": ";\n    findResponsibleContainer(target: "
+            },
+            {
+              "kind": "Reference",
+              "text": "EventTarget",
+              "canonicalReference": "!EventTarget:interface"
+            },
+            {
+              "kind": "Content",
+              "text": ", fallback?: () => "
+            },
+            {
+              "kind": "Reference",
+              "text": "DOMContainer",
+              "canonicalReference": "@microsoft/fast-element!DOMContainer:interface"
+            },
+            {
+              "kind": "Content",
+              "text": "): "
+            },
+            {
+              "kind": "Reference",
+              "text": "DOMContainer",
+              "canonicalReference": "@microsoft/fast-element!DOMContainer:interface"
+            },
+            {
+              "kind": "Content",
+              "text": ";\n    findParentContainer(target: "
+            },
+            {
+              "kind": "Reference",
+              "text": "EventTarget",
+              "canonicalReference": "!EventTarget:interface"
+            },
+            {
+              "kind": "Content",
+              "text": ", fallback?: () => "
+            },
+            {
+              "kind": "Reference",
+              "text": "DOMContainer",
+              "canonicalReference": "@microsoft/fast-element!DOMContainer:interface"
+            },
+            {
+              "kind": "Content",
+              "text": "): "
+            },
+            {
+              "kind": "Reference",
+              "text": "DOMContainer",
+              "canonicalReference": "@microsoft/fast-element!DOMContainer:interface"
+            },
+            {
+              "kind": "Content",
+              "text": ";\n    getOrCreateDOMContainer(target?: "
+            },
+            {
+              "kind": "Reference",
+              "text": "EventTarget",
+              "canonicalReference": "!EventTarget:interface"
+            },
+            {
+              "kind": "Content",
+              "text": ", config?: "
+            },
+            {
+              "kind": "Reference",
+              "text": "Partial",
+              "canonicalReference": "!Partial:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<"
+            },
+            {
+              "kind": "Reference",
+              "text": "Omit",
+              "canonicalReference": "!Omit:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<"
+            },
+            {
+              "kind": "Reference",
+              "text": "ContainerConfiguration",
+              "canonicalReference": "@microsoft/fast-element!ContainerConfiguration:interface"
+            },
+            {
+              "kind": "Content",
+              "text": ", \"parentLocator\">>): "
+            },
+            {
+              "kind": "Reference",
+              "text": "DOMContainer",
+              "canonicalReference": "@microsoft/fast-element!DOMContainer:interface"
+            },
+            {
+              "kind": "Content",
+              "text": ";\n    getDependencies(Type: "
+            },
+            {
+              "kind": "Reference",
+              "text": "Constructable",
+              "canonicalReference": "@microsoft/fast-element!~Constructable:type"
+            },
+            {
+              "kind": "Content",
+              "text": " | "
+            },
+            {
+              "kind": "Reference",
+              "text": "Injectable",
+              "canonicalReference": "@microsoft/fast-element!Injectable:type"
+            },
+            {
+              "kind": "Content",
+              "text": "): "
+            },
+            {
+              "kind": "Reference",
+              "text": "Key",
+              "canonicalReference": "@microsoft/fast-element!Key:type"
+            },
+            {
+              "kind": "Content",
+              "text": "[];\n    defineProperty(target: {}, propertyName: string, key: "
+            },
+            {
+              "kind": "Reference",
+              "text": "Key",
+              "canonicalReference": "@microsoft/fast-element!Key:type"
+            },
+            {
+              "kind": "Content",
+              "text": ", respectConnection?: boolean): void;\n    createContext: typeof "
+            },
+            {
+              "kind": "Reference",
+              "text": "createContext",
+              "canonicalReference": "@microsoft/fast-element!~createContext:function"
+            },
+            {
+              "kind": "Content",
+              "text": ";\n    inject(...dependencies: "
+            },
+            {
+              "kind": "Reference",
+              "text": "Key",
+              "canonicalReference": "@microsoft/fast-element!Key:type"
+            },
+            {
+              "kind": "Content",
+              "text": "[]): (target: any, key?: string | number, descriptor?: "
+            },
+            {
+              "kind": "Reference",
+              "text": "PropertyDescriptor",
+              "canonicalReference": "!PropertyDescriptor:interface"
+            },
+            {
+              "kind": "Content",
+              "text": " | number) => void;\n    transient<T extends "
+            },
+            {
+              "kind": "Reference",
+              "text": "Constructable",
+              "canonicalReference": "@microsoft/fast-element!~Constructable:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<{}>>(target: T & "
+            },
+            {
+              "kind": "Reference",
+              "text": "Partial",
+              "canonicalReference": "!Partial:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<"
+            },
+            {
+              "kind": "Reference",
+              "text": "RegisterSelf",
+              "canonicalReference": "@microsoft/fast-element!RegisterSelf:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<T>>): T & "
+            },
+            {
+              "kind": "Reference",
+              "text": "RegisterSelf",
+              "canonicalReference": "@microsoft/fast-element!RegisterSelf:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<T>;\n    singleton<T_1 extends "
+            },
+            {
+              "kind": "Reference",
+              "text": "Constructable",
+              "canonicalReference": "@microsoft/fast-element!~Constructable:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<{}>>(target: T_1 & "
+            },
+            {
+              "kind": "Reference",
+              "text": "Partial",
+              "canonicalReference": "!Partial:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<"
+            },
+            {
+              "kind": "Reference",
+              "text": "RegisterSelf",
+              "canonicalReference": "@microsoft/fast-element!RegisterSelf:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<T_1>>, options?: "
+            },
+            {
+              "kind": "Reference",
+              "text": "SingletonOptions",
+              "canonicalReference": "@microsoft/fast-element!~SingletonOptions:type"
+            },
+            {
+              "kind": "Content",
+              "text": "): T_1 & "
+            },
+            {
+              "kind": "Reference",
+              "text": "RegisterSelf",
+              "canonicalReference": "@microsoft/fast-element!RegisterSelf:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<T_1>;\n}>"
+            }
+          ],
+          "fileUrlPath": "dist/dts/di/di.d.ts",
+          "isReadonly": true,
+          "releaseTag": "Public",
+          "name": "DI",
+          "variableTypeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 65
+          }
+        },
+        {
+          "kind": "Interface",
+          "canonicalReference": "@microsoft/fast-element!DOMContainer:interface",
+          "docComment": "/**\n * A Container that is associated with a specific Node in the DOM.\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface DOMContainer extends "
+            },
+            {
+              "kind": "Reference",
+              "text": "Container",
+              "canonicalReference": "@microsoft/fast-element!Container:interface"
+            },
+            {
+              "kind": "Content",
+              "text": " "
+            }
+          ],
+          "fileUrlPath": "dist/dts/di/di.d.ts",
+          "releaseTag": "Public",
+          "name": "DOMContainer",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "MethodSignature",
+              "canonicalReference": "@microsoft/fast-element!DOMContainer#handleContextRequests:member(1)",
+              "docComment": "/**\n * Instructs this particular Container to handle W3C Community Context requests that propagate to its associated DOM node.\n *\n * @param enable - true to enable context requests handling; false otherwise.\n *\n * @beta\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "handleContextRequests(enable: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "boolean"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "void"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isOptional": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "releaseTag": "Beta",
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "enable",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "name": "handleContextRequests"
+            }
+          ],
+          "extendsTokenRanges": [
+            {
+              "startIndex": 1,
+              "endIndex": 2
+            }
+          ]
+        },
+        {
+          "kind": "Variable",
+          "canonicalReference": "@microsoft/fast-element!DOMContainer:var",
+          "docComment": "/**\n * The key that resolves a DOMContainer itself.\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "DOMContainer: "
+            },
+            {
+              "kind": "Reference",
+              "text": "ContextDecorator",
+              "canonicalReference": "@microsoft/fast-element!~ContextDecorator:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<"
+            },
+            {
+              "kind": "Reference",
+              "text": "DOMContainer",
+              "canonicalReference": "@microsoft/fast-element!DOMContainer:interface"
+            },
+            {
+              "kind": "Content",
+              "text": ">"
+            }
+          ],
+          "fileUrlPath": "dist/dts/di/di.d.ts",
+          "isReadonly": true,
+          "releaseTag": "Public",
+          "name": "DOMContainer",
+          "variableTypeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 5
+          }
+        },
+        {
+          "kind": "Interface",
+          "canonicalReference": "@microsoft/fast-element!Factory:interface",
+          "docComment": "/**\n * Used by the default Resolver to create instances of objects when needed.\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface Factory<T extends "
+            },
+            {
+              "kind": "Reference",
+              "text": "Constructable",
+              "canonicalReference": "@microsoft/fast-element!~Constructable:type"
+            },
+            {
+              "kind": "Content",
+              "text": " = "
+            },
+            {
+              "kind": "Content",
+              "text": "any"
+            },
+            {
+              "kind": "Content",
+              "text": "> "
+            }
+          ],
+          "fileUrlPath": "dist/dts/di/di.d.ts",
+          "releaseTag": "Public",
+          "typeParameters": [
+            {
+              "typeParameterName": "T",
+              "constraintTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "defaultTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              }
+            }
+          ],
+          "name": "Factory",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "MethodSignature",
+              "canonicalReference": "@microsoft/fast-element!Factory#construct:member(1)",
+              "docComment": "/**\n * Constructs an instance of the factory's object.\n *\n * @param container - The container the object is being constructor for.\n *\n * @param dynamicDependencies - Dynamic dependencies supplied to the constructor.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "construct(container: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Container",
+                  "canonicalReference": "@microsoft/fast-element!Container:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", dynamicDependencies?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Key",
+                  "canonicalReference": "@microsoft/fast-element!Key:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": "[]"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Resolved",
+                  "canonicalReference": "@microsoft/fast-element!Resolved:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<T>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isOptional": false,
+              "returnTypeTokenRange": {
+                "startIndex": 6,
+                "endIndex": 8
+              },
+              "releaseTag": "Public",
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "container",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                },
+                {
+                  "parameterName": "dynamicDependencies",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 3,
+                    "endIndex": 5
+                  },
+                  "isOptional": true
+                }
+              ],
+              "name": "construct"
+            },
+            {
+              "kind": "MethodSignature",
+              "canonicalReference": "@microsoft/fast-element!Factory#constructAsync:member(1)",
+              "docComment": "/**\n * Constructs an instance of the factory's object, allowing for async resolution of dependencies.\n *\n * @param container - The container the object is being constructor for.\n *\n * @param dynamicDependencies - Dynamic dependencies supplied to the constructor.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "constructAsync(container: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Container",
+                  "canonicalReference": "@microsoft/fast-element!Container:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", dynamicDependencies?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Key",
+                  "canonicalReference": "@microsoft/fast-element!Key:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": "[]"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Resolved",
+                  "canonicalReference": "@microsoft/fast-element!Resolved:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<T>>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isOptional": false,
+              "returnTypeTokenRange": {
+                "startIndex": 6,
+                "endIndex": 10
+              },
+              "releaseTag": "Public",
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "container",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                },
+                {
+                  "parameterName": "dynamicDependencies",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 3,
+                    "endIndex": 5
+                  },
+                  "isOptional": true
+                }
+              ],
+              "name": "constructAsync"
+            },
+            {
+              "kind": "MethodSignature",
+              "canonicalReference": "@microsoft/fast-element!Factory#registerTransformer:member(1)",
+              "docComment": "/**\n * Registers a transformer function to alter the object after instantiation but before returning the final constructed instance.\n *\n * @param transformer - The transformer function.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "registerTransformer(transformer: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Transformer",
+                  "canonicalReference": "@microsoft/fast-element!Transformer_2:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<T>"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "void"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isOptional": false,
+              "returnTypeTokenRange": {
+                "startIndex": 4,
+                "endIndex": 5
+              },
+              "releaseTag": "Public",
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "transformer",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 3
+                  },
+                  "isOptional": false
+                }
+              ],
+              "name": "registerTransformer"
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@microsoft/fast-element!Factory#Type:member",
+              "docComment": "/**\n * The concrete type this factory creates.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "readonly Type: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "T"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": true,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "Type",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            }
+          ],
+          "extendsTokenRanges": []
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "@microsoft/fast-element!ignore:function(1)",
+          "docComment": "/**\n * A decorator that tells the container not to try to inject a dependency.\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare function ignore(target: "
+            },
+            {
+              "kind": "Reference",
+              "text": "Injectable",
+              "canonicalReference": "@microsoft/fast-element!Injectable:type"
+            },
+            {
+              "kind": "Content",
+              "text": ", property?: "
+            },
+            {
+              "kind": "Content",
+              "text": "string | number"
+            },
+            {
+              "kind": "Content",
+              "text": ", descriptor?: "
+            },
+            {
+              "kind": "Reference",
+              "text": "PropertyDescriptor",
+              "canonicalReference": "!PropertyDescriptor:interface"
+            },
+            {
+              "kind": "Content",
+              "text": " | number"
+            },
+            {
+              "kind": "Content",
+              "text": "): "
+            },
+            {
+              "kind": "Content",
+              "text": "void"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "dist/dts/di/di.d.ts",
+          "returnTypeTokenRange": {
+            "startIndex": 8,
+            "endIndex": 9
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "target",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isOptional": false
+            },
+            {
+              "parameterName": "property",
+              "parameterTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "isOptional": true
+            },
+            {
+              "parameterName": "descriptor",
+              "parameterTypeTokenRange": {
+                "startIndex": 5,
+                "endIndex": 7
+              },
+              "isOptional": true
+            }
+          ],
+          "name": "ignore"
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "@microsoft/fast-element!inject:function(1)",
+          "docComment": "/**\n * A decorator that specifies what to inject into its target.\n *\n * @remarks\n *\n * The decorator can be used to decorate a class, listing all of the classes dependencies. Or it can be used to decorate a constructor paramter, indicating what to inject for that parameter. Or it can be used for a web component property, indicating what that property should resolve to.\n *\n * @param dependencies - The dependencies to inject.\n *\n * @returns The decorator to be applied to the target class.\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "inject: (...dependencies: "
+            },
+            {
+              "kind": "Reference",
+              "text": "Key",
+              "canonicalReference": "@microsoft/fast-element!Key:type"
+            },
+            {
+              "kind": "Content",
+              "text": "[]"
+            },
+            {
+              "kind": "Content",
+              "text": ") => "
+            },
+            {
+              "kind": "Content",
+              "text": "(target: any, key?: string | number, descriptor?: "
+            },
+            {
+              "kind": "Reference",
+              "text": "PropertyDescriptor",
+              "canonicalReference": "!PropertyDescriptor:interface"
+            },
+            {
+              "kind": "Content",
+              "text": " | number) => void"
+            }
+          ],
+          "fileUrlPath": "dist/dts/di/di.d.ts",
+          "returnTypeTokenRange": {
+            "startIndex": 4,
+            "endIndex": 7
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "dependencies",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 3
+              },
+              "isOptional": false
+            }
+          ],
+          "name": "inject"
+        },
+        {
+          "kind": "TypeAlias",
+          "canonicalReference": "@microsoft/fast-element!Injectable:type",
+          "docComment": "/**\n * A class that declares constructor injected dependencies through a static \"inject\" field array of keys.\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare type Injectable<T = "
+            },
+            {
+              "kind": "Content",
+              "text": "{}"
+            },
+            {
+              "kind": "Content",
+              "text": "> = "
+            },
+            {
+              "kind": "Reference",
+              "text": "Constructable",
+              "canonicalReference": "@microsoft/fast-element!~Constructable:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<T> & {\n    inject?: "
+            },
+            {
+              "kind": "Reference",
+              "text": "Key",
+              "canonicalReference": "@microsoft/fast-element!Key:type"
+            },
+            {
+              "kind": "Content",
+              "text": "[];\n}"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "dist/dts/di/di.d.ts",
+          "releaseTag": "Public",
+          "name": "Injectable",
+          "typeParameters": [
+            {
+              "typeParameterName": "T",
+              "constraintTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              },
+              "defaultTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            }
+          ],
+          "typeTokenRange": {
+            "startIndex": 3,
+            "endIndex": 7
+          }
+        },
+        {
+          "kind": "Interface",
+          "canonicalReference": "@microsoft/fast-element!InterfaceConfiguration:interface",
+          "docComment": "/**\n * Used to configure a dependency injection interface key.\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface InterfaceConfiguration "
+            }
+          ],
+          "fileUrlPath": "dist/dts/di/di.d.ts",
+          "releaseTag": "Public",
+          "name": "InterfaceConfiguration",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@microsoft/fast-element!InterfaceConfiguration#friendlyName:member",
+              "docComment": "/**\n * The friendly name for the interface. Useful for debugging.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "friendlyName?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "friendlyName",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@microsoft/fast-element!InterfaceConfiguration#respectConnection:member",
+              "docComment": "/**\n * When true, the dependency will be re-resolved when FASTElement connection changes. If the resolved value changes due to connection change, a {@link @microsoft/fast-element#Observable | notification} will be emitted for the property, with the previous and next values provided to any subscriber.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "respectConnection?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "boolean"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "respectConnection",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            }
+          ],
+          "extendsTokenRanges": []
+        },
+        {
+          "kind": "TypeAlias",
+          "canonicalReference": "@microsoft/fast-element!Key:type",
+          "docComment": "/**\n * A key that is used to register dependencies with a dependency injection container.\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare type Key = "
+            },
+            {
+              "kind": "Reference",
+              "text": "PropertyKey",
+              "canonicalReference": "!PropertyKey:type"
+            },
+            {
+              "kind": "Content",
+              "text": " | object | "
+            },
+            {
+              "kind": "Reference",
+              "text": "ContextDecorator",
+              "canonicalReference": "@microsoft/fast-element!~ContextDecorator:type"
+            },
+            {
+              "kind": "Content",
+              "text": " | "
+            },
+            {
+              "kind": "Reference",
+              "text": "Constructable",
+              "canonicalReference": "@microsoft/fast-element!~Constructable:type"
+            },
+            {
+              "kind": "Content",
+              "text": " | "
+            },
+            {
+              "kind": "Reference",
+              "text": "Resolver",
+              "canonicalReference": "@microsoft/fast-element!Resolver:interface"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "dist/dts/di/di.d.ts",
+          "releaseTag": "Public",
+          "name": "Key",
+          "typeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 8
+          }
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "@microsoft/fast-element!lazy:function(1)",
+          "docComment": "/**\n * A decorator that lazily injects a dependency depending on whether the `Key` is present at the time of function call.\n *\n * @param key - The key to lazily resolve. see {@link DI.createContext} on interactions with interfaces\n *\n * @example\n *\n * You need to make your argument a function that returns the type, for example\n * ```ts\n * class Foo {\n *   constructor( @lazy('random') public random: () => number )\n * }\n * const foo = container.get(Foo); // instanceof Foo\n * foo.random(); // throws\n * ```\n *\n * would throw an exception because you haven't registered `'random'` before calling the method.\n *\n * @example\n *\n * This, would give you a new 'Math.random()' number each time.\n * ```ts\n * class Foo {\n *   constructor( @lazy('random') public random: () => random )\n * }\n * container.register(Registration.callback('random', Math.random ));\n * container.get(Foo).random(); // some random number\n * container.get(Foo).random(); // another random number\n * ```\n *\n * `@lazy` does not manage the lifecycle of the underlying key. If you want a singleton, you have to register as a `singleton`, `transient` would also behave as you would expect, providing you a new instance each time.\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "lazy: (key: "
+            },
+            {
+              "kind": "Content",
+              "text": "any"
+            },
+            {
+              "kind": "Content",
+              "text": ") => "
+            },
+            {
+              "kind": "Content",
+              "text": "any"
+            }
+          ],
+          "fileUrlPath": "dist/dts/di/di.d.ts",
+          "returnTypeTokenRange": {
+            "startIndex": 3,
+            "endIndex": 4
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "key",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isOptional": false
+            }
+          ],
+          "name": "lazy"
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "@microsoft/fast-element!newInstanceForScope:function(1)",
+          "docComment": "/**\n * A decorator that indicates that a new instance should be injected scoped to the container that requested the instance.\n *\n * @remarks\n *\n * This creates a resolver with an instance strategy pointing to the new instance, effectively making this a singleton, scoped to the container or DOM's subtree.\n *\n * @param key - The dependency key for the new instance.\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "newInstanceForScope: (key: "
+            },
+            {
+              "kind": "Content",
+              "text": "any"
+            },
+            {
+              "kind": "Content",
+              "text": ") => "
+            },
+            {
+              "kind": "Content",
+              "text": "any"
+            }
+          ],
+          "fileUrlPath": "dist/dts/di/di.d.ts",
+          "returnTypeTokenRange": {
+            "startIndex": 3,
+            "endIndex": 4
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "key",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isOptional": false
+            }
+          ],
+          "name": "newInstanceForScope"
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "@microsoft/fast-element!newInstanceOf:function(1)",
+          "docComment": "/**\n * A decorator that indicates that a new instance should be injected.\n *\n * @remarks\n *\n * The instance is not internally cached with a resolver as newInstanceForScope does.\n *\n * @param key - The dependency key for the new instance.\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "newInstanceOf: (key: "
+            },
+            {
+              "kind": "Content",
+              "text": "any"
+            },
+            {
+              "kind": "Content",
+              "text": ") => "
+            },
+            {
+              "kind": "Content",
+              "text": "any"
+            }
+          ],
+          "fileUrlPath": "dist/dts/di/di.d.ts",
+          "returnTypeTokenRange": {
+            "startIndex": 3,
+            "endIndex": 4
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "key",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isOptional": false
+            }
+          ],
+          "name": "newInstanceOf"
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "@microsoft/fast-element!optional:function(1)",
+          "docComment": "/**\n * A decorator that allows you to optionally inject a dependency depending on whether the [[`Key`]] is present, for example:\n *\n * @param key - The key to optionally resolve. see {@link DI.createContext} on interactions with interfaces\n *\n * @example\n * ```ts\n * class Foo {\n *   constructor( @inject('mystring') public str: string = 'somestring' )\n * }\n * container.get(Foo); // throws\n * ```\n *\n * would fail\n *\n * @example\n * ```ts\n * class Foo {\n *   constructor( @optional('mystring') public str: string = 'somestring' )\n * }\n * container.get(Foo).str // somestring\n * ```\n *\n * if you use it without a default it will inject `undefined`, so remember to mark your input type as possibly `undefined`!\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "optional: (key: "
+            },
+            {
+              "kind": "Content",
+              "text": "any"
+            },
+            {
+              "kind": "Content",
+              "text": ") => "
+            },
+            {
+              "kind": "Content",
+              "text": "any"
+            }
+          ],
+          "fileUrlPath": "dist/dts/di/di.d.ts",
+          "returnTypeTokenRange": {
+            "startIndex": 3,
+            "endIndex": 4
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "key",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isOptional": false
+            }
+          ],
+          "name": "optional"
+        },
+        {
+          "kind": "TypeAlias",
+          "canonicalReference": "@microsoft/fast-element!ParentLocator:type",
+          "docComment": "/**\n * A function capable of locating the parent container based on a container's owner.\n *\n * @remarks\n *\n * A container owner is usually an HTMLElement instance.\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare type ParentLocator = "
+            },
+            {
+              "kind": "Content",
+              "text": "(owner: any) => "
+            },
+            {
+              "kind": "Reference",
+              "text": "Container",
+              "canonicalReference": "@microsoft/fast-element!Container:interface"
+            },
+            {
+              "kind": "Content",
+              "text": " | null"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "dist/dts/di/di.d.ts",
+          "releaseTag": "Public",
+          "name": "ParentLocator",
+          "typeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 4
+          }
+        },
+        {
+          "kind": "TypeAlias",
+          "canonicalReference": "@microsoft/fast-element!RegisterSelf:type",
+          "docComment": "/**\n * Represents an object that can register itself.\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare type RegisterSelf<T extends "
+            },
+            {
+              "kind": "Reference",
+              "text": "Constructable",
+              "canonicalReference": "@microsoft/fast-element!~Constructable:type"
+            },
+            {
+              "kind": "Content",
+              "text": "> = "
+            },
+            {
+              "kind": "Content",
+              "text": "{\n    register(container: "
+            },
+            {
+              "kind": "Reference",
+              "text": "Container",
+              "canonicalReference": "@microsoft/fast-element!Container:interface"
+            },
+            {
+              "kind": "Content",
+              "text": "): "
+            },
+            {
+              "kind": "Reference",
+              "text": "Resolver",
+              "canonicalReference": "@microsoft/fast-element!Resolver:interface"
+            },
+            {
+              "kind": "Content",
+              "text": "<"
+            },
+            {
+              "kind": "Reference",
+              "text": "InstanceType",
+              "canonicalReference": "!InstanceType:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<T>>;\n    registerInRequestor: boolean;\n}"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "dist/dts/di/di.d.ts",
+          "releaseTag": "Public",
+          "name": "RegisterSelf",
+          "typeParameters": [
+            {
+              "typeParameterName": "T",
+              "constraintTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "defaultTypeTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              }
+            }
+          ],
+          "typeTokenRange": {
+            "startIndex": 3,
+            "endIndex": 10
+          }
+        },
+        {
+          "kind": "Interface",
+          "canonicalReference": "@microsoft/fast-element!Registration:interface",
+          "docComment": "/**\n * Implemented by objects that wish to register dependencies in the container by creating resolvers.\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface Registration<K = "
+            },
+            {
+              "kind": "Content",
+              "text": "any"
+            },
+            {
+              "kind": "Content",
+              "text": "> "
+            }
+          ],
+          "fileUrlPath": "dist/dts/di/di.d.ts",
+          "releaseTag": "Public",
+          "typeParameters": [
+            {
+              "typeParameterName": "K",
+              "constraintTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              },
+              "defaultTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            }
+          ],
+          "name": "Registration",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "MethodSignature",
+              "canonicalReference": "@microsoft/fast-element!Registration#register:member(1)",
+              "docComment": "/**\n * Creates a resolver for a desired dependency.\n *\n * @param container - The container to register the dependency within.\n *\n * @param key - The key to register dependency under, if overridden.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "register(container: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Container",
+                  "canonicalReference": "@microsoft/fast-element!Container:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Resolver",
+                  "canonicalReference": "@microsoft/fast-element!Resolver:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<K>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isOptional": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 5
+              },
+              "releaseTag": "Public",
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "container",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "name": "register"
+            }
+          ],
+          "extendsTokenRanges": []
+        },
+        {
+          "kind": "Variable",
+          "canonicalReference": "@microsoft/fast-element!Registration:var",
+          "docComment": "/**\n * You can use the resulting Registration of any of the factory methods to register with the container.\n *\n * @example\n * ```\n * class Foo {}\n * const container = DI.createContainer();\n * container.register(Registration.instance(Foo, new Foo()));\n * container.get(Foo);\n * ```\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "Registration: "
+            },
+            {
+              "kind": "Reference",
+              "text": "Readonly",
+              "canonicalReference": "!Readonly:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<{\n    instance<T>(key: "
+            },
+            {
+              "kind": "Reference",
+              "text": "Key",
+              "canonicalReference": "@microsoft/fast-element!Key:type"
+            },
+            {
+              "kind": "Content",
+              "text": ", value: T): "
+            },
+            {
+              "kind": "Reference",
+              "text": "Registration",
+              "canonicalReference": "@microsoft/fast-element!Registration:interface"
+            },
+            {
+              "kind": "Content",
+              "text": "<T>;\n    singleton<T_1 extends "
+            },
+            {
+              "kind": "Reference",
+              "text": "Constructable",
+              "canonicalReference": "@microsoft/fast-element!~Constructable:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<{}>>(key: "
+            },
+            {
+              "kind": "Reference",
+              "text": "Key",
+              "canonicalReference": "@microsoft/fast-element!Key:type"
+            },
+            {
+              "kind": "Content",
+              "text": ", value: T_1): "
+            },
+            {
+              "kind": "Reference",
+              "text": "Registration",
+              "canonicalReference": "@microsoft/fast-element!Registration:interface"
+            },
+            {
+              "kind": "Content",
+              "text": "<"
+            },
+            {
+              "kind": "Reference",
+              "text": "InstanceType",
+              "canonicalReference": "!InstanceType:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<T_1>>;\n    transient<T_2 extends "
+            },
+            {
+              "kind": "Reference",
+              "text": "Constructable",
+              "canonicalReference": "@microsoft/fast-element!~Constructable:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<{}>>(key: "
+            },
+            {
+              "kind": "Reference",
+              "text": "Key",
+              "canonicalReference": "@microsoft/fast-element!Key:type"
+            },
+            {
+              "kind": "Content",
+              "text": ", value: T_2): "
+            },
+            {
+              "kind": "Reference",
+              "text": "Registration",
+              "canonicalReference": "@microsoft/fast-element!Registration:interface"
+            },
+            {
+              "kind": "Content",
+              "text": "<"
+            },
+            {
+              "kind": "Reference",
+              "text": "InstanceType",
+              "canonicalReference": "!InstanceType:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<T_2>>;\n    callback<T_3>(key: "
+            },
+            {
+              "kind": "Reference",
+              "text": "Key",
+              "canonicalReference": "@microsoft/fast-element!Key:type"
+            },
+            {
+              "kind": "Content",
+              "text": ", callback: "
+            },
+            {
+              "kind": "Reference",
+              "text": "ResolveCallback",
+              "canonicalReference": "@microsoft/fast-element!ResolveCallback:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<T_3>): "
+            },
+            {
+              "kind": "Reference",
+              "text": "Registration",
+              "canonicalReference": "@microsoft/fast-element!Registration:interface"
+            },
+            {
+              "kind": "Content",
+              "text": "<"
+            },
+            {
+              "kind": "Reference",
+              "text": "Resolved",
+              "canonicalReference": "@microsoft/fast-element!Resolved:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<T_3>>;\n    cachedCallback<T_4>(key: "
+            },
+            {
+              "kind": "Reference",
+              "text": "Key",
+              "canonicalReference": "@microsoft/fast-element!Key:type"
+            },
+            {
+              "kind": "Content",
+              "text": ", callback: "
+            },
+            {
+              "kind": "Reference",
+              "text": "ResolveCallback",
+              "canonicalReference": "@microsoft/fast-element!ResolveCallback:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<T_4>): "
+            },
+            {
+              "kind": "Reference",
+              "text": "Registration",
+              "canonicalReference": "@microsoft/fast-element!Registration:interface"
+            },
+            {
+              "kind": "Content",
+              "text": "<"
+            },
+            {
+              "kind": "Reference",
+              "text": "Resolved",
+              "canonicalReference": "@microsoft/fast-element!Resolved:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<T_4>>;\n    aliasTo<T_5>(originalKey: T_5, aliasKey: "
+            },
+            {
+              "kind": "Reference",
+              "text": "Key",
+              "canonicalReference": "@microsoft/fast-element!Key:type"
+            },
+            {
+              "kind": "Content",
+              "text": "): "
+            },
+            {
+              "kind": "Reference",
+              "text": "Registration",
+              "canonicalReference": "@microsoft/fast-element!Registration:interface"
+            },
+            {
+              "kind": "Content",
+              "text": "<"
+            },
+            {
+              "kind": "Reference",
+              "text": "Resolved",
+              "canonicalReference": "@microsoft/fast-element!Resolved:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<T_5>>;\n}>"
+            }
+          ],
+          "fileUrlPath": "dist/dts/di/di.d.ts",
+          "isReadonly": true,
+          "releaseTag": "Public",
+          "name": "Registration",
+          "variableTypeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 45
+          }
+        },
+        {
+          "kind": "Interface",
+          "canonicalReference": "@microsoft/fast-element!Registry:interface",
+          "docComment": "/**\n * Implemented by objects that which to register dependencies in a container.\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface Registry "
+            }
+          ],
+          "fileUrlPath": "dist/dts/di/di.d.ts",
+          "releaseTag": "Public",
+          "name": "Registry",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "MethodSignature",
+              "canonicalReference": "@microsoft/fast-element!Registry#register:member(1)",
+              "docComment": "/**\n * Registers dependencies in the specified container.\n *\n * @remarks\n *\n * If this registry doubles as a Registration, it should return a Resolver for the registered dependency.\n *\n * @param container - The container to register dependencies in.\n *\n * @param params - Parameters that affect the registration process.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "register(container: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Container",
+                  "canonicalReference": "@microsoft/fast-element!Container:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", ...params: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "unknown[]"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "void | "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Resolver",
+                  "canonicalReference": "@microsoft/fast-element!Resolver:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isOptional": false,
+              "returnTypeTokenRange": {
+                "startIndex": 5,
+                "endIndex": 7
+              },
+              "releaseTag": "Public",
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "container",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                },
+                {
+                  "parameterName": "params",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 3,
+                    "endIndex": 4
+                  },
+                  "isOptional": false
+                }
+              ],
+              "name": "register"
+            }
+          ],
+          "extendsTokenRanges": []
+        },
+        {
+          "kind": "TypeAlias",
+          "canonicalReference": "@microsoft/fast-element!ResolveCallback:type",
+          "docComment": "/**\n * Represents a custom callback for resolving a request from the container. The handler is the container that is invoking the callback. The requestor is the original container that made the request. The handler and the requestor may not be the same if the request has bubbled up to a parent container in the DI hierarchy. The resolver is the instance of the resolver that stores the callback. This is provided in case the callback needs a place or key against which to store state across resolutions.\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare type ResolveCallback<T = "
+            },
+            {
+              "kind": "Content",
+              "text": "any"
+            },
+            {
+              "kind": "Content",
+              "text": "> = "
+            },
+            {
+              "kind": "Content",
+              "text": "(handler: "
+            },
+            {
+              "kind": "Reference",
+              "text": "Container",
+              "canonicalReference": "@microsoft/fast-element!Container:interface"
+            },
+            {
+              "kind": "Content",
+              "text": ", requestor: "
+            },
+            {
+              "kind": "Reference",
+              "text": "Container",
+              "canonicalReference": "@microsoft/fast-element!Container:interface"
+            },
+            {
+              "kind": "Content",
+              "text": ", resolver: "
+            },
+            {
+              "kind": "Reference",
+              "text": "Resolver",
+              "canonicalReference": "@microsoft/fast-element!Resolver:interface"
+            },
+            {
+              "kind": "Content",
+              "text": "<T>) => T"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "dist/dts/di/di.d.ts",
+          "releaseTag": "Public",
+          "name": "ResolveCallback",
+          "typeParameters": [
+            {
+              "typeParameterName": "T",
+              "constraintTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              },
+              "defaultTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            }
+          ],
+          "typeTokenRange": {
+            "startIndex": 3,
+            "endIndex": 10
+          }
+        },
+        {
+          "kind": "TypeAlias",
+          "canonicalReference": "@microsoft/fast-element!Resolved:type",
+          "docComment": "/**\n * Represents something resolved from a service locator.\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare type Resolved<K> = "
+            },
+            {
+              "kind": "Content",
+              "text": "K extends "
+            },
+            {
+              "kind": "Reference",
+              "text": "ContextDecorator",
+              "canonicalReference": "@microsoft/fast-element!~ContextDecorator:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<infer T> ? T : K extends "
+            },
+            {
+              "kind": "Reference",
+              "text": "Constructable",
+              "canonicalReference": "@microsoft/fast-element!~Constructable:type"
+            },
+            {
+              "kind": "Content",
+              "text": " ? "
+            },
+            {
+              "kind": "Reference",
+              "text": "InstanceType",
+              "canonicalReference": "!InstanceType:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<K> : K extends "
+            },
+            {
+              "kind": "Reference",
+              "text": "ResolverLike",
+              "canonicalReference": "@microsoft/fast-element!~ResolverLike:interface"
+            },
+            {
+              "kind": "Content",
+              "text": "<any, infer T1> ? T1 extends "
+            },
+            {
+              "kind": "Reference",
+              "text": "Constructable",
+              "canonicalReference": "@microsoft/fast-element!~Constructable:type"
+            },
+            {
+              "kind": "Content",
+              "text": " ? "
+            },
+            {
+              "kind": "Reference",
+              "text": "InstanceType",
+              "canonicalReference": "!InstanceType:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<T1> : T1 : K"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "dist/dts/di/di.d.ts",
+          "releaseTag": "Public",
+          "name": "Resolved",
+          "typeParameters": [
+            {
+              "typeParameterName": "K",
+              "constraintTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              },
+              "defaultTypeTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              }
+            }
+          ],
+          "typeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 14
+          }
+        },
+        {
+          "kind": "Interface",
+          "canonicalReference": "@microsoft/fast-element!Resolver:interface",
+          "docComment": "/**\n * Internally, the DI system maps \"keys\" to \"resolvers\". A resolver controls how a dependency is resolved. Resolvers for transient, singleton, etc. are provided out of the box, but you can also implement Resolver yourself and supply custom logic for resolution.\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface Resolver<K = "
+            },
+            {
+              "kind": "Content",
+              "text": "any"
+            },
+            {
+              "kind": "Content",
+              "text": "> extends "
+            },
+            {
+              "kind": "Reference",
+              "text": "ResolverLike",
+              "canonicalReference": "@microsoft/fast-element!~ResolverLike:interface"
+            },
+            {
+              "kind": "Content",
+              "text": "<"
+            },
+            {
+              "kind": "Reference",
+              "text": "Container",
+              "canonicalReference": "@microsoft/fast-element!Container:interface"
+            },
+            {
+              "kind": "Content",
+              "text": ", K>"
+            },
+            {
+              "kind": "Content",
+              "text": " "
+            }
+          ],
+          "fileUrlPath": "dist/dts/di/di.d.ts",
+          "releaseTag": "Public",
+          "typeParameters": [
+            {
+              "typeParameterName": "K",
+              "constraintTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              },
+              "defaultTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            }
+          ],
+          "name": "Resolver",
+          "preserveMemberOrder": false,
+          "members": [],
+          "extendsTokenRanges": [
+            {
+              "startIndex": 3,
+              "endIndex": 7
+            }
+          ]
+        },
+        {
+          "kind": "Class",
+          "canonicalReference": "@microsoft/fast-element!ResolverBuilder:class",
+          "docComment": "/**\n * A utility class used that constructs and registers resolvers for a dependency injection container. Supports a standard set of object lifetimes.\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare class ResolverBuilder<K> "
+            }
+          ],
+          "fileUrlPath": "dist/dts/di/di.d.ts",
+          "releaseTag": "Public",
+          "typeParameters": [
+            {
+              "typeParameterName": "K",
+              "constraintTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              },
+              "defaultTypeTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              }
+            }
+          ],
+          "isAbstract": false,
+          "name": "ResolverBuilder",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "Constructor",
+              "canonicalReference": "@microsoft/fast-element!ResolverBuilder:constructor(1)",
+              "docComment": "/**\n * Constructs a new instance of the `ResolverBuilder` class\n *\n * @param container - The container to create resolvers for.\n *\n * @param key - The key to register resolvers under.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "constructor(container: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Container",
+                  "canonicalReference": "@microsoft/fast-element!Container:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", key: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Key",
+                  "canonicalReference": "@microsoft/fast-element!Key:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ");"
+                }
+              ],
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "container",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                },
+                {
+                  "parameterName": "key",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 3,
+                    "endIndex": 4
+                  },
+                  "isOptional": false
+                }
+              ]
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@microsoft/fast-element!ResolverBuilder#aliasTo:member(1)",
+              "docComment": "/**\n * Aliases the current key to a different key.\n *\n * @param destinationKey - The key to point the alias to.\n *\n * @returns The resolver.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "aliasTo(destinationKey: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Key",
+                  "canonicalReference": "@microsoft/fast-element!Key:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Resolver",
+                  "canonicalReference": "@microsoft/fast-element!Resolver:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<K>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 5
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "destinationKey",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "aliasTo"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@microsoft/fast-element!ResolverBuilder#cachedCallback:member(1)",
+              "docComment": "/**\n * Creates a resolver that invokes a callback function the first time that a dependency resolution is requested. The returned value is then cached and provided for all subsequent requests.\n *\n * @param value - The callback to call during the first resolution.\n *\n * @returns The resolver.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "cachedCallback(value: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "ResolveCallback",
+                  "canonicalReference": "@microsoft/fast-element!ResolveCallback:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<K>"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Resolver",
+                  "canonicalReference": "@microsoft/fast-element!Resolver:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<K>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 4,
+                "endIndex": 6
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "value",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 3
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "cachedCallback"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@microsoft/fast-element!ResolverBuilder#callback:member(1)",
+              "docComment": "/**\n * Creates a resolver that invokes a callback function for every dependency resolution request, allowing custom logic to return the dependency.\n *\n * @param value - The callback to call during resolution.\n *\n * @returns The resolver.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "callback(value: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "ResolveCallback",
+                  "canonicalReference": "@microsoft/fast-element!ResolveCallback:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<K>"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Resolver",
+                  "canonicalReference": "@microsoft/fast-element!Resolver:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<K>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 4,
+                "endIndex": 6
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "value",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 3
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "callback"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@microsoft/fast-element!ResolverBuilder#instance:member(1)",
+              "docComment": "/**\n * Creates a resolver for an existing object instance.\n *\n * @param value - The instance to resolve.\n *\n * @returns The resolver.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "instance(value: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "K"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Resolver",
+                  "canonicalReference": "@microsoft/fast-element!Resolver:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<K>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 5
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "value",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "instance"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@microsoft/fast-element!ResolverBuilder#singleton:member(1)",
+              "docComment": "/**\n * Creates a resolver that enforces a singleton lifetime.\n *\n * @param value - The type to create and cache the singleton for.\n *\n * @returns The resolver.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "singleton(value: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Constructable",
+                  "canonicalReference": "@microsoft/fast-element!~Constructable:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Resolver",
+                  "canonicalReference": "@microsoft/fast-element!Resolver:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<K>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 5
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "value",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "singleton"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@microsoft/fast-element!ResolverBuilder#transient:member(1)",
+              "docComment": "/**\n * Creates a resolver that creates a new instance for every dependency request.\n *\n * @param value - The type to create instances of.\n *\n * @returns - The resolver.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "transient(value: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Constructable",
+                  "canonicalReference": "@microsoft/fast-element!~Constructable:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Resolver",
+                  "canonicalReference": "@microsoft/fast-element!Resolver:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<K>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 5
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "value",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "transient"
+            }
+          ],
+          "implementsTokenRanges": []
+        },
+        {
+          "kind": "Interface",
+          "canonicalReference": "@microsoft/fast-element!ServiceLocator:interface",
+          "docComment": "/**\n * Implemented by objects capable of resolving services and other dependencies.\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface ServiceLocator "
+            }
+          ],
+          "fileUrlPath": "dist/dts/di/di.d.ts",
+          "releaseTag": "Public",
+          "name": "ServiceLocator",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "MethodSignature",
+              "canonicalReference": "@microsoft/fast-element!ServiceLocator#get:member(1)",
+              "docComment": "/**\n * Gets a dependency by key.\n *\n * @param key - The key to lookup.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "get<K extends "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Key",
+                  "canonicalReference": "@microsoft/fast-element!Key:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">(key: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "K"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Resolved",
+                  "canonicalReference": "@microsoft/fast-element!Resolved:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<K>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isOptional": false,
+              "returnTypeTokenRange": {
+                "startIndex": 5,
+                "endIndex": 7
+              },
+              "releaseTag": "Public",
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "key",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 3,
+                    "endIndex": 4
+                  },
+                  "isOptional": false
+                }
+              ],
+              "typeParameters": [
+                {
+                  "typeParameterName": "K",
+                  "constraintTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "defaultTypeTokenRange": {
+                    "startIndex": 0,
+                    "endIndex": 0
+                  }
+                }
+              ],
+              "name": "get"
+            },
+            {
+              "kind": "MethodSignature",
+              "canonicalReference": "@microsoft/fast-element!ServiceLocator#get:member(2)",
+              "docComment": "/**\n * Gets a dependency by key.\n *\n * @param key - The key to lookup.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "get<K extends "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Key",
+                  "canonicalReference": "@microsoft/fast-element!Key:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">(key: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Key",
+                  "canonicalReference": "@microsoft/fast-element!Key:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Resolved",
+                  "canonicalReference": "@microsoft/fast-element!Resolved:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<K>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isOptional": false,
+              "returnTypeTokenRange": {
+                "startIndex": 5,
+                "endIndex": 7
+              },
+              "releaseTag": "Public",
+              "overloadIndex": 2,
+              "parameters": [
+                {
+                  "parameterName": "key",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 3,
+                    "endIndex": 4
+                  },
+                  "isOptional": false
+                }
+              ],
+              "typeParameters": [
+                {
+                  "typeParameterName": "K",
+                  "constraintTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "defaultTypeTokenRange": {
+                    "startIndex": 0,
+                    "endIndex": 0
+                  }
+                }
+              ],
+              "name": "get"
+            },
+            {
+              "kind": "MethodSignature",
+              "canonicalReference": "@microsoft/fast-element!ServiceLocator#get:member(3)",
+              "docComment": "/**\n * Gets a dependency by key.\n *\n * @param key - The key to lookup.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "get<K extends "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Key",
+                  "canonicalReference": "@microsoft/fast-element!Key:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">(key: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "K | "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Key",
+                  "canonicalReference": "@microsoft/fast-element!Key:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Resolved",
+                  "canonicalReference": "@microsoft/fast-element!Resolved:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<K>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isOptional": false,
+              "returnTypeTokenRange": {
+                "startIndex": 6,
+                "endIndex": 8
+              },
+              "releaseTag": "Public",
+              "overloadIndex": 3,
+              "parameters": [
+                {
+                  "parameterName": "key",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 3,
+                    "endIndex": 5
+                  },
+                  "isOptional": false
+                }
+              ],
+              "typeParameters": [
+                {
+                  "typeParameterName": "K",
+                  "constraintTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "defaultTypeTokenRange": {
+                    "startIndex": 0,
+                    "endIndex": 0
+                  }
+                }
+              ],
+              "name": "get"
+            },
+            {
+              "kind": "MethodSignature",
+              "canonicalReference": "@microsoft/fast-element!ServiceLocator#getAll:member(1)",
+              "docComment": "/**\n * Gets an array of all dependencies by key.\n *\n * @param key - The key to lookup.\n *\n * @param searchAncestors - Indicates whether to search the entire hierarchy of service locators.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "getAll<K extends "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Key",
+                  "canonicalReference": "@microsoft/fast-element!Key:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">(key: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "K"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", searchAncestors?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "boolean"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "readonly "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Resolved",
+                  "canonicalReference": "@microsoft/fast-element!Resolved:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<K>[]"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isOptional": false,
+              "returnTypeTokenRange": {
+                "startIndex": 7,
+                "endIndex": 10
+              },
+              "releaseTag": "Public",
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "key",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 3,
+                    "endIndex": 4
+                  },
+                  "isOptional": false
+                },
+                {
+                  "parameterName": "searchAncestors",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 5,
+                    "endIndex": 6
+                  },
+                  "isOptional": true
+                }
+              ],
+              "typeParameters": [
+                {
+                  "typeParameterName": "K",
+                  "constraintTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "defaultTypeTokenRange": {
+                    "startIndex": 0,
+                    "endIndex": 0
+                  }
+                }
+              ],
+              "name": "getAll"
+            },
+            {
+              "kind": "MethodSignature",
+              "canonicalReference": "@microsoft/fast-element!ServiceLocator#getAll:member(2)",
+              "docComment": "/**\n * Gets an array of all dependencies by key.\n *\n * @param key - The key to lookup.\n *\n * @param searchAncestors - Indicates whether to search the entire hierarchy of service locators.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "getAll<K extends "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Key",
+                  "canonicalReference": "@microsoft/fast-element!Key:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">(key: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Key",
+                  "canonicalReference": "@microsoft/fast-element!Key:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", searchAncestors?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "boolean"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "readonly "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Resolved",
+                  "canonicalReference": "@microsoft/fast-element!Resolved:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<K>[]"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isOptional": false,
+              "returnTypeTokenRange": {
+                "startIndex": 7,
+                "endIndex": 10
+              },
+              "releaseTag": "Public",
+              "overloadIndex": 2,
+              "parameters": [
+                {
+                  "parameterName": "key",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 3,
+                    "endIndex": 4
+                  },
+                  "isOptional": false
+                },
+                {
+                  "parameterName": "searchAncestors",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 5,
+                    "endIndex": 6
+                  },
+                  "isOptional": true
+                }
+              ],
+              "typeParameters": [
+                {
+                  "typeParameterName": "K",
+                  "constraintTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "defaultTypeTokenRange": {
+                    "startIndex": 0,
+                    "endIndex": 0
+                  }
+                }
+              ],
+              "name": "getAll"
+            },
+            {
+              "kind": "MethodSignature",
+              "canonicalReference": "@microsoft/fast-element!ServiceLocator#getAll:member(3)",
+              "docComment": "/**\n * Gets an array of all dependencies by key.\n *\n * @param key - The key to lookup.\n *\n * @param searchAncestors - Indicates whether to search the entire hierarchy of service locators.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "getAll<K extends "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Key",
+                  "canonicalReference": "@microsoft/fast-element!Key:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">(key: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "K | "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Key",
+                  "canonicalReference": "@microsoft/fast-element!Key:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", searchAncestors?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "boolean"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "readonly "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Resolved",
+                  "canonicalReference": "@microsoft/fast-element!Resolved:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<K>[]"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isOptional": false,
+              "returnTypeTokenRange": {
+                "startIndex": 8,
+                "endIndex": 11
+              },
+              "releaseTag": "Public",
+              "overloadIndex": 3,
+              "parameters": [
+                {
+                  "parameterName": "key",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 3,
+                    "endIndex": 5
+                  },
+                  "isOptional": false
+                },
+                {
+                  "parameterName": "searchAncestors",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 6,
+                    "endIndex": 7
+                  },
+                  "isOptional": true
+                }
+              ],
+              "typeParameters": [
+                {
+                  "typeParameterName": "K",
+                  "constraintTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "defaultTypeTokenRange": {
+                    "startIndex": 0,
+                    "endIndex": 0
+                  }
+                }
+              ],
+              "name": "getAll"
+            },
+            {
+              "kind": "MethodSignature",
+              "canonicalReference": "@microsoft/fast-element!ServiceLocator#getAsync:member(1)",
+              "docComment": "/**\n * Gets a dependency by key, allowing for asynchronously resolved dependencies.\n *\n * @param key - The key to lookup.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "getAsync<K extends "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Key",
+                  "canonicalReference": "@microsoft/fast-element!Key:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">(key: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "K"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Resolved",
+                  "canonicalReference": "@microsoft/fast-element!Resolved:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<K>>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isOptional": false,
+              "returnTypeTokenRange": {
+                "startIndex": 5,
+                "endIndex": 9
+              },
+              "releaseTag": "Public",
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "key",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 3,
+                    "endIndex": 4
+                  },
+                  "isOptional": false
+                }
+              ],
+              "typeParameters": [
+                {
+                  "typeParameterName": "K",
+                  "constraintTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "defaultTypeTokenRange": {
+                    "startIndex": 0,
+                    "endIndex": 0
+                  }
+                }
+              ],
+              "name": "getAsync"
+            },
+            {
+              "kind": "MethodSignature",
+              "canonicalReference": "@microsoft/fast-element!ServiceLocator#getAsync:member(2)",
+              "docComment": "/**\n * Gets a dependency by key, allowing for asynchronously resolved dependencies.\n *\n * @param key - The key to lookup.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "getAsync<K extends "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Key",
+                  "canonicalReference": "@microsoft/fast-element!Key:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">(key: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Key",
+                  "canonicalReference": "@microsoft/fast-element!Key:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Resolved",
+                  "canonicalReference": "@microsoft/fast-element!Resolved:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<K>>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isOptional": false,
+              "returnTypeTokenRange": {
+                "startIndex": 5,
+                "endIndex": 9
+              },
+              "releaseTag": "Public",
+              "overloadIndex": 2,
+              "parameters": [
+                {
+                  "parameterName": "key",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 3,
+                    "endIndex": 4
+                  },
+                  "isOptional": false
+                }
+              ],
+              "typeParameters": [
+                {
+                  "typeParameterName": "K",
+                  "constraintTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "defaultTypeTokenRange": {
+                    "startIndex": 0,
+                    "endIndex": 0
+                  }
+                }
+              ],
+              "name": "getAsync"
+            },
+            {
+              "kind": "MethodSignature",
+              "canonicalReference": "@microsoft/fast-element!ServiceLocator#getAsync:member(3)",
+              "docComment": "/**\n * Gets a dependency by key, allowing for asynchronously resolved dependencies.\n *\n * @param key - The key to lookup.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "getAsync<K extends "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Key",
+                  "canonicalReference": "@microsoft/fast-element!Key:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">(key: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "K | "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Key",
+                  "canonicalReference": "@microsoft/fast-element!Key:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Resolved",
+                  "canonicalReference": "@microsoft/fast-element!Resolved:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<K>>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isOptional": false,
+              "returnTypeTokenRange": {
+                "startIndex": 6,
+                "endIndex": 10
+              },
+              "releaseTag": "Public",
+              "overloadIndex": 3,
+              "parameters": [
+                {
+                  "parameterName": "key",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 3,
+                    "endIndex": 5
+                  },
+                  "isOptional": false
+                }
+              ],
+              "typeParameters": [
+                {
+                  "typeParameterName": "K",
+                  "constraintTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "defaultTypeTokenRange": {
+                    "startIndex": 0,
+                    "endIndex": 0
+                  }
+                }
+              ],
+              "name": "getAsync"
+            },
+            {
+              "kind": "MethodSignature",
+              "canonicalReference": "@microsoft/fast-element!ServiceLocator#has:member(1)",
+              "docComment": "/**\n * Determines whether the locator has the ability to provide an implementation for the requested key.\n *\n * @param key - The dependency key to lookup.\n *\n * @param searchAncestors - Indicates whether to search the entire hierarchy of service locators.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "has<K extends "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Key",
+                  "canonicalReference": "@microsoft/fast-element!Key:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">(key: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "K | "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Key",
+                  "canonicalReference": "@microsoft/fast-element!Key:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", searchAncestors: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "boolean"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "boolean"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isOptional": false,
+              "returnTypeTokenRange": {
+                "startIndex": 8,
+                "endIndex": 9
+              },
+              "releaseTag": "Public",
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "key",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 3,
+                    "endIndex": 5
+                  },
+                  "isOptional": false
+                },
+                {
+                  "parameterName": "searchAncestors",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 6,
+                    "endIndex": 7
+                  },
+                  "isOptional": false
+                }
+              ],
+              "typeParameters": [
+                {
+                  "typeParameterName": "K",
+                  "constraintTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "defaultTypeTokenRange": {
+                    "startIndex": 0,
+                    "endIndex": 0
+                  }
+                }
+              ],
+              "name": "has"
+            }
+          ],
+          "extendsTokenRanges": []
+        },
+        {
+          "kind": "Variable",
+          "canonicalReference": "@microsoft/fast-element!ServiceLocator:var",
+          "docComment": "/**\n * The key that resolves the ServiceLocator itself.\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "ServiceLocator: "
+            },
+            {
+              "kind": "Reference",
+              "text": "ContextDecorator",
+              "canonicalReference": "@microsoft/fast-element!~ContextDecorator:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<"
+            },
+            {
+              "kind": "Reference",
+              "text": "ServiceLocator",
+              "canonicalReference": "@microsoft/fast-element!ServiceLocator:interface"
+            },
+            {
+              "kind": "Content",
+              "text": ">"
+            }
+          ],
+          "fileUrlPath": "dist/dts/di/di.d.ts",
+          "isReadonly": true,
+          "releaseTag": "Public",
+          "name": "ServiceLocator",
+          "variableTypeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 5
+          }
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "@microsoft/fast-element!singleton:function(1)",
+          "docComment": "/**\n * Registers the decorated class as a singleton dependency; the class will only be created once. Each consecutive time the dependency is resolved, the same instance will be returned.\n *\n * @example\n * ```ts\n * @singleton()\n * class Foo { }\n * ```\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare function singleton<T extends "
+            },
+            {
+              "kind": "Reference",
+              "text": "Constructable",
+              "canonicalReference": "@microsoft/fast-element!~Constructable:type"
+            },
+            {
+              "kind": "Content",
+              "text": ">(): "
+            },
+            {
+              "kind": "Content",
+              "text": "typeof "
+            },
+            {
+              "kind": "Reference",
+              "text": "singletonDecorator",
+              "canonicalReference": "@microsoft/fast-element!~singletonDecorator:function"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "dist/dts/di/di.d.ts",
+          "returnTypeTokenRange": {
+            "startIndex": 3,
+            "endIndex": 5
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 1,
+          "parameters": [],
+          "typeParameters": [
+            {
+              "typeParameterName": "T",
+              "constraintTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "defaultTypeTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              }
+            }
+          ],
+          "name": "singleton"
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "@microsoft/fast-element!singleton:function(2)",
+          "docComment": "/**\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare function singleton<T extends "
+            },
+            {
+              "kind": "Reference",
+              "text": "Constructable",
+              "canonicalReference": "@microsoft/fast-element!~Constructable:type"
+            },
+            {
+              "kind": "Content",
+              "text": ">(options?: "
+            },
+            {
+              "kind": "Reference",
+              "text": "SingletonOptions",
+              "canonicalReference": "@microsoft/fast-element!~SingletonOptions:type"
+            },
+            {
+              "kind": "Content",
+              "text": "): "
+            },
+            {
+              "kind": "Content",
+              "text": "typeof "
+            },
+            {
+              "kind": "Reference",
+              "text": "singletonDecorator",
+              "canonicalReference": "@microsoft/fast-element!~singletonDecorator:function"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "dist/dts/di/di.d.ts",
+          "returnTypeTokenRange": {
+            "startIndex": 5,
+            "endIndex": 7
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 2,
+          "parameters": [
+            {
+              "parameterName": "options",
+              "parameterTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "isOptional": true
+            }
+          ],
+          "typeParameters": [
+            {
+              "typeParameterName": "T",
+              "constraintTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "defaultTypeTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              }
+            }
+          ],
+          "name": "singleton"
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "@microsoft/fast-element!singleton:function(3)",
+          "docComment": "/**\n * Registers the `target` class as a singleton dependency; the class will only be created once. Each consecutive time the dependency is resolved, the same instance will be returned.\n *\n * @param target - The class / constructor function to register as a singleton.\n *\n * @example\n * ```ts\n * @singleton()\n * class Foo { }\n * ```\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare function singleton<T extends "
+            },
+            {
+              "kind": "Reference",
+              "text": "Constructable",
+              "canonicalReference": "@microsoft/fast-element!~Constructable:type"
+            },
+            {
+              "kind": "Content",
+              "text": ">(target: "
+            },
+            {
+              "kind": "Content",
+              "text": "T & "
+            },
+            {
+              "kind": "Reference",
+              "text": "Partial",
+              "canonicalReference": "!Partial:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<"
+            },
+            {
+              "kind": "Reference",
+              "text": "RegisterSelf",
+              "canonicalReference": "@microsoft/fast-element!RegisterSelf:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<T>>"
+            },
+            {
+              "kind": "Content",
+              "text": "): "
+            },
+            {
+              "kind": "Content",
+              "text": "T & "
+            },
+            {
+              "kind": "Reference",
+              "text": "RegisterSelf",
+              "canonicalReference": "@microsoft/fast-element!RegisterSelf:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<T>"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "dist/dts/di/di.d.ts",
+          "returnTypeTokenRange": {
+            "startIndex": 9,
+            "endIndex": 12
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 3,
+          "parameters": [
+            {
+              "parameterName": "target",
+              "parameterTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 8
+              },
+              "isOptional": false
+            }
+          ],
+          "typeParameters": [
+            {
+              "typeParameterName": "T",
+              "constraintTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "defaultTypeTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              }
+            }
+          ],
+          "name": "singleton"
+        },
+        {
+          "kind": "TypeAlias",
+          "canonicalReference": "@microsoft/fast-element!Transformer_2:type",
+          "docComment": "/**\n * Transforms an object after it is created but before it is returned to the requestor.\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare type Transformer<K> = "
+            },
+            {
+              "kind": "Content",
+              "text": "(instance: "
+            },
+            {
+              "kind": "Reference",
+              "text": "Resolved",
+              "canonicalReference": "@microsoft/fast-element!Resolved:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<K>) => "
+            },
+            {
+              "kind": "Reference",
+              "text": "Resolved",
+              "canonicalReference": "@microsoft/fast-element!Resolved:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<K>"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "dist/dts/di/di.d.ts",
+          "releaseTag": "Public",
+          "name": "Transformer_2",
+          "typeParameters": [
+            {
+              "typeParameterName": "K",
+              "constraintTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              },
+              "defaultTypeTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              }
+            }
+          ],
+          "typeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 6
+          }
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "@microsoft/fast-element!transient:function(1)",
+          "docComment": "/**\n * Registers the decorated class as a transient dependency; each time the dependency is resolved a new instance will be created.\n *\n * @example\n * ```ts\n * @transient()\n * class Foo { }\n * ```\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare function transient<T extends "
+            },
+            {
+              "kind": "Reference",
+              "text": "Constructable",
+              "canonicalReference": "@microsoft/fast-element!~Constructable:type"
+            },
+            {
+              "kind": "Content",
+              "text": ">(): "
+            },
+            {
+              "kind": "Content",
+              "text": "typeof "
+            },
+            {
+              "kind": "Reference",
+              "text": "transientDecorator",
+              "canonicalReference": "@microsoft/fast-element!~transientDecorator:function"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "dist/dts/di/di.d.ts",
+          "returnTypeTokenRange": {
+            "startIndex": 3,
+            "endIndex": 5
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 1,
+          "parameters": [],
+          "typeParameters": [
+            {
+              "typeParameterName": "T",
+              "constraintTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "defaultTypeTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              }
+            }
+          ],
+          "name": "transient"
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "@microsoft/fast-element!transient:function(2)",
+          "docComment": "/**\n * Registers the `target` class as a transient dependency; each time the dependency is resolved a new instance will be created.\n *\n * @param target - The class / constructor function to register as transient.\n *\n * @example\n * ```ts\n * @transient()\n * class Foo { }\n * ```\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare function transient<T extends "
+            },
+            {
+              "kind": "Reference",
+              "text": "Constructable",
+              "canonicalReference": "@microsoft/fast-element!~Constructable:type"
+            },
+            {
+              "kind": "Content",
+              "text": ">(target: "
+            },
+            {
+              "kind": "Content",
+              "text": "T & "
+            },
+            {
+              "kind": "Reference",
+              "text": "Partial",
+              "canonicalReference": "!Partial:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<"
+            },
+            {
+              "kind": "Reference",
+              "text": "RegisterSelf",
+              "canonicalReference": "@microsoft/fast-element!RegisterSelf:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<T>>"
+            },
+            {
+              "kind": "Content",
+              "text": "): "
+            },
+            {
+              "kind": "Content",
+              "text": "T & "
+            },
+            {
+              "kind": "Reference",
+              "text": "RegisterSelf",
+              "canonicalReference": "@microsoft/fast-element!RegisterSelf:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<T>"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "dist/dts/di/di.d.ts",
+          "returnTypeTokenRange": {
+            "startIndex": 9,
+            "endIndex": 12
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 2,
+          "parameters": [
+            {
+              "parameterName": "target",
+              "parameterTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 8
+              },
+              "isOptional": false
+            }
+          ],
+          "typeParameters": [
+            {
+              "typeParameterName": "T",
+              "constraintTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "defaultTypeTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              }
+            }
+          ],
+          "name": "transient"
+        }
+      ]
+    }
+  ]
+}
