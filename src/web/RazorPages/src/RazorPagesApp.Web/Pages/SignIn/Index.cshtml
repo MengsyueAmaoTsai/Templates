@@ -1,0 +1,29 @@
+@page "/sign-in"
+
+@model SignInViewModel
+
+@{
+    ViewData["Title"] = "Sign in";
+
+    var emailPlaceholder = "someone@example.com";
+}
+
+<div>
+    <form>
+        <h2>Sign in </h2>
+
+        <div>
+            <label>Email</label>
+            <input type="email" placeholder="@emailPlaceholder" required>
+        </div>
+
+        <div>
+            <label>Password</label>
+            <input type="password" required>
+        </div>
+
+        <button>
+            Sign in 
+        </button>
+    </form>
+</div>
