@@ -1,0 +1,24 @@
+@page "/about"
+@using System.Reflection
+
+@model AboutViewModel
+
+@{
+    ViewData["Title"] = "About";
+}
+
+<div>
+    <h1>About</h1>
+
+    <h2>App Info</h2>
+    <ul>
+        <li>Version: @Model.AppVersion</li>
+        <li>Environment: @Model.EnvironmentName</li>
+    </ul>
+
+    <h2>Technologies</h2>
+    <ul>
+        <li>DotNet: @Model.DotNetVersion</li>
+    </ul>
+</div>
+
