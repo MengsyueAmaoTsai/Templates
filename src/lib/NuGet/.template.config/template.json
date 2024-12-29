@@ -1,0 +1,26 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "Mengsyue Amao Tsai",
+  "classifications": ["Lib", "NuGet"],
+  "identity": "RichillCapital.Templates.Lib.NuGet",
+  "name": "RichillCapital - NuGet Library Project",
+  "shortName": "lib-nuget",
+  "tags": {
+    "language": "C#",
+    "type": "solution"
+  },
+  "sourceName": "NuGetLib",
+  "preferNameDirectory": true,
+  "sources": [
+    {
+      "exclude": [
+        "**/[Bb]in/**",
+        "**/[Oo]bj/**",
+        ".template.config/**/*",
+        "**/*.filelist",
+        "**/*.user",
+        "**/*.lock.json"
+      ]
+    }
+  ]
+}
